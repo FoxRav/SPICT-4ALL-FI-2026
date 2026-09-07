@@ -1,0 +1,465 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SPICT-4ALL Official Source Requirement",
+  "type": "object",
+  "required": [
+    "requirement_id",
+    "exact_source_text_en",
+    "exact_text_sha256",
+    "official_source_filename",
+    "official_source_file_sha256",
+    "source_role",
+    "source_provenance",
+    "change_year",
+    "canonical_source_presence",
+    "conflict_status",
+    "translation_evidence_required",
+    "requires_human_signoff",
+    "source_authority_confirmation_required",
+    "final_inclusion_status",
+    "publication_blocking"
+  ],
+  "properties": {
+    "requirement_id": {
+      "type": "string",
+      "pattern": "^S4A-REQ-[0-9]{4}-[0-9]{3}$"
+    },
+    "exact_source_text_en": {
+      "type": "string",
+      "minLength": 1
+    },
+    "exact_text_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "official_source_filename": {
+      "type": "string",
+      "pattern": "^[^/\\\\]+\\.(docx|pdf)$"
+    },
+    "official_source_file_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "source_role": {
+      "type": "string",
+      "const": "official_change_spec"
+    },
+    "source_provenance": {
+      "type": "object",
+      "required": [
+        "document_part",
+        "marking"
+      ],
+      "properties": {
+        "document_part": {
+          "type": "string",
+          "pattern": "^word/(document|header[^/]*|footer[^/]*|footnotes|endnotes)\\.xml$"
+        },
+        "table_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "row": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "column": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "paragraph": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "paragraph_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "marking": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": [
+                "type",
+                "value"
+              ],
+              "properties": {
+                "type": {
+                  "const": "highlight"
+                },
+                "value": {
+                  "enum": [
+                    "yellow",
+                    "green"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "required": [
+                "type",
+                "w_val",
+                "theme_color",
+                "theme_shade"
+              ],
+              "properties": {
+                "type": {
+                  "const": "font_color"
+                },
+                "w_val": {
+                  "type": "string",
+                  "pattern": "^[A-Fa-f0-9]{6}$"
+                },
+                "theme_color": {
+                  "const": "accent6"
+                },
+                "theme_shade": {
+                  "type": "string",
+                  "pattern": "^[A-Fa-f0-9]{2}$"
+                }
+              },
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "table_index",
+            "row",
+            "column",
+            "paragraph"
+          ],
+          "not": {
+            "required": [
+              "paragraph_index"
+            ]
+          }
+        },
+        {
+          "required": [
+            "paragraph_index"
+          ],
+          "not": {
+            "anyOf": [
+              {
+                "required": [
+                  "table_index"
+                ]
+              },
+              {
+                "required": [
+                  "row"
+                ]
+              },
+              {
+                "required": [
+                  "column"
+                ]
+              },
+              {
+                "required": [
+                  "paragraph"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "change_year": {
+      "type": "integer",
+      "enum": [
+        2025,
+        2026
+      ]
+    },
+    "canonical_source_presence": {
+      "const": false
+    },
+    "conflict_status": {
+      "enum": [
+        "UNRESOLVED_CANONICAL_OMISSION",
+        "AUTHORITY_RESOLVED"
+      ]
+    },
+    "translation_evidence_required": {
+      "const": true
+    },
+    "requires_human_signoff": {
+      "const": true
+    },
+    "source_authority_confirmation_required": {
+      "type": "boolean"
+    },
+    "final_inclusion_status": {
+      "enum": [
+        "UNRESOLVED",
+        "INCLUDE",
+        "EXCLUDE"
+      ]
+    },
+    "publication_blocking": {
+      "type": "boolean"
+    },
+    "authority_disposition": {
+      "type": "object",
+      "required": [
+        "requirement_id",
+        "decision",
+        "status",
+        "decision_maker",
+        "decision_date",
+        "evidence_reference"
+      ],
+      "properties": {
+        "requirement_id": {
+          "type": "string",
+          "pattern": "^S4A-REQ-[0-9]{4}-[0-9]{3}$"
+        },
+        "decision": {
+          "enum": [
+            "INCLUDE_IN_FINAL_SOURCE",
+            "EXCLUDE_FROM_FINAL_SOURCE"
+          ]
+        },
+        "status": {
+          "const": "FINAL"
+        },
+        "decision_maker": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "decision_date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "evidence_reference": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "change_year": {
+            "const": 2025
+          }
+        },
+        "required": [
+          "change_year"
+        ]
+      },
+      "then": {
+        "properties": {
+          "source_provenance": {
+            "properties": {
+              "marking": {
+                "properties": {
+                  "type": {
+                    "const": "highlight"
+                  },
+                  "value": {
+                    "const": "yellow"
+                  }
+                },
+                "required": [
+                  "type",
+                  "value"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "change_year": {
+            "const": 2026
+          }
+        },
+        "required": [
+          "change_year"
+        ]
+      },
+      "then": {
+        "properties": {
+          "source_provenance": {
+            "properties": {
+              "marking": {
+                "oneOf": [
+                  {
+                    "properties": {
+                      "type": {
+                        "const": "highlight"
+                      },
+                      "value": {
+                        "const": "green"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "value"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "type": {
+                        "const": "font_color"
+                      },
+                      "theme_color": {
+                        "const": "accent6"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "theme_color"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "conflict_status": {
+            "const": "UNRESOLVED_CANONICAL_OMISSION"
+          }
+        },
+        "required": [
+          "conflict_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "source_authority_confirmation_required": {
+            "const": true
+          },
+          "final_inclusion_status": {
+            "const": "UNRESOLVED"
+          },
+          "publication_blocking": {
+            "const": true
+          }
+        },
+        "not": {
+          "required": [
+            "authority_disposition"
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "conflict_status": {
+            "const": "AUTHORITY_RESOLVED"
+          }
+        },
+        "required": [
+          "conflict_status"
+        ]
+      },
+      "then": {
+        "required": [
+          "authority_disposition"
+        ],
+        "properties": {
+          "final_inclusion_status": {
+            "enum": [
+              "INCLUDE",
+              "EXCLUDE"
+            ]
+          },
+          "source_authority_confirmation_required": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "final_inclusion_status": {
+            "const": "INCLUDE"
+          }
+        },
+        "required": [
+          "final_inclusion_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "authority_disposition": {
+            "properties": {
+              "decision": {
+                "const": "INCLUDE_IN_FINAL_SOURCE"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "final_inclusion_status": {
+            "const": "EXCLUDE"
+          }
+        },
+        "required": [
+          "final_inclusion_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "authority_disposition": {
+            "properties": {
+              "decision": {
+                "const": "EXCLUDE_FROM_FINAL_SOURCE"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "final_inclusion_status": {
+            "enum": [
+              "INCLUDE",
+              "EXCLUDE"
+            ]
+          }
+        },
+        "required": [
+          "final_inclusion_status"
+        ]
+      },
+      "then": {
+        "required": [
+          "authority_disposition"
+        ]
+      }
+    }
+  ],
+  "additionalProperties": false
+}

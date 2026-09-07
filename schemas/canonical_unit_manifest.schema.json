@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "version",
+    "bindings"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "bindings": {
+      "type": "array",
+      "minItems": 53,
+      "maxItems": 53,
+      "items": {
+        "type": "object",
+        "required": [
+          "unit_id",
+          "source_location",
+          "structural_location",
+          "normalization_method",
+          "authority_required",
+          "source_text_en",
+          "source_text_sha256",
+          "canonical_official_filename",
+          "canonical_official_sha256",
+          "extraction_method",
+          "baseline_translation_status",
+          "baseline_final_inclusion_status",
+          "baseline_publication_blocking",
+          "baseline_insertable"
+        ],
+        "properties": {
+          "unit_id": {
+            "type": "string"
+          },
+          "source_location": {
+            "type": "object"
+          },
+          "structural_location": {
+            "type": "object"
+          },
+          "normalization_method": {
+            "type": "string"
+          },
+          "authority_required": {
+            "type": "boolean"
+          },
+          "source_text_en": {
+            "type": "string"
+          },
+          "source_text_sha256": {
+            "type": "string"
+          },
+          "canonical_official_filename": {
+            "type": "string"
+          },
+          "canonical_official_sha256": {
+            "type": "string"
+          },
+          "extraction_method": {
+            "type": "string"
+          },
+          "baseline_translation_status": {
+            "type": "string"
+          },
+          "baseline_final_inclusion_status": {
+            "type": "string"
+          },
+          "baseline_publication_blocking": {
+            "type": "boolean"
+          },
+          "baseline_insertable": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

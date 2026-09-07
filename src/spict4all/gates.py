@@ -4,11 +4,16 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Any
 
 import yaml
 
 from .errors import GateError
+from .evidence import FinalInclusionStatus
+from .requirements import (
+    CanonicalUnitVerification,
+    ConflictStatus,
+    SourceRequirement,
+)
 
 
 def required_generation_gates(quality_gates_path: Path) -> tuple[str, ...]:
@@ -43,3 +48,67 @@ def assert_finalizable(
     missing = [name for name in required_gates if gate_results.get(name) != "PASS"]
     if missing:
         raise GateError(f"Cannot mark artifact final; gates not passed: {missing}")
+
+
+def source_reconciliation_blockers(
+    canonical_verification: CanonicalUnitVerification,
+    requirements: list[SourceRequirement],
+) -> tuple[str, ...]:
+    """Return authority decisions still required for the final source set."""
+
+    requirement_blockers = [
+        requirement.requirement_id
+        for requirement in requirements
+        if requirement.source_authority_confirmation_required
+        and requirement.final_inclusion_status is FinalInclusionStatus.UNRESOLVED
+    ]
+    canonical_blockers = [
+        str(resolution.unit["unit_id"])
+        for resolution in canonical_verification.resolutions
+        if resolution.final_inclusion_status is FinalInclusionStatus.UNRESOLVED
+    ]
+    return tuple(sorted(requirement_blockers + canonical_blockers))
+
+
+def publication_blockers(
+    canonical_verification: CanonicalUnitVerification,
+    requirements: list[SourceRequirement],
+) -> tuple[str, ...]:
+    """Return unresolved authority issues that prohibit publication."""
+
+    requirement_blockers = [
+        requirement.requirement_id
+        for requirement in requirements
+        if requirement.final_inclusion_status is FinalInclusionStatus.UNRESOLVED
+        and (
+            requirement.publication_blocking
+            or requirement.conflict_status
+            is ConflictStatus.UNRESOLVED_CANONICAL_OMISSION
+        )
+    ]
+    canonical_blockers = [
+        str(resolution.unit["unit_id"])
+        for resolution in canonical_verification.resolutions
+        if resolution.final_inclusion_status is FinalInclusionStatus.UNRESOLVED
+        and resolution.exception is not None
+        and resolution.exception.publication_blocking
+    ]
+    return tuple(sorted(requirement_blockers + canonical_blockers))
+
+
+def assert_source_reconciliation_resolved(
+    canonical_verification: CanonicalUnitVerification,
+    requirements: list[SourceRequirement],
+) -> None:
+    blockers = source_reconciliation_blockers(canonical_verification, requirements)
+    if blockers:
+        raise GateError(f"Final source reconciliation is unresolved: {list(blockers)}")
+
+
+def assert_publication_allowed(
+    canonical_verification: CanonicalUnitVerification,
+    requirements: list[SourceRequirement],
+) -> None:
+    blockers = publication_blockers(canonical_verification, requirements)
+    if blockers:
+        raise GateError(f"Publication is blocked by unresolved source authority: {list(blockers)}")

@@ -14,7 +14,7 @@
   "properties": {
     "unit_id": {
       "type": "string",
-      "pattern": "^S4A-2026-[0-9]{3}$"
+      "pattern": "^(S4A-2026-[0-9]{3}|S4A-REQ-[0-9]{4}-[0-9]{3})$"
     },
     "source_text_sha256": {
       "type": "string",
@@ -61,7 +61,8 @@
           "severity",
           "type",
           "note"
-        ]
+        ],
+        "additionalProperties": false
       }
     },
     "status": {
@@ -73,7 +74,42 @@
         "HUMAN_APPROVED",
         "HUMAN_REJECTED"
       ]
+    },
+    "extensions": {
+      "type": "object",
+      "description": "Namespaced forward-compatibility container. Nothing inside it carries approval, gate, review or document-insertion authority."
     }
   },
-  "additionalProperties": true
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "READY_FOR_SYNTHESIS",
+              "READY_FOR_HUMAN_REVIEW",
+              "HUMAN_APPROVED",
+              "HUMAN_REJECTED"
+            ]
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "required": [
+          "candidate_fi"
+        ],
+        "properties": {
+          "candidate_fi": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
 }

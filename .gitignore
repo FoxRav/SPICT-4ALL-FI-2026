@@ -3,6 +3,7 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.firecrawl/
 .coverage
 htmlcov/
 *.egg-info/
@@ -14,6 +15,7 @@ htmlcov/
 Thumbs.db
 
 # Local / generated work products
+tmp/
 work/**/tmp/
 work/**/cache/
 reports/tmp/

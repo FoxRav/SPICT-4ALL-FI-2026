@@ -1,11 +1,11 @@
-source_en,approved_fi,decision_note
-life shortening health conditions,TBD,Core SPICT-4ALL concept; do not collapse into terminal/end-of-life language.
-palliative care,TBD,Must align with Finnish clinical usage and SPICT conceptual intent.
-carer,TBD,Decide contextually: informal carer/family caregiver vs professional care staff.
-care plan,TBD,Use Finnish healthcare terminology consistently.
-frailty,TBD,Clinical concept; plain-language wording must still preserve meaning.
-kidney dialysis,TBD,Keep patient-facing plain language while clinically correct.
-breathing machine,TBD,Plain-language source term; avoid unnecessary jargon.
-holistic care,TBD,"Includes symptom, emotional, social, functional, financial, spiritual and cultural domains."
-quality of life,TBD,Preserve patient-centred meaning.
-Power of Attorney,TBD,Local legal/cultural adaptation requires explicit expert decision if present in guidance.
+term_id,concept_en,candidate_fi,approved_fi,definition_context,source_refs,source_evidence_strength,status,clinical_risk,decision_note,decided_by,decision_date
+TERM-001,life shortening health conditions,,,"Exact SPICT wording; must not be collapsed into terminal or end-of-life language.",S4A-2026-001|S4A-2026-042,NONE,HUMAN_REVIEW_REQUIRED,HIGH,Terminology evidence and explicit human decision required.,,
+TERM-002,palliative care,,,"SPICT source concept.",S4A-2026-009|S4A-2026-019,NONE,HUMAN_REVIEW_REQUIRED,HIGH,Must preserve SPICT conceptual intent and be assessed against registered Finnish evidence.,,
+TERM-003,carer,,,"Context may distinguish an informal carer or family caregiver from professional staff.",S4A-2026-006|S4A-2026-046,NONE,HUMAN_REVIEW_REQUIRED,HIGH,Context-specific human terminology decision required.,,
+TERM-004,care plan,,,"Patient-centred planning concept.",S4A-2026-001|S4A-2026-051,NONE,HUMAN_REVIEW_REQUIRED,HIGH,Assess registered Finnish healthcare terminology without changing the English meaning.,,
+TERM-005,frailty,,,"Clinical concept used with dementia.",S4A-2026-021,NONE,HUMAN_REVIEW_REQUIRED,HIGH,Plain-language wording must preserve the clinical concept.,,
+TERM-006,kidney dialysis,,,"Patient-facing source concept.",S4A-2026-019|S4A-2026-020,NONE,HUMAN_REVIEW_REQUIRED,HIGH,Terminology decision must preserve starting and stopping alternatives.,,
+TERM-007,breathing machine,,,"Plain-language source wording.",S4A-2026-035,NONE,HUMAN_REVIEW_REQUIRED,HIGH,Avoid adding technical specificity not present in the source.,,
+TERM-008,holistic care,,,"Includes symptom, emotional, social, functional, financial, spiritual and cultural domains.",S4A-2026-049,NONE,HUMAN_REVIEW_REQUIRED,HIGH,All listed domains must remain represented.,,
+TERM-009,quality of life,,,"Patient-centred source concept.",S4A-2026-009,NONE,HUMAN_REVIEW_REQUIRED,HIGH,Terminology decision must preserve patient-centred meaning.,,
+TERM-010,Power of Attorney,,,"Guidance concept outside the canonical source-unit index.",,NONE,HUMAN_REVIEW_REQUIRED,HIGH,Any local legal or cultural adaptation requires explicit expert decision.,,

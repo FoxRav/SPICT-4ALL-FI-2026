@@ -47,3 +47,14 @@ def test_source_unit_must_require_human_signoff(tmp_path, make_unit, write_jsonl
     path = write_jsonl(tmp_path / "units.jsonl", [unit])
     with pytest.raises(IntegrityError, match="does not require human sign-off"):
         load_source_units(path)
+
+
+@pytest.mark.parametrize("status", ["AUTHORITY_DECISON_REQUIRED", "ARBITRARY"])
+def test_unknown_translation_status_fails(
+    tmp_path, make_unit, write_jsonl, status: str
+) -> None:
+    unit = make_unit(0)
+    unit["translation_status"] = status
+    path = write_jsonl(tmp_path / "units.jsonl", [unit])
+    with pytest.raises(IntegrityError, match="Invalid translation_status"):
+        load_source_units(path)

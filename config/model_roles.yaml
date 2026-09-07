@@ -9,11 +9,21 @@ roles:
   forward_translation_A:
     model: "GPT-5.6 Sol Medium"
     isolation: "must not see Agent B output"
+    shared_controlled_input: "explicitly APPROVED project terminology only"
+    forbidden_inputs:
+      - "Agent B translation"
+      - "synthesis output"
+      - "critic conclusions from the other forward run"
     purpose: "Independent EN->FI candidate"
 
   forward_translation_B:
     model: "Claude Fable 5.1 High"
     isolation: "must not see Agent A output"
+    shared_controlled_input: "explicitly APPROVED project terminology only"
+    forbidden_inputs:
+      - "Agent A translation"
+      - "synthesis output"
+      - "critic conclusions from the other forward run"
     purpose: "Independent EN->FI candidate"
 
   synthesis_C:

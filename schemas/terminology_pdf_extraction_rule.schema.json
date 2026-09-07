@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PDF exact-fragment terminology extraction rule set",
+  "type": "object",
+  "required": [
+    "rules_version",
+    "rules"
+  ],
+  "properties": {
+    "rules_version": {
+      "const": 1
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "entry_id",
+          "source_id",
+          "page",
+          "exact_fragment",
+          "term_fi",
+          "term_en",
+          "definition",
+          "context"
+        ],
+        "properties": {
+          "entry_id": {
+            "type": "string",
+            "pattern": "^TERM-EVID-PDF-[0-9]{3}$"
+          },
+          "source_id": {
+            "type": "string",
+            "pattern": "^TERM-SRC-[0-9]{3}$"
+          },
+          "page": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "exact_fragment": {
+            "type": "string",
+            "minLength": 1
+          },
+          "term_fi": {
+            "type": "string",
+            "minLength": 1
+          },
+          "term_en": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "definition": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "context": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

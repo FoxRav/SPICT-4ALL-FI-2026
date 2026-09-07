@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from .errors import CoverageError
+from .evidence import EvidenceSource
 
 
 @dataclass(frozen=True)
@@ -21,9 +22,15 @@ class CoverageResult:
 
 
 def check_coverage(
-    source_units: list[dict[str, Any]], artifact_records: list[dict[str, Any]]
+    source_units: list[dict[str, Any]] | list[EvidenceSource],
+    artifact_records: list[dict[str, Any]],
 ) -> CoverageResult:
-    source_ids = [unit["unit_id"] for unit in source_units]
+    source_ids = [
+        source.evidence_id
+        if isinstance(source, EvidenceSource)
+        else str(source["unit_id"])
+        for source in source_units
+    ]
     artifact_ids = [record.get("unit_id") for record in artifact_records]
     valid_artifact_ids = [item for item in artifact_ids if isinstance(item, str)]
     duplicate_ids = sorted(
@@ -42,7 +49,8 @@ def check_coverage(
 
 
 def require_complete_coverage(
-    source_units: list[dict[str, Any]], artifact_records: list[dict[str, Any]]
+    source_units: list[dict[str, Any]] | list[EvidenceSource],
+    artifact_records: list[dict[str, Any]],
 ) -> CoverageResult:
     result = check_coverage(source_units, artifact_records)
     if not result.complete:

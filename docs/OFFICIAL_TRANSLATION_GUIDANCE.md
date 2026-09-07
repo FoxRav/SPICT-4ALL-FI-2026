@@ -22,3 +22,10 @@ Official URL:
 https://www.spict.org.uk/wp-content/uploads/sites/74/2026/05/20260521-Edits-for-SPICT-4ALL-translations-2025-and-2026.docx
 
 Status in this bootstrap: **included and hash-locked**. Its provenance and an unresolved difference from the canonical template are recorded in `docs/SOURCE_PROVENANCE.md`.
+
+The official change requirement and the canonical template have distinct roles:
+- the canonical template remains the canonical document/layout source;
+- the change specification is authoritative evidence that its explicitly marked 2026 requirement exists;
+- only an explicit human/source-authority disposition can decide final inclusion.
+
+The unresolved requirement may receive independent forward translations, synthesis, blind back-translation, structured critique, and human adjudication. Those evidence steps must not automatically insert it into a generated DOCX or be represented as a source-authority decision.

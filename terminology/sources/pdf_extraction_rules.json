@@ -1,0 +1,115 @@
+{
+  "rules_version": 1,
+  "rules": [
+    {
+      "entry_id": "TERM-EVID-PDF-001",
+      "source_id": "TERM-SRC-001",
+      "page": 1,
+      "exact_fragment": "Dyspnea\nHengenahdistus, vaikeutunut hengitys",
+      "term_fi": "Dyspnea",
+      "term_en": null,
+      "definition": "Hengenahdistus, vaikeutunut hengitys",
+      "context": null
+    },
+    {
+      "entry_id": "TERM-EVID-PDF-002",
+      "source_id": "TERM-SRC-001",
+      "page": 1,
+      "exact_fragment": "Inoperaabeli\nEi leikattavissa oleva",
+      "term_fi": "Inoperaabeli",
+      "term_en": null,
+      "definition": "Ei leikattavissa oleva",
+      "context": null
+    },
+    {
+      "entry_id": "TERM-EVID-PDF-003",
+      "source_id": "TERM-SRC-001",
+      "page": 2,
+      "exact_fragment": "Palliatiivinen",
+      "term_fi": "Palliatiivinen",
+      "term_en": null,
+      "definition": null,
+      "context": null
+    },
+    {
+      "entry_id": "TERM-EVID-PDF-004",
+      "source_id": "TERM-SRC-002",
+      "page": 1,
+      "exact_fragment": "Palliatiivinen hoito ja saattohoito",
+      "term_fi": "Palliatiivinen hoito",
+      "term_en": null,
+      "definition": null,
+      "context": null
+    },
+    {
+      "entry_id": "TERM-EVID-PDF-005",
+      "source_id": "TERM-SRC-002",
+      "page": 1,
+      "exact_fragment": "Palliatiivinen hoito ja saattohoito",
+      "term_fi": "saattohoito",
+      "term_en": null,
+      "definition": null,
+      "context": null
+    },
+    {
+      "entry_id": "TERM-EVID-PDF-006",
+      "source_id": "TERM-SRC-002",
+      "page": 1,
+      "exact_fragment": "hoitosuunnitelma (advance care planning)",
+      "term_fi": "hoitosuunnitelma",
+      "term_en": "advance care planning",
+      "definition": null,
+      "context": null
+    },
+    {
+      "entry_id": "TERM-EVID-PDF-007",
+      "source_id": "TERM-SRC-003",
+      "page": 5,
+      "exact_fragment": "Avainsanat: Palliatiivinen hoito, saattohoito, laatu, laatusuositus, laatukriteeri",
+      "term_fi": "Palliatiivinen hoito",
+      "term_en": null,
+      "definition": null,
+      "context": null
+    },
+    {
+      "entry_id": "TERM-EVID-PDF-008",
+      "source_id": "TERM-SRC-003",
+      "page": 5,
+      "exact_fragment": "Avainsanat: Palliatiivinen hoito, saattohoito, laatu, laatusuositus, laatukriteeri",
+      "term_fi": "saattohoito",
+      "term_en": null,
+      "definition": null,
+      "context": null
+    },
+    {
+      "entry_id": "TERM-EVID-PDF-009",
+      "source_id": "TERM-SRC-003",
+      "page": 5,
+      "exact_fragment": "Avainsanat: Palliatiivinen hoito, saattohoito, laatu, laatusuositus, laatukriteeri",
+      "term_fi": "laatu",
+      "term_en": null,
+      "definition": null,
+      "context": null
+    },
+    {
+      "entry_id": "TERM-EVID-PDF-010",
+      "source_id": "TERM-SRC-003",
+      "page": 5,
+      "exact_fragment": "Avainsanat: Palliatiivinen hoito, saattohoito, laatu, laatusuositus, laatukriteeri",
+      "term_fi": "laatusuositus",
+      "term_en": null,
+      "definition": null,
+      "context": null
+    },
+    {
+      "entry_id": "TERM-EVID-PDF-011",
+      "source_id": "TERM-SRC-003",
+      "page": 5,
+      "exact_fragment": "Avainsanat: Palliatiivinen hoito, saattohoito, laatu, laatusuositus, laatukriteeri",
+      "term_fi": "laatukriteeri",
+      "term_en": null,
+      "definition": null,
+      "context": null
+    }
+  ]
+}

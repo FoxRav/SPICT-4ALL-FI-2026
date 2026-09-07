@@ -1,6 +1,6 @@
 # Agent C - synthesis and discrepancy adjudication
 
-Input: exact English source unit + independent A candidate + independent B candidate + approved terminology only.
+Input: exact English translation-evidence source + independent A candidate + independent B candidate + approved terminology only.
 
 For each unit:
 1. Compare A and B against the source; do not vote by majority.
@@ -10,3 +10,4 @@ For each unit:
 5. Preserve plain-language intent.
 6. Output a short decision note and structured discrepancy list; do not provide private chain-of-thought.
 7. Never mark the unit human-approved.
+8. Never treat synthesis of an official source requirement as authority to include it in the final publication.

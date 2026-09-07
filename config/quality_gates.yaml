@@ -2,15 +2,36 @@ quality_gates:
   G0_source_integrity:
     required: true
     checks:
-      - official file hashes match manifest
-      - all source unit IDs unique
-      - source-unit hashes match exact English text
+      - all official source file hashes and byte counts match the manifest
+      - every canonical source unit has a unique ID and exact-text hash
+      - every canonical source unit resolves to manifest-verified canonical DOCX visible text either exactly or through an enumerated deterministic layout-whitespace normalization
+      - canonical exceptions cannot create text absent from the verified canonical DOCX
+      - unresolved canonical authority states remain non-insertable and authority-blocking
+      - source-unit data cannot enlarge the canonical DOCX text corpus
+      - every explicit official source requirement is accounted for with a unique requirement ID and exact-text hash
+      - every marked change-spec paragraph absent from canonical DOCX text maps to exactly one official change requirement
+      - every source conflict is explicit and linked to its official provenance
+      - unresolved authority conflicts remain explicitly unresolved
+      - mutable project governance files match the tracked integrity ledger
+
+  T0_terminology_evidence_ready:
+    required: true
+    blocks_g0: false
+    checks:
+      - every terminology reference source hash and byte count matches its manifest
+      - terminology provenance and unresolved metadata are explicit
+      - extracted evidence, conflict records, report, and relevance map reproduce from registered sources and extraction rules
+      - conflicts and definition differences remain explicit
+      - no unapproved terminology is represented as approved or mandatory
+      - terminology evidence cannot add to or alter the English SPICT source corpus
+      - approved project terminology is separately identifiable
+      - ValidateTerminology does not replace VerifySources; unmanifested files under sources/official/ remain a VerifySources failure
 
   G1_independent_forward_translation:
     required: true
     checks:
-      - candidate A exists for every translatable unit
-      - candidate B exists for every translatable unit
+      - candidate A exists for every translation-evidence source
+      - candidate B exists for every translation-evidence source
       - A and B produced independently
 
   G2_synthesis:
@@ -52,6 +73,9 @@ quality_gates:
       - final external review / approval status recorded
 
 release_policy:
-  allow_final_docx_generation_when: "G0-G5 pass"
+  allow_translation_evidence_work_when: "G0 passes; unresolved authority conflicts remain explicit"
+  allow_forward_translation_runs_when: "G0 and T0 pass; both independent agents receive only the same explicitly APPROVED project terminology"
+  allow_final_docx_generation_when: "G0-G5 pass and final source reconciliation has no unresolved inclusion decisions"
   allow_claim_validated_when: "Only after documented human/field validation and relevant external approval"
-  allow_publication_when: "Explicit project-owner and SPICT programme conditions are satisfied"
+  allow_publication_when: "No publication-blocking source conflict is unresolved and explicit project-owner and SPICT programme conditions are satisfied"
+  allow_claim_source_authority_resolved_when: "Every authority-required canonical wording and official source requirement has an explicit authority disposition"

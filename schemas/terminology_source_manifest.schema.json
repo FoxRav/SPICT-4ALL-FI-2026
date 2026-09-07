@@ -1,0 +1,489 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Terminology reference source manifest",
+  "description": "Separates verifiable file facts, source-verified metadata bound to machine-checkable evidence, explicitly unresolved metadata, and project-inferred assessment. Project inference must never be represented as source-provided evidence.",
+  "type": "object",
+  "required": [
+    "manifest_version",
+    "source_root",
+    "sources"
+  ],
+  "properties": {
+    "manifest_version": {
+      "const": 2
+    },
+    "source_root": {
+      "const": "data/Sanasto"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "nonblank": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "metadata_field": {
+      "enum": [
+        "title",
+        "publisher_organisation",
+        "publication_version_date",
+        "source_url",
+        "copyright_notice",
+        "licence_reuse_terms"
+      ]
+    },
+    "metadata_evidence": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "page",
+            "locator",
+            "metadata_field",
+            "source_file",
+            "source_sha256",
+            "exact_source_text",
+            "semantic_evidence_type",
+            "extraction_rule",
+            "context_text",
+            "line_start",
+            "line_count",
+            "span_start",
+            "span_end"
+          ],
+          "properties": {
+            "kind": {
+              "const": "PDF_PAGE"
+            },
+            "page": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "locator": {
+              "$ref": "#/$defs/nonblank"
+            },
+            "metadata_field": {
+              "$ref": "#/$defs/metadata_field"
+            },
+            "source_file": {
+              "type": "string"
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "exact_source_text": {
+              "$ref": "#/$defs/nonblank"
+            },
+            "semantic_evidence_type": {
+              "enum": [
+                "DOCUMENT_TITLE",
+                "PUBLISHER_ATTRIBUTION",
+                "PUBLICATION_DATE",
+                "DOCUMENT_RETRIEVAL_OR_PERSISTENT_URL",
+                "COPYRIGHT_NOTICE"
+              ]
+            },
+            "extraction_rule": {
+              "type": "string"
+            },
+            "context_text": {
+              "type": "string"
+            },
+            "line_start": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "line_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "span_start": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "span_end": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "row",
+            "header",
+            "locator",
+            "metadata_field",
+            "source_file",
+            "source_sha256",
+            "exact_source_text",
+            "semantic_evidence_type",
+            "extraction_rule",
+            "context_text"
+          ],
+          "properties": {
+            "kind": {
+              "const": "CSV_CELL"
+            },
+            "row": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "header": {
+              "$ref": "#/$defs/nonblank"
+            },
+            "locator": {
+              "$ref": "#/$defs/nonblank"
+            },
+            "metadata_field": {
+              "$ref": "#/$defs/metadata_field"
+            },
+            "source_file": {
+              "type": "string"
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "exact_source_text": {
+              "$ref": "#/$defs/nonblank"
+            },
+            "semantic_evidence_type": {
+              "enum": [
+                "DOCUMENT_TITLE",
+                "PUBLISHER_ATTRIBUTION",
+                "PUBLICATION_DATE",
+                "DOCUMENT_RETRIEVAL_OR_PERSISTENT_URL",
+                "COPYRIGHT_NOTICE"
+              ]
+            },
+            "extraction_rule": {
+              "type": "string"
+            },
+            "context_text": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "source_verified_value": {
+      "type": "object",
+      "required": [
+        "value",
+        "derivation",
+        "evidence"
+      ],
+      "properties": {
+        "value": {
+          "$ref": "#/$defs/nonblank"
+        },
+        "derivation": {
+          "enum": [
+            "EXACT_SOURCE_TEXT",
+            "SOURCE_TEXT_LINE_BREAK_NORMALIZED",
+            "SOURCE_DATE_NORMALIZED_ISO"
+          ]
+        },
+        "source_fragment": {
+          "$ref": "#/$defs/nonblank"
+        },
+        "evidence": {
+          "$ref": "#/$defs/metadata_evidence"
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "derivation": {
+                "const": "EXACT_SOURCE_TEXT"
+              }
+            },
+            "required": [
+              "derivation"
+            ]
+          },
+          "then": {
+            "not": {
+              "required": [
+                "source_fragment"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "derivation": {
+                "enum": [
+                  "SOURCE_TEXT_LINE_BREAK_NORMALIZED",
+                  "SOURCE_DATE_NORMALIZED_ISO"
+                ]
+              }
+            },
+            "required": [
+              "derivation"
+            ]
+          },
+          "then": {
+            "required": [
+              "source_fragment"
+            ]
+          }
+        }
+      ]
+    },
+    "csv_structure": {
+      "type": "object",
+      "description": "Explicit CSV layout semantics. Rows are physical, 1-based CSV record numbers.",
+      "required": [
+        "delimiter",
+        "field_name_row",
+        "primary_term_header",
+        "non_entry_rows"
+      ],
+      "properties": {
+        "delimiter": {
+          "const": ";"
+        },
+        "field_name_row": {
+          "const": 1
+        },
+        "primary_term_header": {
+          "$ref": "#/$defs/nonblank"
+        },
+        "non_entry_rows": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "required": [
+              "row",
+              "purpose",
+              "expected_primary_term_cell"
+            ],
+            "properties": {
+              "row": {
+                "type": "integer",
+                "minimum": 2
+              },
+              "purpose": {
+                "enum": [
+                  "HUMAN_READABLE_COLUMN_LABELS",
+                  "VOCABULARY_TITLE"
+                ]
+              },
+              "expected_primary_term_cell": {
+                "$ref": "#/$defs/nonblank"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "file_facts": {
+      "type": "object",
+      "description": "Directly verifiable facts about the local file itself.",
+      "required": [
+        "filename",
+        "byte_count",
+        "sha256",
+        "detected_file_type"
+      ],
+      "properties": {
+        "filename": {
+          "$ref": "#/$defs/nonblank"
+        },
+        "byte_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "detected_file_type": {
+          "enum": [
+            "PDF",
+            "CSV_SEMICOLON_UTF8"
+          ]
+        },
+        "csv_structure": {
+          "$ref": "#/$defs/csv_structure"
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "detected_file_type": {
+                "const": "CSV_SEMICOLON_UTF8"
+              }
+            },
+            "required": [
+              "detected_file_type"
+            ]
+          },
+          "then": {
+            "required": [
+              "csv_structure"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "detected_file_type": {
+                "const": "PDF"
+              }
+            },
+            "required": [
+              "detected_file_type"
+            ]
+          },
+          "then": {
+            "not": {
+              "required": [
+                "csv_structure"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "terminology_role",
+        "file_facts",
+        "source_verified_metadata",
+        "unresolved_metadata",
+        "project_inferred_metadata"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "pattern": "^TERM-SRC-[0-9]{3}$"
+        },
+        "terminology_role": {
+          "const": "TERMINOLOGY_REFERENCE"
+        },
+        "file_facts": {
+          "$ref": "#/$defs/file_facts"
+        },
+        "source_verified_metadata": {
+          "type": "object",
+          "description": "Metadata present in the file's own content or machine-verifiable structure. Every entry is re-verified against the registered file.",
+          "properties": {
+            "title": {
+              "$ref": "#/$defs/source_verified_value"
+            },
+            "publisher_organisation": {
+              "$ref": "#/$defs/source_verified_value"
+            },
+            "publication_version_date": {
+              "$ref": "#/$defs/source_verified_value"
+            },
+            "source_url": {
+              "$ref": "#/$defs/source_verified_value"
+            },
+            "copyright_notice": {
+              "$ref": "#/$defs/source_verified_value"
+            },
+            "licence_reuse_terms": {
+              "$ref": "#/$defs/source_verified_value"
+            }
+          },
+          "additionalProperties": false
+        },
+        "unresolved_metadata": {
+          "type": "array",
+          "description": "Metadata that the file does not state. These fields must carry no claimed value.",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "required": [
+              "field",
+              "reason"
+            ],
+            "properties": {
+              "field": {
+                "$ref": "#/$defs/metadata_field"
+              },
+              "reason": {
+                "$ref": "#/$defs/nonblank"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "project_inferred_metadata": {
+          "type": "object",
+          "description": "Project classifications and observations. These are never source-provided evidence.",
+          "required": [
+            "provenance_status",
+            "licence_reuse_status",
+            "evidence_level",
+            "metadata_confidence",
+            "notes"
+          ],
+          "properties": {
+            "provenance_status": {
+              "enum": [
+                "CONTENT_AND_FILE_VERIFIED_METADATA_PARTIAL",
+                "FILE_VERIFIED_METADATA_UNRESOLVED"
+              ]
+            },
+            "licence_reuse_status": {
+              "enum": [
+                "COPYRIGHT_NOTICE_NO_REUSE_TERMS_IDENTIFIED",
+                "UNKNOWN_NOT_STATED_IN_SOURCE"
+              ]
+            },
+            "evidence_level": {
+              "enum": [
+                2,
+                3
+              ]
+            },
+            "metadata_confidence": {
+              "enum": [
+                "HIGH",
+                "MEDIUM",
+                "LOW"
+              ]
+            },
+            "notes": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/nonblank"
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SPICT-4ALL Canonical Unit Normalization Exception",
+  "type": "object",
+  "required": [
+    "unit_id",
+    "unit_text",
+    "unit_source_text_sha256",
+    "exception_type",
+    "source_provenance",
+    "reason_exact_matching_not_applicable",
+    "authority_status",
+    "source_authority_decision_required",
+    "publication_blocking",
+    "evidence_status"
+  ],
+  "properties": {
+    "unit_id": {
+      "type": "string",
+      "pattern": "^S4A-2026-[0-9]{3}$"
+    },
+    "unit_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "unit_source_text_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "exception_type": {
+      "const": "NORMALIZED_CANONICAL_TEXT"
+    },
+    "source_provenance": {
+      "type": "object",
+      "required": [
+        "canonical_docx_filename",
+        "canonical_docx_sha256",
+        "document_part",
+        "paragraph_index",
+        "extraction_method",
+        "normalization_method",
+        "exact_canonical_visible_text",
+        "exact_canonical_visible_text_sha256",
+        "normalized_canonical_text"
+      ],
+      "properties": {
+        "canonical_docx_filename": {
+          "type": "string",
+          "minLength": 1
+        },
+        "canonical_docx_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "document_part": {
+          "type": "string",
+          "pattern": "^word/(document|header[^/]*|footer[^/]*|footnotes|endnotes)\\.xml$"
+        },
+        "paragraph_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "table_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "row": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "column": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "paragraph": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "extraction_method": {
+          "const": "OOXML_VISIBLE_PARAGRAPH_TEXT"
+        },
+        "normalization_method": {
+          "enum": [
+            "LINE_BREAK_TO_SPACE"
+          ]
+        },
+        "exact_canonical_visible_text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exact_canonical_visible_text_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "normalized_canonical_text": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "reason_exact_matching_not_applicable": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authority_status": {
+      "enum": [
+        "AUTHORITY_DECISION_REQUIRED",
+        "AUTHORITY_RESOLVED"
+      ]
+    },
+    "source_authority_decision_required": {
+      "type": "boolean"
+    },
+    "publication_blocking": {
+      "type": "boolean"
+    },
+    "evidence_status": {
+      "enum": [
+        "NORMALIZATION_VERIFIED_AUTHORITY_UNRESOLVED",
+        "AUTHORITY_RESOLVED"
+      ]
+    },
+    "authority_disposition": {
+      "type": "object",
+      "required": [
+        "unit_id",
+        "decision",
+        "decision_maker",
+        "decision_date",
+        "evidence_reference",
+        "status"
+      ],
+      "properties": {
+        "unit_id": {
+          "type": "string",
+          "pattern": "^S4A-2026-[0-9]{3}$"
+        },
+        "decision": {
+          "enum": [
+            "APPROVE_CANONICAL_EXCEPTION",
+            "REJECT_CANONICAL_EXCEPTION"
+          ]
+        },
+        "decision_maker": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "decision_date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "evidence_reference": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "status": {
+          "const": "FINAL"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "authority_status": {
+            "const": "AUTHORITY_DECISION_REQUIRED"
+          }
+        },
+        "required": [
+          "authority_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "source_authority_decision_required": {
+            "const": true
+          },
+          "publication_blocking": {
+            "const": true
+          },
+          "evidence_status": {
+            "const": "NORMALIZATION_VERIFIED_AUTHORITY_UNRESOLVED"
+          }
+        },
+        "not": {
+          "required": [
+            "authority_disposition"
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "authority_status": {
+            "const": "AUTHORITY_RESOLVED"
+          }
+        },
+        "required": [
+          "authority_status"
+        ]
+      },
+      "then": {
+        "required": [
+          "authority_disposition"
+        ],
+        "properties": {
+          "source_authority_decision_required": {
+            "const": false
+          },
+          "evidence_status": {
+            "const": "AUTHORITY_RESOLVED"
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

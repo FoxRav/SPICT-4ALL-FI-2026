@@ -1,0 +1,41 @@
+{
+  "r5_scratch_attacks": [
+    {
+      "attack": "canonical_identity_and_membership",
+      "unsafe_input_rejected": true,
+      "exit_code": 1,
+      "diagnostic": "FAIL S4A-2026-000: frozen canonical identity source_text_en mismatch"
+    },
+    {
+      "attack": "publisher_as_title",
+      "unsafe_input_rejected": true,
+      "exit_code": 1,
+      "diagnostic": "FAIL TERM-SRC-001: title field-specific evidence binding mismatch"
+    },
+    {
+      "attack": "official_role_substitution",
+      "unsafe_input_rejected": true,
+      "exit_code": 1,
+      "diagnostic": "FAIL Unsupported official role: 'TERMINOLOGY_REFERENCE'"
+    },
+    {
+      "attack": "nested_unmanifested_file",
+      "unsafe_input_rejected": true,
+      "exit_code": 1,
+      "diagnostic": "FAIL Official source verification failed: unmanifested official files: ['review-probe/test.txt']"
+    }
+  ],
+  "prior_security_regressions": {
+    "test_nodes": [
+      "tests/test_canonical_units.py::test_liver_canonical_unit_with_approved_exception_fails",
+      "tests/test_canonical_units.py::test_arbitrary_fabricated_text_with_approved_exception_fails",
+      "tests/test_authority_attribution.py::test_canonical_disposition_rejects_blank_attribution_fields",
+      "tests/test_authority_attribution.py::test_requirement_disposition_rejects_blank_attribution_fields",
+      "tests/test_reviews_and_gates.py::test_multirow_review_validation_is_per_unit_and_order_independent",
+      "tests/test_artifacts.py::test_whitespace_completed_candidate_fails",
+      "tests/test_terminology.py::test_unapproved_term_cannot_enter_mandatory_glossary"
+    ],
+    "exit_code": 0,
+    "stdout": ".........................................                                [100%]\n41 passed in 1.46s\n"
+  }
+}

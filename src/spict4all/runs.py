@@ -4,9 +4,10 @@ from __future__ import annotations
 
 import json
 import re
-from datetime import datetime, timezone
+from collections.abc import Iterable
+from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 from . import __version__
 from .errors import ImmutableRunError
@@ -31,7 +32,7 @@ def build_run_metadata(
         input_records.append(
             {"path": str(path), "sha256": sha256_file(path), "bytes": path.stat().st_size}
         )
-    timestamp = created_at_utc or datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+    timestamp = created_at_utc or datetime.now(UTC).isoformat().replace("+00:00", "Z")
     return {
         "run_id": run_id,
         "role": role,

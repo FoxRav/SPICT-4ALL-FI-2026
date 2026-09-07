@@ -10,14 +10,37 @@ This repository is designed as an **AI-assisted, human-approved translation and 
 
 The official template instructs that the translated text goes after each line in English. The original file is immutable. Never edit it in place.
 
+The manifest-verified canonical template is the authority for canonical unit
+text. Every source unit must resolve to visible DOCX text at its exact location,
+either directly or through an enumerated layout-only normalization recorded in
+`data/canonical_unit_exceptions.jsonl`. An exception cannot create canonical
+text. Separate,
+explicitly marked changes found in official change specifications are recorded in
+`data/source_requirements.jsonl`; they are evidence inputs, not automatic additions
+to the canonical template. Human/source-authority disposition is required before an
+unresolved requirement can be included in a final publication.
+
 ## Engineering setup on Windows 11
 
 ```powershell
 cd F:\-DEV-\120.Samin-PDF
 .\tools.ps1 -Task Setup
 .\tools.ps1 -Task VerifySources
+.\tools.ps1 -Task ValidateCanonical
+.\tools.ps1 -Task ValidateRequirements
+.\tools.ps1 -Task ValidateGovernance
+.\tools.ps1 -Task BuildTerminology
+.\tools.ps1 -Task ValidateTerminology
 .\tools.ps1 -Task Test
+.\tools.ps1 -Task TypeCheck
+.\tools.ps1 -Task Lint
 ```
+
+`data/Sanasto/**` is registered only as Finnish terminology/reference evidence.
+Its files cannot alter the English SPICT corpus. `BuildTerminology` regenerates
+source-linked discoveries, explicit conflicts, and a conservative relevance
+map; only rows with explicit human `APPROVED` status may later constrain both
+independent forward translations.
 
 The package requires Python 3.12 or newer. Direct dependencies are pinned in `pyproject.toml`, and the Windows development environment is fully version-pinned in `requirements-dev.lock`. The PowerShell setup creates a repository-local `.venv`; no model API integration is installed.
 
@@ -34,7 +57,7 @@ The package requires Python 3.12 or newer. Direct dependencies are pinned in `py
   --output work\synthesis\discrepancies.tsv
 ```
 
-Run directories created with `create-run` are immutable: an existing run ID is never overwritten. Human-review and quality-gate checks must pass before a workflow artifact can be marked final.
+Run directories created with `create-run` are immutable: an existing run ID is never overwritten. Human-review and quality-gate checks must pass before a workflow artifact can be marked final. Unresolved source-authority decisions do not prevent independent translation evidence work, but they block final source reconciliation and, when marked publication-blocking, publication.
 
 ## Core rule
 

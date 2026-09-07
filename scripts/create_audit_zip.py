@@ -1,4 +1,4 @@
-"""Create and verify the deterministic SPICT-4ALL FI bootstrap audit ZIP."""
+"""Create and verify the SPICT-4ALL FI bootstrap audit ZIP."""
 
 from __future__ import annotations
 
@@ -12,9 +12,8 @@ import subprocess
 import sys
 import tempfile
 import zipfile
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path, PurePosixPath
-
 
 ROOT_FILES = (
     ".editorconfig",
@@ -329,7 +328,7 @@ def main() -> int:
 
     payload = collect_payload(repository)
     official_hashes = official_hash_lines(repository)
-    created_utc = datetime.now(timezone.utc).replace(microsecond=0)
+    created_utc = datetime.now(UTC).replace(microsecond=0)
     created_local = created_utc.astimezone()
     zip_timestamp = (
         created_local.year,

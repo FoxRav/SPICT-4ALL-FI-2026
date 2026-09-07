@@ -1,0 +1,548 @@
+{
+  "manifest_version": 2,
+  "source_root": "data/Sanasto",
+  "sources": [
+    {
+      "source_id": "TERM-SRC-001",
+      "terminology_role": "TERMINOLOGY_REFERENCE",
+      "file_facts": {
+        "filename": "hoitosuositukseen-palliatiivinen-hoito-ja-saattohoito-liittyvää-sanastoa.pdf",
+        "byte_count": 285974,
+        "sha256": "a53e67df6962e182eb2a4113ec7b93a0efa5cd4a95536866d69a83bdabedb38f",
+        "detected_file_type": "PDF"
+      },
+      "source_verified_metadata": {
+        "title": {
+          "value": "Hoitosuositukseen Palliatiivinen hoito ja saattohoito liittyvää sanastoa",
+          "derivation": "EXACT_SOURCE_TEXT",
+          "evidence": {
+            "kind": "PDF_PAGE",
+            "page": 1,
+            "locator": "running title line in the page footer block",
+            "metadata_field": "title",
+            "source_file": "hoitosuositukseen-palliatiivinen-hoito-ja-saattohoito-liittyvää-sanastoa.pdf",
+            "source_sha256": "a53e67df6962e182eb2a4113ec7b93a0efa5cd4a95536866d69a83bdabedb38f",
+            "exact_source_text": "Hoitosuositukseen Palliatiivinen hoito ja saattohoito liittyvää sanastoa",
+            "semantic_evidence_type": "DOCUMENT_TITLE",
+            "extraction_rule": "FROZEN_PDF_LINE_RANGE_AND_FIELD_SPAN",
+            "line_start": 65,
+            "line_count": 1,
+            "context_text": "Hoitosuositukseen Palliatiivinen hoito ja saattohoito liittyvää sanastoa",
+            "span_start": 0,
+            "span_end": 72
+          }
+        },
+        "publisher_organisation": {
+          "value": "Suomalainen Lääkäriseura Duodecim",
+          "derivation": "EXACT_SOURCE_TEXT",
+          "evidence": {
+            "kind": "PDF_PAGE",
+            "page": 3,
+            "locator": "copyright line above the running title",
+            "metadata_field": "publisher_organisation",
+            "source_file": "hoitosuositukseen-palliatiivinen-hoito-ja-saattohoito-liittyvää-sanastoa.pdf",
+            "source_sha256": "a53e67df6962e182eb2a4113ec7b93a0efa5cd4a95536866d69a83bdabedb38f",
+            "exact_source_text": "Suomalainen Lääkäriseura Duodecim",
+            "semantic_evidence_type": "PUBLISHER_ATTRIBUTION",
+            "extraction_rule": "FROZEN_PDF_LINE_RANGE_AND_FIELD_SPAN",
+            "line_start": 47,
+            "line_count": 1,
+            "context_text": "© 2026 Suomalainen Lääkäriseura Duodecim",
+            "span_start": 7,
+            "span_end": 40
+          }
+        },
+        "publication_version_date": {
+          "value": "2018-02-16",
+          "derivation": "SOURCE_DATE_NORMALIZED_ISO",
+          "source_fragment": "16.2.2018",
+          "evidence": {
+            "kind": "PDF_PAGE",
+            "page": 1,
+            "locator": "date line below the working-group line",
+            "metadata_field": "publication_version_date",
+            "source_file": "hoitosuositukseen-palliatiivinen-hoito-ja-saattohoito-liittyvää-sanastoa.pdf",
+            "source_sha256": "a53e67df6962e182eb2a4113ec7b93a0efa5cd4a95536866d69a83bdabedb38f",
+            "exact_source_text": "16.2.2018",
+            "semantic_evidence_type": "PUBLICATION_DATE",
+            "extraction_rule": "FROZEN_PDF_LINE_RANGE_AND_FIELD_SPAN",
+            "line_start": 4,
+            "line_count": 1,
+            "context_text": "16.2.2018",
+            "span_start": 0,
+            "span_end": 9
+          }
+        },
+        "source_url": {
+          "value": "https://www.kaypahoito.fi/nix01005?utm_source=chatgpt.com",
+          "derivation": "EXACT_SOURCE_TEXT",
+          "evidence": {
+            "kind": "PDF_PAGE",
+            "page": 1,
+            "locator": "retrieval URL printed in the page footer block",
+            "metadata_field": "source_url",
+            "source_file": "hoitosuositukseen-palliatiivinen-hoito-ja-saattohoito-liittyvää-sanastoa.pdf",
+            "source_sha256": "a53e67df6962e182eb2a4113ec7b93a0efa5cd4a95536866d69a83bdabedb38f",
+            "exact_source_text": "https://www.kaypahoito.fi/nix01005?utm_source=chatgpt.com",
+            "semantic_evidence_type": "DOCUMENT_RETRIEVAL_OR_PERSISTENT_URL",
+            "extraction_rule": "FROZEN_PDF_LINE_RANGE_AND_FIELD_SPAN",
+            "line_start": 66,
+            "line_count": 1,
+            "context_text": "https://www.kaypahoito.fi/nix01005?utm_source=chatgpt.com",
+            "span_start": 0,
+            "span_end": 57
+          }
+        },
+        "copyright_notice": {
+          "value": "© 2026 Suomalainen Lääkäriseura Duodecim",
+          "derivation": "EXACT_SOURCE_TEXT",
+          "evidence": {
+            "kind": "PDF_PAGE",
+            "page": 3,
+            "locator": "copyright line after the final terminology row",
+            "metadata_field": "copyright_notice",
+            "source_file": "hoitosuositukseen-palliatiivinen-hoito-ja-saattohoito-liittyvää-sanastoa.pdf",
+            "source_sha256": "a53e67df6962e182eb2a4113ec7b93a0efa5cd4a95536866d69a83bdabedb38f",
+            "exact_source_text": "© 2026 Suomalainen Lääkäriseura Duodecim",
+            "semantic_evidence_type": "COPYRIGHT_NOTICE",
+            "extraction_rule": "FROZEN_PDF_LINE_RANGE_AND_FIELD_SPAN",
+            "line_start": 47,
+            "line_count": 1,
+            "context_text": "© 2026 Suomalainen Lääkäriseura Duodecim",
+            "span_start": 0,
+            "span_end": 40
+          }
+        }
+      },
+      "unresolved_metadata": [
+        {
+          "field": "licence_reuse_terms",
+          "reason": "The file states a copyright notice but no reuse licence or permission terms"
+        }
+      ],
+      "project_inferred_metadata": {
+        "provenance_status": "CONTENT_AND_FILE_VERIFIED_METADATA_PARTIAL",
+        "licence_reuse_status": "COPYRIGHT_NOTICE_NO_REUSE_TERMS_IDENTIFIED",
+        "evidence_level": 2,
+        "metadata_confidence": "HIGH",
+        "notes": [
+          "The footer carries a 2026 retrieval timestamp and the URL carries a download tracking parameter; both are capture artifacts of this local copy, not publication metadata.",
+          "The page 1 working-group line names a Käypä hoito working group; the project does not merge it into the publisher value."
+        ]
+      }
+    },
+    {
+      "source_id": "TERM-SRC-002",
+      "terminology_role": "TERMINOLOGY_REFERENCE",
+      "file_facts": {
+        "filename": "palliatiivinen-hoito-ja-saattohoito.pdf",
+        "byte_count": 830715,
+        "sha256": "a37cffaa4fdcb39db9ba76fe6959cb13e4af117f5bb3ba0cd70ed5c4792a2419",
+        "detected_file_type": "PDF"
+      },
+      "source_verified_metadata": {
+        "title": {
+          "value": "Palliatiivinen hoito ja saattohoito",
+          "derivation": "EXACT_SOURCE_TEXT",
+          "evidence": {
+            "kind": "PDF_PAGE",
+            "page": 1,
+            "locator": "document title line",
+            "metadata_field": "title",
+            "source_file": "palliatiivinen-hoito-ja-saattohoito.pdf",
+            "source_sha256": "a37cffaa4fdcb39db9ba76fe6959cb13e4af117f5bb3ba0cd70ed5c4792a2419",
+            "exact_source_text": "Palliatiivinen hoito ja saattohoito",
+            "semantic_evidence_type": "DOCUMENT_TITLE",
+            "extraction_rule": "FROZEN_PDF_LINE_RANGE_AND_FIELD_SPAN",
+            "line_start": 0,
+            "line_count": 1,
+            "context_text": "Palliatiivinen hoito ja saattohoito",
+            "span_start": 0,
+            "span_end": 35
+          }
+        },
+        "publisher_organisation": {
+          "value": "Suomalaisen Lääkäriseuran Duodecimin ja Suomen Palliatiivisen Lääketieteen yhdistyksen asettama työryhmä",
+          "derivation": "EXACT_SOURCE_TEXT",
+          "evidence": {
+            "kind": "PDF_PAGE",
+            "page": 1,
+            "locator": "working-group attribution line",
+            "metadata_field": "publisher_organisation",
+            "source_file": "palliatiivinen-hoito-ja-saattohoito.pdf",
+            "source_sha256": "a37cffaa4fdcb39db9ba76fe6959cb13e4af117f5bb3ba0cd70ed5c4792a2419",
+            "exact_source_text": "Suomalaisen Lääkäriseuran Duodecimin ja Suomen Palliatiivisen Lääketieteen yhdistyksen asettama työryhmä",
+            "semantic_evidence_type": "PUBLISHER_ATTRIBUTION",
+            "extraction_rule": "FROZEN_PDF_LINE_RANGE_AND_FIELD_SPAN",
+            "line_start": 3,
+            "line_count": 1,
+            "context_text": "Suomalaisen Lääkäriseuran Duodecimin ja Suomen Palliatiivisen Lääketieteen yhdistyksen asettama työryhmä",
+            "span_start": 0,
+            "span_end": 104
+          }
+        },
+        "publication_version_date": {
+          "value": "2019-10-04",
+          "derivation": "SOURCE_DATE_NORMALIZED_ISO",
+          "source_fragment": "Julkaistu: 04.10.2019",
+          "evidence": {
+            "kind": "PDF_PAGE",
+            "page": 1,
+            "locator": "publication and status line under the title",
+            "metadata_field": "publication_version_date",
+            "source_file": "palliatiivinen-hoito-ja-saattohoito.pdf",
+            "source_sha256": "a37cffaa4fdcb39db9ba76fe6959cb13e4af117f5bb3ba0cd70ed5c4792a2419",
+            "exact_source_text": "Julkaistu: 04.10.2019",
+            "semantic_evidence_type": "PUBLICATION_DATE",
+            "extraction_rule": "FROZEN_PDF_LINE_RANGE_AND_FIELD_SPAN",
+            "line_start": 1,
+            "line_count": 1,
+            "context_text": "Käypä hoito -suositus | Julkaistu: 04.10.2019 | Tila: voimassa",
+            "span_start": 24,
+            "span_end": 45
+          }
+        },
+        "source_url": {
+          "value": "https://www.kaypahoito.fi/hoi50063?utm_source=chatgpt.com",
+          "derivation": "EXACT_SOURCE_TEXT",
+          "evidence": {
+            "kind": "PDF_PAGE",
+            "page": 46,
+            "locator": "retrieval URL printed in the final page footer block",
+            "metadata_field": "source_url",
+            "source_file": "palliatiivinen-hoito-ja-saattohoito.pdf",
+            "source_sha256": "a37cffaa4fdcb39db9ba76fe6959cb13e4af117f5bb3ba0cd70ed5c4792a2419",
+            "exact_source_text": "https://www.kaypahoito.fi/hoi50063?utm_source=chatgpt.com",
+            "semantic_evidence_type": "DOCUMENT_RETRIEVAL_OR_PERSISTENT_URL",
+            "extraction_rule": "FROZEN_PDF_LINE_RANGE_AND_FIELD_SPAN",
+            "line_start": 20,
+            "line_count": 1,
+            "context_text": "https://www.kaypahoito.fi/hoi50063?utm_source=chatgpt.com",
+            "span_start": 0,
+            "span_end": 57
+          }
+        },
+        "copyright_notice": {
+          "value": "© 2026 Suomalainen Lääkäriseura Duodecim",
+          "derivation": "EXACT_SOURCE_TEXT",
+          "evidence": {
+            "kind": "PDF_PAGE",
+            "page": 45,
+            "locator": "copyright line",
+            "metadata_field": "copyright_notice",
+            "source_file": "palliatiivinen-hoito-ja-saattohoito.pdf",
+            "source_sha256": "a37cffaa4fdcb39db9ba76fe6959cb13e4af117f5bb3ba0cd70ed5c4792a2419",
+            "exact_source_text": "© 2026 Suomalainen Lääkäriseura Duodecim",
+            "semantic_evidence_type": "COPYRIGHT_NOTICE",
+            "extraction_rule": "FROZEN_PDF_LINE_RANGE_AND_FIELD_SPAN",
+            "line_start": 36,
+            "line_count": 1,
+            "context_text": "© 2026 Suomalainen Lääkäriseura Duodecim",
+            "span_start": 0,
+            "span_end": 40
+          }
+        }
+      },
+      "unresolved_metadata": [
+        {
+          "field": "licence_reuse_terms",
+          "reason": "The file states a copyright notice but no reuse licence or permission terms"
+        }
+      ],
+      "project_inferred_metadata": {
+        "provenance_status": "CONTENT_AND_FILE_VERIFIED_METADATA_PARTIAL",
+        "licence_reuse_status": "COPYRIGHT_NOTICE_NO_REUSE_TERMS_IDENTIFIED",
+        "evidence_level": 2,
+        "metadata_confidence": "HIGH",
+        "notes": [
+          "The print capture carries a 2026 retrieval timestamp while the stated publication date is 2019; a human terminology reviewer must confirm currency before approval.",
+          "The copyright notice is on page 45, not on the final page 46 that carries the retrieval URL."
+        ]
+      }
+    },
+    {
+      "source_id": "TERM-SRC-003",
+      "terminology_role": "TERMINOLOGY_REFERENCE",
+      "file_facts": {
+        "filename": "OHJ2022_004_08042022.pdf",
+        "byte_count": 1079401,
+        "sha256": "a9171d1373a7ec8d5b35f8ba25d3ed3c6c4cda309f200e5721465a123921c554",
+        "detected_file_type": "PDF"
+      },
+      "source_verified_metadata": {
+        "title": {
+          "value": "Palliatiivisen hoidon ja saattohoidon kansallinen laatusuositus",
+          "derivation": "SOURCE_TEXT_LINE_BREAK_NORMALIZED",
+          "source_fragment": "Palliatiivisen hoidon ja saattohoidon \nkansallinen laatusuositus",
+          "evidence": {
+            "kind": "PDF_PAGE",
+            "page": 2,
+            "locator": "title block on the imprint page",
+            "metadata_field": "title",
+            "source_file": "OHJ2022_004_08042022.pdf",
+            "source_sha256": "a9171d1373a7ec8d5b35f8ba25d3ed3c6c4cda309f200e5721465a123921c554",
+            "exact_source_text": "Palliatiivisen hoidon ja saattohoidon \nkansallinen laatusuositus",
+            "semantic_evidence_type": "DOCUMENT_TITLE",
+            "extraction_rule": "FROZEN_PDF_LINE_RANGE_AND_FIELD_SPAN",
+            "line_start": 8,
+            "line_count": 2,
+            "context_text": "Palliatiivisen hoidon ja saattohoidon \nkansallinen laatusuositus ",
+            "span_start": 0,
+            "span_end": 64
+          }
+        },
+        "publisher_organisation": {
+          "value": "Terveyden ja hyvinvoinnin laitos",
+          "derivation": "EXACT_SOURCE_TEXT",
+          "evidence": {
+            "kind": "PDF_PAGE",
+            "page": 3,
+            "locator": "copyright line on the imprint page",
+            "metadata_field": "publisher_organisation",
+            "source_file": "OHJ2022_004_08042022.pdf",
+            "source_sha256": "a9171d1373a7ec8d5b35f8ba25d3ed3c6c4cda309f200e5721465a123921c554",
+            "exact_source_text": "Terveyden ja hyvinvoinnin laitos",
+            "semantic_evidence_type": "PUBLISHER_ATTRIBUTION",
+            "extraction_rule": "FROZEN_PDF_LINE_RANGE_AND_FIELD_SPAN",
+            "line_start": 28,
+            "line_count": 1,
+            "context_text": "© Kirjoittajat ja Terveyden ja hyvinvoinnin laitos ",
+            "span_start": 18,
+            "span_end": 50
+          }
+        },
+        "publication_version_date": {
+          "value": "2022",
+          "derivation": "SOURCE_DATE_NORMALIZED_ISO",
+          "source_fragment": "Helsinki, 2022",
+          "evidence": {
+            "kind": "PDF_PAGE",
+            "page": 3,
+            "locator": "place and year of publication on the imprint page",
+            "metadata_field": "publication_version_date",
+            "source_file": "OHJ2022_004_08042022.pdf",
+            "source_sha256": "a9171d1373a7ec8d5b35f8ba25d3ed3c6c4cda309f200e5721465a123921c554",
+            "exact_source_text": "Helsinki, 2022",
+            "semantic_evidence_type": "PUBLICATION_DATE",
+            "extraction_rule": "FROZEN_PDF_LINE_RANGE_AND_FIELD_SPAN",
+            "line_start": 49,
+            "line_count": 1,
+            "context_text": "Helsinki, 2022 ",
+            "span_start": 0,
+            "span_end": 14
+          }
+        },
+        "source_url": {
+          "value": "http://urn.fi/URN:ISBN:978-952-343-824-8",
+          "derivation": "EXACT_SOURCE_TEXT",
+          "evidence": {
+            "kind": "PDF_PAGE",
+            "page": 3,
+            "locator": "persistent URN below the ISBN on the imprint page",
+            "metadata_field": "source_url",
+            "source_file": "OHJ2022_004_08042022.pdf",
+            "source_sha256": "a9171d1373a7ec8d5b35f8ba25d3ed3c6c4cda309f200e5721465a123921c554",
+            "exact_source_text": "http://urn.fi/URN:ISBN:978-952-343-824-8",
+            "semantic_evidence_type": "DOCUMENT_RETRIEVAL_OR_PERSISTENT_URL",
+            "extraction_rule": "FROZEN_PDF_LINE_RANGE_AND_FIELD_SPAN",
+            "line_start": 42,
+            "line_count": 1,
+            "context_text": "http://urn.fi/URN:ISBN:978-952-343-824-8 ",
+            "span_start": 0,
+            "span_end": 40
+          }
+        },
+        "copyright_notice": {
+          "value": "© Kirjoittajat ja Terveyden ja hyvinvoinnin laitos",
+          "derivation": "EXACT_SOURCE_TEXT",
+          "evidence": {
+            "kind": "PDF_PAGE",
+            "page": 3,
+            "locator": "copyright line on the imprint page",
+            "metadata_field": "copyright_notice",
+            "source_file": "OHJ2022_004_08042022.pdf",
+            "source_sha256": "a9171d1373a7ec8d5b35f8ba25d3ed3c6c4cda309f200e5721465a123921c554",
+            "exact_source_text": "© Kirjoittajat ja Terveyden ja hyvinvoinnin laitos",
+            "semantic_evidence_type": "COPYRIGHT_NOTICE",
+            "extraction_rule": "FROZEN_PDF_LINE_RANGE_AND_FIELD_SPAN",
+            "line_start": 28,
+            "line_count": 1,
+            "context_text": "© Kirjoittajat ja Terveyden ja hyvinvoinnin laitos ",
+            "span_start": 0,
+            "span_end": 50
+          }
+        }
+      },
+      "unresolved_metadata": [
+        {
+          "field": "licence_reuse_terms",
+          "reason": "The file states a copyright notice but no reuse licence or permission terms"
+        }
+      ],
+      "project_inferred_metadata": {
+        "provenance_status": "CONTENT_AND_FILE_VERIFIED_METADATA_PARTIAL",
+        "licence_reuse_status": "COPYRIGHT_NOTICE_NO_REUSE_TERMS_IDENTIFIED",
+        "evidence_level": 2,
+        "metadata_confidence": "HIGH",
+        "notes": [
+          "The file states the series identifier Ohjaus 4/2022 and ISBN 978-952-343-824-8; the project records only the URN as the source URL.",
+          "The publication date is verified to year precision only because the imprint page states no day or month."
+        ]
+      }
+    },
+    {
+      "source_id": "TERM-SRC-004",
+      "terminology_role": "TERMINOLOGY_REFERENCE",
+      "file_facts": {
+        "filename": "Terveydenhuollon_tiedonhallinnan_sanasto.csv",
+        "byte_count": 112697,
+        "sha256": "3e2ae5ef2f2ed833deebd54b06688b1ab0b334bed940750f3320b11c3137a2e1",
+        "detected_file_type": "CSV_SEMICOLON_UTF8",
+        "csv_structure": {
+          "delimiter": ";",
+          "field_name_row": 1,
+          "primary_term_header": "properties.prefLabel.fi",
+          "non_entry_rows": [
+            {
+              "row": 2,
+              "purpose": "HUMAN_READABLE_COLUMN_LABELS",
+              "expected_primary_term_cell": "Suositettava termi"
+            },
+            {
+              "row": 3,
+              "purpose": "VOCABULARY_TITLE",
+              "expected_primary_term_cell": "Terveydenhuollon tiedonhallinnan sanasto"
+            }
+          ]
+        }
+      },
+      "source_verified_metadata": {
+        "title": {
+          "value": "Terveydenhuollon tiedonhallinnan sanasto",
+          "derivation": "EXACT_SOURCE_TEXT",
+          "evidence": {
+            "kind": "CSV_CELL",
+            "row": 3,
+            "header": "properties.prefLabel.fi",
+            "locator": "vocabulary title row preceding the concept rows",
+            "metadata_field": "title",
+            "source_file": "Terveydenhuollon_tiedonhallinnan_sanasto.csv",
+            "source_sha256": "3e2ae5ef2f2ed833deebd54b06688b1ab0b334bed940750f3320b11c3137a2e1",
+            "exact_source_text": "Terveydenhuollon tiedonhallinnan sanasto",
+            "semantic_evidence_type": "DOCUMENT_TITLE",
+            "extraction_rule": "CSV_VOCABULARY_TITLE_ROW",
+            "context_text": "Terveydenhuollon tiedonhallinnan sanasto"
+          }
+        }
+      },
+      "unresolved_metadata": [
+        {
+          "field": "publisher_organisation",
+          "reason": "No publisher or organisation is stated anywhere in the CSV"
+        },
+        {
+          "field": "publication_version_date",
+          "reason": "No publication or version date is stated anywhere in the CSV"
+        },
+        {
+          "field": "source_url",
+          "reason": "No source URL is stated anywhere in the CSV"
+        },
+        {
+          "field": "copyright_notice",
+          "reason": "No copyright notice is stated anywhere in the CSV"
+        },
+        {
+          "field": "licence_reuse_terms",
+          "reason": "No reuse licence or permission terms are stated anywhere in the CSV"
+        }
+      ],
+      "project_inferred_metadata": {
+        "provenance_status": "FILE_VERIFIED_METADATA_UNRESOLVED",
+        "licence_reuse_status": "UNKNOWN_NOT_STATED_IN_SOURCE",
+        "evidence_level": 3,
+        "metadata_confidence": "MEDIUM",
+        "notes": [
+          "Publisher, date, URL and licence are unknown for this export. The project does not infer them from the filename."
+        ]
+      }
+    },
+    {
+      "source_id": "TERM-SRC-005",
+      "terminology_role": "TERMINOLOGY_REFERENCE",
+      "file_facts": {
+        "filename": "Sosiaali-_ja_terveydenhuollon_uudistamisen_keskeiset_käsitteet.csv",
+        "byte_count": 155433,
+        "sha256": "75925bf85c6297c50fa27ce3997ba62078a97f5c3976ce85e6a7aac694fcd829",
+        "detected_file_type": "CSV_SEMICOLON_UTF8",
+        "csv_structure": {
+          "delimiter": ";",
+          "field_name_row": 1,
+          "primary_term_header": "properties.prefLabel.fi",
+          "non_entry_rows": [
+            {
+              "row": 2,
+              "purpose": "HUMAN_READABLE_COLUMN_LABELS",
+              "expected_primary_term_cell": "Suositettava termi"
+            },
+            {
+              "row": 3,
+              "purpose": "VOCABULARY_TITLE",
+              "expected_primary_term_cell": "Sosiaali- ja terveydenhuollon uudistamisen keskeiset käsitteet"
+            }
+          ]
+        }
+      },
+      "source_verified_metadata": {
+        "title": {
+          "value": "Sosiaali- ja terveydenhuollon uudistamisen keskeiset käsitteet",
+          "derivation": "EXACT_SOURCE_TEXT",
+          "evidence": {
+            "kind": "CSV_CELL",
+            "row": 3,
+            "header": "properties.prefLabel.fi",
+            "locator": "vocabulary title row preceding the concept rows",
+            "metadata_field": "title",
+            "source_file": "Sosiaali-_ja_terveydenhuollon_uudistamisen_keskeiset_käsitteet.csv",
+            "source_sha256": "75925bf85c6297c50fa27ce3997ba62078a97f5c3976ce85e6a7aac694fcd829",
+            "exact_source_text": "Sosiaali- ja terveydenhuollon uudistamisen keskeiset käsitteet",
+            "semantic_evidence_type": "DOCUMENT_TITLE",
+            "extraction_rule": "CSV_VOCABULARY_TITLE_ROW",
+            "context_text": "Sosiaali- ja terveydenhuollon uudistamisen keskeiset käsitteet"
+          }
+        }
+      },
+      "unresolved_metadata": [
+        {
+          "field": "publisher_organisation",
+          "reason": "No publisher or organisation is stated anywhere in the CSV"
+        },
+        {
+          "field": "publication_version_date",
+          "reason": "No publication or version date is stated anywhere in the CSV"
+        },
+        {
+          "field": "source_url",
+          "reason": "No source URL is stated anywhere in the CSV"
+        },
+        {
+          "field": "copyright_notice",
+          "reason": "No copyright notice is stated anywhere in the CSV"
+        },
+        {
+          "field": "licence_reuse_terms",
+          "reason": "No reuse licence or permission terms are stated anywhere in the CSV"
+        }
+      ],
+      "project_inferred_metadata": {
+        "provenance_status": "FILE_VERIFIED_METADATA_UNRESOLVED",
+        "licence_reuse_status": "UNKNOWN_NOT_STATED_IN_SOURCE",
+        "evidence_level": 3,
+        "metadata_confidence": "MEDIUM",
+        "notes": [
+          "Publisher, date, URL and licence are unknown for this export. The project does not infer them from the filename."
+        ]
+      }
+    }
+  ]
+}

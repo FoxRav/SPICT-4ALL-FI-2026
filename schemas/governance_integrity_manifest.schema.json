@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Project-controlled governance data integrity manifest",
+  "type": "object",
+  "required": [
+    "manifest_version",
+    "trust_model",
+    "files"
+  ],
+  "properties": {
+    "manifest_version": {
+      "const": 1
+    },
+    "trust_model": {
+      "const": "PROJECT_CONTROLLED_GIT_AND_AUDIT_ANCHOR"
+    },
+    "files": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "relative_path",
+          "byte_count",
+          "sha256",
+          "role",
+          "official_source"
+        ],
+        "properties": {
+          "relative_path": {
+            "enum": [
+              "data/source_requirements.jsonl",
+              "data/canonical_unit_exceptions.jsonl"
+            ]
+          },
+          "byte_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "role": {
+            "const": "MUTABLE_GOVERNANCE_DATA"
+          },
+          "official_source": {
+            "const": false
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

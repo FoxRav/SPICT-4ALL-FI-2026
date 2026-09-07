@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from .errors import ArtifactValidationError
+from .evidence import EvidenceSource
 
 REPORT_COLUMNS = (
     "unit_id", "source_text_sha256", "agent_a_present", "agent_b_present",
@@ -16,7 +17,7 @@ REPORT_COLUMNS = (
 
 
 def generate_discrepancy_report(
-    source_units: list[dict[str, Any]],
+    source_units: list[dict[str, Any]] | list[EvidenceSource],
     agent_a: list[dict[str, Any]],
     agent_b: list[dict[str, Any]],
     output_path: Path,
@@ -29,13 +30,22 @@ def generate_discrepancy_report(
             writer = csv.DictWriter(handle, fieldnames=REPORT_COLUMNS, delimiter="\t", lineterminator="\n")
             writer.writeheader()
             for source in source_units:
-                unit_id = source["unit_id"]
+                unit_id = (
+                    source.evidence_id
+                    if isinstance(source, EvidenceSource)
+                    else str(source["unit_id"])
+                )
+                source_hash = (
+                    source.source_text_sha256
+                    if isinstance(source, EvidenceSource)
+                    else source["source_text_sha256"]
+                )
                 a = by_a.get(unit_id)
                 b = by_b.get(unit_id)
                 writer.writerow(
                     {
                         "unit_id": unit_id,
-                        "source_text_sha256": source["source_text_sha256"],
+                        "source_text_sha256": source_hash,
                         "agent_a_present": str(a is not None).lower(),
                         "agent_b_present": str(b is not None).lower(),
                         "candidate_text_equal": (

@@ -1,0 +1,20 @@
+{
+  "manifest_version": 1,
+  "trust_model": "PROJECT_CONTROLLED_GIT_AND_AUDIT_ANCHOR",
+  "files": [
+    {
+      "relative_path": "data/canonical_unit_exceptions.jsonl",
+      "byte_count": 1335,
+      "sha256": "c01a6d88c62dc2fdce9d6f6f3406edfad3d298b6213a77ecbbf1686b21ecdf91",
+      "role": "MUTABLE_GOVERNANCE_DATA",
+      "official_source": false
+    },
+    {
+      "relative_path": "data/source_requirements.jsonl",
+      "byte_count": 893,
+      "sha256": "7893316538c8866c2b8d8f7fbce0940b282d445436003575758409ac72b8a023",
+      "role": "MUTABLE_GOVERNANCE_DATA",
+      "official_source": false
+    }
+  ]
+}

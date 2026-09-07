@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [ValidateSet("Setup", "Test", "VerifySources", "ValidateArtifact", "CheckCoverage")]
+    [ValidateSet("Setup", "Test", "VerifySources", "ValidateRequirements", "ValidateCanonical", "ValidateGovernance", "BuildTerminology", "ValidateTerminology", "TypeCheck", "Lint", "ValidateArtifact", "CheckCoverage")]
     [string]$Task = "Test",
     [string]$Artifact = "",
     [string]$Schema = "schemas/translation_candidate.schema.json"
@@ -32,6 +32,28 @@ switch ($Task) {
     }
     "VerifySources" {
         & $VenvPython -m spict4all.cli --root $RepoRoot verify-sources
+    }
+    "ValidateRequirements" {
+        & $VenvPython -m spict4all.cli --root $RepoRoot validate-requirements
+    }
+    "ValidateCanonical" {
+        & $VenvPython -m spict4all.cli --root $RepoRoot validate-canonical
+    }
+    "ValidateGovernance" {
+        & $VenvPython -m spict4all.cli --root $RepoRoot validate-governance
+    }
+    "BuildTerminology" {
+        & $VenvPython (Join-Path $RepoRoot "scripts\build_terminology_evidence.py")
+    }
+    "ValidateTerminology" {
+        & $VenvPython -m spict4all.cli --root $RepoRoot validate-terminology
+    }
+    "TypeCheck" {
+        & $VenvPython -m mypy --strict (Join-Path $RepoRoot "src\spict4all")
+    }
+    "Lint" {
+        & $VenvPython -m ruff check (Join-Path $RepoRoot "src") `
+            (Join-Path $RepoRoot "scripts") (Join-Path $RepoRoot "tests")
     }
     "ValidateArtifact" {
         if (-not $Artifact) { throw "-Artifact is required" }
