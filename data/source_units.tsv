@@ -1,0 +1,55 @@
+unit_id	section	source_text_en	source_text_sha256	row	column	paragraph	status	target_fi
+S4A-2026-000	document_title	Supportive and Palliative Care Indicators Tool (SPICT-4ALL-……)	e0d92d4423ed4dd44c3905348ccb15531f9d0d8635b6d9e3e6aed8f7d5977a79				AUTHORITY_DECISION_REQUIRED	
+S4A-2026-001	intro	The SPICT helps us look for people who have life shortening health conditions and are less well. These people need more help and care now, and a plan for care in the future.	073f41ea2df0103ff84d71ac3bf63cdbc88ed4ce579604fbbac10aea11652aac	1	0	0	UNTRANSLATED	
+S4A-2026-002	general_indicators	Does this person have signs of poor health or health problems that are getting worse?	4e2ea44a5cb6778dfe05cadc1c17810b91e4e245ac7d2d9f0eb869b523fb452d	3	0	0	UNTRANSLATED	
+S4A-2026-003	general_indicators	Urgent or emergency hospital admission(s) or visits.	e0833c16f94535ce3009a1737201e39f1b822baa1447edbc35b6f8a37a6d756a	5	0	0	UNTRANSLATED	
+S4A-2026-004	general_indicators	"Less able to manage usual activities; not as well as they used to be.
+(Person often stays in bed or in a chair for more than half the day.)"	e2a76846cca5d053af8161133c81edddbe40529b37fde2bfde986af56ce60c3c	7	0	0	UNTRANSLATED	
+S4A-2026-005	general_indicators	Needs more help and care from others due to increasing physical and/or mental health problems.	fdcefa0555355b1ced3795bd3b6068b5a351d4a7f2498a9d6b941094a3606f21	9	0	0	UNTRANSLATED	
+S4A-2026-006	general_indicators	Person’s carer needs more help and support.	ecdb4474294eb1f6797305ec921a2f58658b85ca3875d9e639de4ccb3e322601	9	0	1	UNTRANSLATED	
+S4A-2026-007	general_indicators	Has clearly lost weight over the last few months; or stays too thin.	7181dd9f28e654ec269bda2ff32da7c18405eca65e4969279686e38741064214	11	0	0	UNTRANSLATED	
+S4A-2026-008	general_indicators	Has troublesome symptoms most of the time despite good treatment of their health problems.	4001d97a18450bfb36e8eaf191283f8cceccbbe86bbd1d331d9e74621a7d8eb7	13	0	0	UNTRANSLATED	
+S4A-2026-009	general_indicators	The person (or family) asks for palliative care; chooses to reduce, stop or not have treatment; or wishes to focus on quality of life.	792e53797023341c64f79e3598752320b23375c8bc346e14dd6906e003362f29	15	0	0	UNTRANSLATED	
+S4A-2026-010	health_problem_prompt	Does this person have any of these health problems?	91aa0e8b9dd807ae79c1ed0d573e0faf66910befda4681cae6c821e8e5687c6b	17	0	0	UNTRANSLATED	
+S4A-2026-011	cancer	Cancer	f2c28b5295d9ad14e2e24f8467e0dab646338858d7f11d5267b094e875e36edb	19	0	0	UNTRANSLATED	
+S4A-2026-012	heart_or_circulation	Heart or circulation problems	96483c2d15c955cd20a7e3f77f7cfe11675e57abac2b8253523ca7f90a49f219	19	1	0	UNTRANSLATED	
+S4A-2026-013	kidney	Kidney problems	268f55cc97dd320e421d37a95d15154fe7a9996c5eac7349e37b35a9a2ff388d	19	2	0	UNTRANSLATED	
+S4A-2026-014	cancer	Less able to manage usual activities and health is getting poorer.	99fde2e084601e17d09b4d21f6fd5332555634a614361a9d6df4299582c02fbb	21	0	0	UNTRANSLATED	
+S4A-2026-015	heart_or_circulation	Heart failure or heart blood vessel disease. Short of breath or has chest pain when resting, moving or walking a few steps.	a2033df46c00ed0fa3eaae26c5185127d715d9f8a71db3b98965ac006919465c	21	1	0	UNTRANSLATED	
+S4A-2026-016	kidney	Kidneys are not working well; general health is getting poorer.	caf76353b40f44135d84633d46d756043db126bfd293f6b08f0902384e619f1b	21	2	0	UNTRANSLATED	
+S4A-2026-017	cancer	Not well enough for cancer treatment or treatment is to help with symptoms.	9206d4bd4125ed5c6ef1006bbbe74035d8c4ee3021400d0bcaf06ab0908a552f	23	0	0	UNTRANSLATED	
+S4A-2026-018	heart_or_circulation	Leg problems due to poor blood circulation; surgery is not possible.	058b7cb6ee5a40a7d514f92acad1533f77a63576601024e2667ffc02e6aea25f	23	1	0	UNTRANSLATED	
+S4A-2026-019	kidney	Stopping kidney dialysis or choosing palliative care instead of starting dialysis.	2b7fddfeb4727487c69bcfde27c5f60a91c1e74206c30068035e330753f18303	23	2	0	UNTRANSLATED	
+S4A-2026-020	kidney	Stopping or not starting dialysis	8ce559219ef352629369543d5a95eeae1d37c880c65715511d69634ae6eefcb2	25	2	0	UNTRANSLATED	
+S4A-2026-021	dementia_or_frailty	Dementia or frailty	ae652fc158e53bfb5c9b52b9c94f57696f0d433f2240c5345a6d99b48ba02f73	27	0	0	UNTRANSLATED	
+S4A-2026-022	respiratory	Respiratory problems	fd5a7429de80300bad8e049546d350e782e81952420927c1e487b0d285007c11	27	1	0	UNTRANSLATED	
+S4A-2026-023	liver	Liver problems	2008353ef1fa350f45f0267d8e2116677fce16728e66b811230748faa8400728	27	2	0	UNTRANSLATED	
+S4A-2026-024	dementia_or_frailty	Unable to dress, walk or eat without help.	b946f5676d14ac3e69ba2303043942ee4e09a1da960a77735c4aedc09e3bc02e	29	0	0	UNTRANSLATED	
+S4A-2026-025	respiratory	More unwell with long term lung problems. Short of breath when resting, moving or walking a few steps even when the chest is at its best.	4370111602ffcff5b4b2fe5b501df2b001b5424b4813493a605dacc5e6472802	29	1	0	UNTRANSLATED	
+S4A-2026-026	liver	Worsening liver problems in the past year with complications like:	af527f00432f81a06cb3f05cdda159821b786bc73318c0fb577f55eac57dc04e	29	2	0	UNTRANSLATED	
+S4A-2026-027	liver	fluid building up in the belly	adb8720dd5159892938a27769ffa7b771bd1f74d02cc3bb4922751f115123f94	29	2	1	UNTRANSLATED	
+S4A-2026-028	liver	being confused at times	893dc30e9dbb7c7b6604094e6b3b32e28d57e18d24b141b094f8f05995c6ea34	29	2	2	UNTRANSLATED	
+S4A-2026-029	liver	kidneys not working well	7ee57d9b958f5eed889774298637a6a7646c7b7d671773f8a9abad9e3d20ccae	29	2	3	UNTRANSLATED	
+S4A-2026-030	liver	infections	f7c719ccac9bfcb69d5a06bb091cce53a8f48edc8f55a49e92418e5a0ef1bcf4	29	2	4	UNTRANSLATED	
+S4A-2026-031	liver	bleeding from the gullet	d00a673e4350880f79ceb91ca8b1c89ebc9421e549a5c3b10de2d3452237baa7	29	2	5	UNTRANSLATED	
+S4A-2026-032	dementia_or_frailty	Eating and drinking less; difficulty with swallowing.	b5543801f73cb501f54de194003f7d5fee207839b814601958e703045193e220	31	0	0	UNTRANSLATED	
+S4A-2026-033	respiratory	Needs to use oxygen for much of the day and night.	16b7ffb4566568735f445007a90b206e7051187169f0a14d5c2302ffb1c6fc79	31	1	0	UNTRANSLATED	
+S4A-2026-034	dementia_or_frailty	Has poor control of bladder and bowels.	ee85bfdd3adc62c869acaa94fca31314a483269c0459128809a2dc1ba3199063	33	0	0	UNTRANSLATED	
+S4A-2026-035	respiratory	Has needed treatment with a breathing machine in hospital.	03dc5cede7282aba176529d454a95cc5428d817357dbffc5dbaaaa5c9262cb81	33	1	0	UNTRANSLATED	
+S4A-2026-036	dementia_or_frailty	Not able to communicate by speaking; not responding much to other people.	69688aa05b30b967ed5ed973c91cae039d2ff3f7130f894e0184addb81c60884	35	0	0	UNTRANSLATED	
+S4A-2026-037	dementia_or_frailty	Frequent falls; fractured femur.	96324a612d8a141623f99119fea92e7043689d4744fe0d6bbead80d2cd8aa182	37	0	0	UNTRANSLATED	
+S4A-2026-038	dementia_or_frailty	Frequent infections; pneumonia	99ecdde88af547bde3129601476f3b323e511474ef069349752fe59866e61df8	39	0	0	UNTRANSLATED	
+S4A-2026-039	nervous_system	Nervous system problems	5c3d417084d24c372a80dcc69467cc7d378715635bedd894b9bcbc3369dc071e	41	0	0	UNTRANSLATED	
+S4A-2026-040	other_conditions_and_actions	Other conditions	76be1cc7c5b8be144dbd59555fa0b57a080e2e7bcbeedb0845e61c69a1fb0c0a	41	1	0	UNTRANSLATED	
+S4A-2026-041	nervous_system	Physical and mental health are getting worse.	c0da68998a98e8a4b62feac9d288b1324608a923e07936e501368f525b478fa9	43	0	0	UNTRANSLATED	
+S4A-2026-042	other_conditions_and_actions	People who are less well with other life shortening physical or mental illnesses or health conditions. There is no treatment available or it will not work well.	d19219bbd6660dba90264b527df0573d44b9374e279181ff43baa7592d8d1169	43	1	0	UNTRANSLATED	
+S4A-2026-043	nervous_system	More problems with speaking and communicating; swallowing is getting worse.	9fe2e73f548c64d0fd73941103a61bd789543c15a871c027617567cea69c7dbe	45	0	0	UNTRANSLATED	
+S4A-2026-044	other_conditions_and_actions	What we can do to help this person and their family.	3de4716eb33b41c98155657b801a05859fefe5fda817a3744076e38e39ab74d5	45	1	0	UNTRANSLATED	
+S4A-2026-045	nervous_system	Chest infections or pneumonia; breathing problems.	e6f4042ff1dd7f0560ebe0676573b533335874aa799c08b7701a94b72bcbf75d	47	0	0	UNTRANSLATED	
+S4A-2026-046	other_conditions_and_actions	Start talking with the person and their family or carer about help needed now and why making plans is important in case things change.	fc1e70c2a5d6055d43bd6e968d068c53e30374d1c0f46ff989b1d85d18584bd6	47	1	0	UNTRANSLATED	
+S4A-2026-047	nervous_system	Ongoing disability with increasing physical and/or mental health problems after one or more strokes.	f3cb22010d9566918b33bf98f2e3bbd44976fe1c2a638f3d561a2c8cb3c36d37	49	0	0	UNTRANSLATED	
+S4A-2026-048	other_conditions_and_actions	Ask for help and advice from a nurse, doctor, social worker or other staff if the person or family needs a review of their care and support.	88456f1d645cbb8c2b727c914d1aea3db6974b82608a1d99c43f68ac4868bff8	49	1	0	UNTRANSLATED	
+S4A-2026-049	care_actions	We look at the person’s medicines and other treatments to give the best care. Holistic care includes symptoms, emotional, social, functional, financial, spiritual, cultural problems.	bbf8762a42a6a44aacc9121173ad6e4c5578384ec72e3f25ebee38e11f6be4f3	51	1	0	UNTRANSLATED	
+S4A-2026-050	care_actions	Ask for specialist help if symptoms or problems are difficult to manage.	ea006ba91f098733a23dacdda2893c980aabebc7414528de20a2ec009d628520	53	1	0	UNTRANSLATED	
+S4A-2026-051	care_actions	Care plans are shared with staff who need to see them and kept up to date.	886e103145f4e3545e3196a255762f45c8e5724745af06ba5f39463b40df39fb	55	1	0	UNTRANSLATED	
+S4A-2026-052	document_footer	SPICT – 4ALL 2026	0a78ae33f3c606ddb9e6a0403586e89ada590f7dd48254a2fe854b48bff589be	56	0	1	UNTRANSLATED	

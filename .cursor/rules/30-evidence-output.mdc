@@ -1,0 +1,15 @@
+---
+description: "Structured evidence requirements for AI outputs"
+alwaysApply: true
+---
+# Evidence output
+AI agents must return structured artifacts, not only prose.
+For each unit record:
+- unit_id
+- source_text_sha256
+- model/session identifier
+- Finnish candidate or review outcome
+- concise decision note (not private chain-of-thought)
+- explicit uncertainty / issue flags
+- terminology decisions or unresolved terms
+Do not discard rejected candidates; retain them for auditability.

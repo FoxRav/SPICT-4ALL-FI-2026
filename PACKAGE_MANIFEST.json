@@ -1,0 +1,255 @@
+{
+  "package": "SPICT4ALL-FI-project-bootstrap-v0.1",
+  "files": [
+    {
+      "path": ".cursor/rules/00-governance.mdc",
+      "sha256": "1e3f2fc71bf686219ea5af23a5f538be553752d9a3a1cddb52650c4c8ccddc9a",
+      "bytes": 594
+    },
+    {
+      "path": ".cursor/rules/10-translation-quality.mdc",
+      "sha256": "566c8d014cde8268efd2f505635d920eee731e02b97149b04af2a9c31783ccad",
+      "bytes": 708
+    },
+    {
+      "path": ".cursor/rules/20-source-integrity.mdc",
+      "sha256": "982ea487ec102e7e57b57c4081d77e1d9fb282c60a793b95ff40bc68f366ffce",
+      "bytes": 571
+    },
+    {
+      "path": ".cursor/rules/30-evidence-output.mdc",
+      "sha256": "5940961ae15d94d5fcf0fff63b2d84ff3f9026b9b13d9d71cc3139126f1a9b6b",
+      "bytes": 487
+    },
+    {
+      "path": ".editorconfig",
+      "sha256": "5dd13b0475ac31955496533d89e8c0fa4061ecd7258ab16d63a33d0a9226c471",
+      "bytes": 222
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "74550ddcb8ec67753a654215e19614e0b535e3bebd1bc749e995788cdbafc9f5",
+      "bytes": 245
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "3a6f7fa4500256c39b5d71e3a01d2ad9a82820ca5b7a8654192668dc0d079ce9",
+      "bytes": 1781
+    },
+    {
+      "path": "BOOTSTRAP_CODEX.md",
+      "sha256": "c52dbc99e23fee538660c2a8b174ed9a8d1ee6800833ef07c637a83012ed45cc",
+      "bytes": 1802
+    },
+    {
+      "path": "NOTICE.md",
+      "sha256": "8164c521b18405fbf9b8ec1268d915da11f7a75d0c5058f6faeb584d097e268e",
+      "bytes": 462
+    },
+    {
+      "path": "README.md",
+      "sha256": "5b350bd2421cd405972c915565c844499b9d4f378c865827392c48143c65ff81",
+      "bytes": 1318
+    },
+    {
+      "path": "config/model_roles.yaml",
+      "sha256": "a2d83dd358f0cf857569fd2de9d482c34562d0c87d99469b6f3843514b5639ef",
+      "bytes": 1533
+    },
+    {
+      "path": "config/project.yaml",
+      "sha256": "1273d87639f2a0fe95dbb07cd91e0d781d0ae3b0afb2495cd204e0e9493424bf",
+      "bytes": 513
+    },
+    {
+      "path": "config/quality_gates.yaml",
+      "sha256": "feb522a6db1abaebf5488298d928e44066b058aef43cbdf97766e65ca9bc875b",
+      "bytes": 1878
+    },
+    {
+      "path": "data/README.md",
+      "sha256": "ecb20b60756a41886da21756df27cd08dddb38632742213f5ed6c54d836d5fc9",
+      "bytes": 319
+    },
+    {
+      "path": "data/source_units.jsonl",
+      "sha256": "f4751a7e67ff42338fc5c23a842cc7af07c03f2c6a394dea1819f26546c127a5",
+      "bytes": 22694
+    },
+    {
+      "path": "data/source_units.tsv",
+      "sha256": "01a065acaa5f55de8a2687af4435a6a2a95efd4c180da2379485362dc5aad0ce",
+      "bytes": 9706
+    },
+    {
+      "path": "deliverables/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/METHODOLOGY.md",
+      "sha256": "dd9d319aea836041470a2a8ac63d47aa01cb45edc740b3011e6e4ff9bed1a632",
+      "bytes": 2209
+    },
+    {
+      "path": "docs/MODEL_STRATEGY.md",
+      "sha256": "4d02fc80729861fa0fea02b1562708e19d108c843a7a66659cf064332f5026f9",
+      "bytes": 1030
+    },
+    {
+      "path": "docs/OFFICIAL_TRANSLATION_GUIDANCE.md",
+      "sha256": "ce86434f055aa99b99135ad1b2b5149e8c70a998f3edd833d13034f99e4d3966",
+      "bytes": 1276
+    },
+    {
+      "path": "docs/PROJECT_CHARTER.md",
+      "sha256": "90845d9c00532cf2bf8265e363edc3304476321bb4f390be4eb02ec303afd27f",
+      "bytes": 1174
+    },
+    {
+      "path": "docs/SOURCE_PROVENANCE.md",
+      "sha256": "2efe180fcb5ef2d6316e6f2537f9b5efb1d9d26ec93b0f01158c1089c8896842",
+      "bytes": 703
+    },
+    {
+      "path": "docs/WORKFLOW.md",
+      "sha256": "846ebb4f10c57c57c5d740879967c63390f9f38a130b6b6d93f4d6e7111f37b6",
+      "bytes": 1661
+    },
+    {
+      "path": "prompts/01-agent-a-forward.md",
+      "sha256": "e094c5812bf113272386371f45461242c24aebed9f31abbee34f0e46aa7ad03b",
+      "bytes": 829
+    },
+    {
+      "path": "prompts/02-agent-b-forward.md",
+      "sha256": "e630e4613cf14c16dff9fcf6dd4c98b142c35660a831387a8b287e0690ef732a",
+      "bytes": 570
+    },
+    {
+      "path": "prompts/03-agent-c-synthesis.md",
+      "sha256": "ec2bef61efd2cfd6489b2eb25e0b320c0117220bb0376885d58e7a6dee70fbcb",
+      "bytes": 639
+    },
+    {
+      "path": "prompts/04-blind-backtranslation.md",
+      "sha256": "34f09d8c1e30ce524fe317363acb22a423023716fb1ca945e02a4e39f489f63e",
+      "bytes": 431
+    },
+    {
+      "path": "prompts/05-clinical-semantic-critic.md",
+      "sha256": "ea6d9eb04492afc4aa7fada5d71953a2978a7604ae09431afa2a598a5a20b0c3",
+      "bytes": 602
+    },
+    {
+      "path": "prompts/06-plain-language-critic.md",
+      "sha256": "e5844d91e2acd41394afc3623702713958ca059904719ef5939994d1ada7d1ee",
+      "bytes": 603
+    },
+    {
+      "path": "prompts/07-adversarial-critic.md",
+      "sha256": "875174662dd98c6970e357d5839038fc738534984530c3d46b3b0e5f5d5bcafc",
+      "bytes": 505
+    },
+    {
+      "path": "schemas/translation_candidate.schema.json",
+      "sha256": "2eb47698e52f6466d131dcee41d62657c847cabae281189de6326cdc68f05c44",
+      "bytes": 1570
+    },
+    {
+      "path": "scripts/check_translation_coverage.py",
+      "sha256": "eb167187111effef10f163a2e4909b227d1dbf5ea943df0d3d13da0b742df394",
+      "bytes": 781
+    },
+    {
+      "path": "scripts/verify_sources.py",
+      "sha256": "01598de128ff517d3503b96afea0b85677da4f844b8b36b5feff812f0fd3675d",
+      "bytes": 1172
+    },
+    {
+      "path": "sources/manifests/source_manifest.json",
+      "sha256": "83de780c2998e7c6b63e781186d3448f0f5ebb89b9864c3dfe31897e021b0765",
+      "bytes": 1025
+    },
+    {
+      "path": "sources/official/20260130-Using-SPICT-4ALL-2025.docx",
+      "sha256": "1b8ee715051ca53a27d0a2261a7f879face8a57727fbfd12fc6a830ef1c155ca",
+      "bytes": 111045
+    },
+    {
+      "path": "sources/official/20260521-Word-template-SPICT-4ALL-translations-2026.docx",
+      "sha256": "aea5e489ffc93f57ab3666572f65044fba8375aa5dda897d0ef2988c3a9f8581",
+      "bytes": 66914
+    },
+    {
+      "path": "sources/official/20260521-Word-template-SPICT-4ALL-translations-2026.pdf",
+      "sha256": "d22418ca1d1b68a2be762bcdf48ae0e6ad41ac41c8e3d76b419e9062d4357f72",
+      "bytes": 223468
+    },
+    {
+      "path": "sources/official/README.md",
+      "sha256": "ed16cc002863d55fdeed9f0a931c5424c3a45e412ca21090b93e29ba90817af6",
+      "bytes": 472
+    },
+    {
+      "path": "sources/reference/README.md",
+      "sha256": "ae0706433cb9a7377c9f3d61cbecb77fcabecbaa6f5ad0cca6b804b7152eee0b",
+      "bytes": 274
+    },
+    {
+      "path": "templates/disagreement_log.tsv",
+      "sha256": "6145066c1b93d8f36601ed251fb801cb1372f8ad406d2a93cb6bcb7ddf2d6fa8",
+      "bytes": 98
+    },
+    {
+      "path": "templates/human_review.tsv",
+      "sha256": "23f0634428ff6de2b48a39237dbaf05367b655c6fb634e6f37d4284245d2e758",
+      "bytes": 5228
+    },
+    {
+      "path": "templates/model_run_log.tsv",
+      "sha256": "0c07cc7c0d21bc5c91731b4f4de5936df7d7f4c3041b41ccdb1c4f60d9aa2851",
+      "bytes": 118
+    },
+    {
+      "path": "terminology/terms.csv",
+      "sha256": "7884ab56dea3d7b4fe6233bd1b25df087a7103098ff91f498baaa847e7a41808",
+      "bytes": 921
+    },
+    {
+      "path": "work/agent-a/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "work/agent-b/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "work/backtranslation/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "work/critics/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "work/final/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "work/human-review/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "work/synthesis/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ]
+}

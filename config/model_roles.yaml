@@ -1,0 +1,44 @@
+# Model names below match the models visible in the user's Cursor model picker on 2026-09-07.
+# Reconfirm availability before each major run. Model availability is tooling-dependent and can change.
+
+roles:
+  engineering_bootstrap:
+    model: "Codex 5.3 Medium"
+    purpose: "Repository bootstrap, scripts, schemas, tests and automation. Not a language authority."
+
+  forward_translation_A:
+    model: "GPT-5.6 Sol Medium"
+    isolation: "must not see Agent B output"
+    purpose: "Independent EN->FI candidate"
+
+  forward_translation_B:
+    model: "Claude Fable 5.1 High"
+    isolation: "must not see Agent A output"
+    purpose: "Independent EN->FI candidate"
+
+  synthesis_C:
+    model: "Claude Opus 5 High"
+    purpose: "Compare A/B against exact source and produce a traceable synthesis; never auto-approve"
+
+  blind_back_translation:
+    model: "GPT-5.6 Sol Medium"
+    isolation: "fresh session; receives Finnish candidate only, never English source"
+    purpose: "FI->EN drift detection"
+
+  adversarial_critic:
+    model: "Cursor Grok 4.6 Medium"
+    purpose: "Independent dissent/error detector; findings require corroboration, never final authority"
+
+  low_risk_mechanical_only:
+    allowed_models:
+      - "Composer 2.5 Fast"
+      - "Claude Haiku 4.5"
+    forbidden_for:
+      - "final translation wording"
+      - "clinical interpretation"
+      - "human approval replacement"
+
+human_roles:
+  - "palliative-care clinical reviewer"
+  - "Finnish plain-language / linguistic reviewer"
+  - "methodology / project adjudicator"

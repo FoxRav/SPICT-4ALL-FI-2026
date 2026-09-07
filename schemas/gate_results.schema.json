@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SPICT-4ALL Quality Gate Results",
+  "type": "object",
+  "required": ["gates"],
+  "properties": {
+    "gates": {
+      "type": "object",
+      "patternProperties": {
+        "^G[0-9]+_[A-Za-z0-9_]+$": {"enum": ["PASS", "FAIL", "BLOCKED", "NOT_RUN"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,57 @@
+quality_gates:
+  G0_source_integrity:
+    required: true
+    checks:
+      - official file hashes match manifest
+      - all source unit IDs unique
+      - source-unit hashes match exact English text
+
+  G1_independent_forward_translation:
+    required: true
+    checks:
+      - candidate A exists for every translatable unit
+      - candidate B exists for every translatable unit
+      - A and B produced independently
+
+  G2_synthesis:
+    required: true
+    checks:
+      - source compared directly with A and B
+      - disagreements explicitly recorded
+      - unresolved terminology marked, never guessed
+
+  G3_blind_back_translation:
+    required: true
+    checks:
+      - back-translator did not receive English source
+      - meaning drift and omissions recorded
+
+  G4_automated_and_agent_critique:
+    required: true
+    checks:
+      - negation and modality review
+      - terminology consistency review
+      - numbers / enumerations / alternatives review
+      - patient vs family vs staff agency review
+      - plain-language review
+      - omission / addition review
+
+  G5_human_review:
+    required: true
+    checks:
+      - every unit receives explicit human disposition
+      - clinical issues signed off by qualified clinical reviewer
+      - Finnish wording/plain-language issues signed off
+      - unresolved issues block release
+
+  G6_field_testing_and_programme_review:
+    required_for_final_publication: true
+    checks:
+      - target-user / staff testing documented as required by project methodology
+      - revisions tracked
+      - final external review / approval status recorded
+
+release_policy:
+  allow_final_docx_generation_when: "G0-G5 pass"
+  allow_claim_validated_when: "Only after documented human/field validation and relevant external approval"
+  allow_publication_when: "Explicit project-owner and SPICT programme conditions are satisfied"

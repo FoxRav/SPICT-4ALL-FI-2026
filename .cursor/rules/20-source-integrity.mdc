@@ -1,0 +1,10 @@
+---
+description: "Protect canonical SPICT-4ALL source material and unit hashes"
+alwaysApply: true
+---
+# Source integrity
+- Canonical DOCX: `sources/official/20260521-Word-template-SPICT-4ALL-translations-2026.docx`.
+- Use `data/source_units.jsonl` as the machine-readable index; the DOCX remains the source of truth if any discrepancy exists.
+- Before any translation run, execute `python scripts/verify_sources.py`.
+- Reject processing if official-file hashes do not match `sources/manifests/source_manifest.json`.
+- Never overwrite source text fields or source hashes.

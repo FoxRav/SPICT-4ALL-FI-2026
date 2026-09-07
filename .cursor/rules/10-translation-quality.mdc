@@ -1,0 +1,12 @@
+---
+description: "Quality constraints for translation candidates and reviews"
+alwaysApply: true
+---
+# Translation quality
+For every unit:
+- Preserve semantic content exactly, including negation, modality, alternatives, agency, severity, time and conditionals.
+- Preserve the source's patient-facing plain-language level unless a documented adaptation decision changes it.
+- Flag ambiguous source wording rather than guessing.
+- Use terminology from `terminology/terms.csv` only when status is approved; `TBD` is not an approved Finnish term.
+- Never harmonize a back-translation toward the English source; back-translation must reveal drift.
+- Every disagreement must be surfaced in a structured issue list.

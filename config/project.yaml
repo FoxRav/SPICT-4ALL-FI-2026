@@ -1,0 +1,15 @@
+project:
+  id: spict4all-fi-2026
+  name: SPICT-4ALL Finnish Translation 2026
+  target_language: fi-FI
+  source_language: en-GB
+  canonical_source: sources/official/20260521-Word-template-SPICT-4ALL-translations-2026.docx
+  target_status: University of St Andrews / SPICT International Programme review candidate
+  publication_status: NOT_APPROVED
+
+governance:
+  immutable_source: true
+  human_final_authority: true
+  audit_trail_required: true
+  blind_back_translation: true
+  independent_forward_translations: 2

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SPICT-4ALL Translation Candidate",
+  "type": "object",
+  "required": [
+    "unit_id",
+    "source_text_sha256",
+    "model",
+    "candidate_fi",
+    "decision_note",
+    "issues",
+    "status"
+  ],
+  "properties": {
+    "unit_id": {
+      "type": "string",
+      "pattern": "^S4A-2026-[0-9]{3}$"
+    },
+    "source_text_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "prompt_version": {
+      "type": "string"
+    },
+    "candidate_fi": {
+      "type": "string"
+    },
+    "decision_note": {
+      "type": "string",
+      "description": "Concise auditable note; not private chain-of-thought."
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "severity": {
+            "enum": [
+              "BLOCKER",
+              "MAJOR",
+              "MINOR",
+              "NOTE"
+            ]
+          },
+          "type": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "severity",
+          "type",
+          "note"
+        ]
+      }
+    },
+    "status": {
+      "enum": [
+        "DRAFT",
+        "BLOCKED",
+        "READY_FOR_SYNTHESIS",
+        "READY_FOR_HUMAN_REVIEW",
+        "HUMAN_APPROVED",
+        "HUMAN_REJECTED"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,12 @@
+---
+description: "Mandatory governance for the SPICT-4ALL FI translation project"
+alwaysApply: true
+---
+# SPICT-4ALL FI governance
+- Treat `AGENTS.md` as authoritative project instructions.
+- Never modify `sources/official/**`.
+- Never fabricate clinical facts, source wording, approvals, citations, test results, or reviewer decisions.
+- Final wording is not approved until the human review gate is recorded.
+- Do not describe automated checks as clinical validation.
+- Preserve an auditable history of every candidate and decision.
+- If evidence is missing, mark it missing; do not infer it.
