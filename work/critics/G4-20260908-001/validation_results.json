@@ -1,0 +1,100 @@
+{
+  "clinical_validation_claimed": false,
+  "combined_count": 54,
+  "combined_findings_sha256": "29d8ec2a0f8588de7a331088be0181eb169c84337e390d273957f2b86e1e5f19",
+  "corroborated_count": 7,
+  "corroborated_ids": [
+    "S4A-2026-001",
+    "S4A-2026-009",
+    "S4A-2026-025",
+    "S4A-2026-026",
+    "S4A-2026-042",
+    "S4A-2026-045",
+    "S4A-2026-049"
+  ],
+  "critic_a_count": 54,
+  "critic_a_issue_count": 7,
+  "critic_a_only_count": 0,
+  "critic_a_severity": {
+    "BLOCKER": 1,
+    "HIGH": 1,
+    "LOW": 3,
+    "MEDIUM": 2,
+    "NONE": 47
+  },
+  "critic_a_sha256": "e527f6b999d3e06aeaa883de26264a9b29dc3e394c2f9f8d5437797dbba72daf",
+  "critic_b_count": 54,
+  "critic_b_issue_count": 21,
+  "critic_b_only_count": 14,
+  "critic_b_only_ids": [
+    "S4A-2026-000",
+    "S4A-2026-003",
+    "S4A-2026-004",
+    "S4A-2026-008",
+    "S4A-2026-014",
+    "S4A-2026-017",
+    "S4A-2026-018",
+    "S4A-2026-021",
+    "S4A-2026-033",
+    "S4A-2026-034",
+    "S4A-2026-036",
+    "S4A-2026-040",
+    "S4A-2026-043",
+    "S4A-2026-047"
+  ],
+  "critic_b_only_medium_ids": [
+    "S4A-2026-008",
+    "S4A-2026-017",
+    "S4A-2026-021",
+    "S4A-2026-036"
+  ],
+  "critic_b_severity": {
+    "BLOCKER": 0,
+    "HIGH": 2,
+    "LOW": 12,
+    "MEDIUM": 7,
+    "NONE": 33
+  },
+  "critic_b_sha256": "ba0bb2822a4cb711d51388e025deb73ea25980f22a435e81e7bc9864d1ace52e",
+  "critic_outputs_unchanged": true,
+  "duplicate_ids": false,
+  "finnish_revised": false,
+  "g2_candidates_sha256": "76462191d3ad2a83c878982a1460443f322437e547b747f6267f4a29d887c619",
+  "g2_finnish_unchanged": true,
+  "g2_source_evidence_match": true,
+  "g3_back_translation_sha256": "e674a7f0a69ed05c554eaade38e4dbd8025c1f34df0499a8fc4cc9a15c99f00f",
+  "g3_back_translation_unchanged": true,
+  "g4_pass_claimed": false,
+  "g5_created": false,
+  "human_adjudication_performed": false,
+  "human_approval_present": false,
+  "human_decision_conflict_ids": [
+    "S4A-2026-001",
+    "S4A-2026-017",
+    "S4A-2026-042"
+  ],
+  "id_order_match": true,
+  "mechanical_checks": "PASS",
+  "medium_or_higher_unit_ids": [
+    "S4A-2026-001",
+    "S4A-2026-008",
+    "S4A-2026-009",
+    "S4A-2026-017",
+    "S4A-2026-021",
+    "S4A-2026-025",
+    "S4A-2026-026",
+    "S4A-2026-036",
+    "S4A-2026-042",
+    "S4A-2026-045",
+    "S4A-2026-049"
+  ],
+  "review_input_count": 54,
+  "review_input_sha256": "5a07c32c9680032eaa69f268b8160c3460f1b2ebdf7c9a6b547688b81d4f526f",
+  "run_id": "G4-20260908-001",
+  "semantic_correctness": "Not claimed. G4 consolidation does not adjudicate or revise Finnish.",
+  "source_authority_blockers": [
+    "S4A-2026-000",
+    "S4A-REQ-2026-001"
+  ],
+  "work_package": "WP-G4-CONSOLIDATION-AUDIT-001"
+}

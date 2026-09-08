@@ -6,7 +6,7 @@ This repository contains the methodology, translation workflow, terminology evid
 
 The project is being developed for expert review in accordance with the translation guidance provided by the SPICT International Programme / University of St Andrews.
 
-> **Status:** G0, T0, T1, G1, G2 and G3 complete; G4 independent review is in progress.  
+> **Status:** G0, T0, T1, G1, G2, G3 and G4 complete; G5 human adjudication is in progress.  
 > This repository does not yet contain a final, validated or SPICT-approved Finnish publication.
 
 ---
@@ -168,8 +168,8 @@ Only explicit human decisions may establish mandatory project terminology.
 | **G1** | Two independent EN → FI forward translations | **PASS** |
 | **G2** | Independent synthesis | **PASS** |
 | **G3** | Blind FI → EN back-translation | **PASS** |
-| **G4** | Independent critics and adversarial review | **IN PROGRESS** |
-| **G5** | Human adjudication and final source reconciliation | Pending |
+| **G4** | Independent critics and adversarial review | **PASS** |
+| **G5** | Human adjudication and final source reconciliation | **IN PROGRESS** |
 | **G6** | Target-user testing and external review | Pending |
 
 Completion of one gate does not automatically resolve uncertainty belonging to another gate.
@@ -179,7 +179,8 @@ Current translation evidence state:
 - **G1:** two genuinely independent complete EN → FI forward translations, 54/54 units each
 - **G2:** one complete synthesized Finnish candidate, 54/54 units
 - **G3:** one complete blind FI → EN back-translation, 54/54 units
-- **G4:** independent semantic, terminology, plain-language and adversarial criticism in progress
+- **G4:** two independent complete critic reviews, 54/54 units each; findings consolidated and audited
+- **G5:** explicit human disposition of every translatable unit in progress
 
 ---
 

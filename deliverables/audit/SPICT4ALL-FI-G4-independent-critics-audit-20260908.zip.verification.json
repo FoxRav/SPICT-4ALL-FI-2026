@@ -1,0 +1,171 @@
+{
+  "archive_verification": {
+    "zip": "SPICT4ALL-FI-G4-independent-critics-audit-20260908.zip",
+    "bytes": 112500,
+    "sha256": "7d89ea998282bf5b506c840d0a5865cecfb7298abbd741dbb35165f35c59bdee",
+    "members": 31,
+    "member_hashes": "PASS (every member, including audit metadata)",
+    "crc": "PASS",
+    "manifest_membership": "PASS",
+    "nested_archives": 0,
+    "coverage": "PASS (54/54)",
+    "corroborated": 7,
+    "critic_a_only": 0,
+    "critic_b_only": 14,
+    "human_approval_present": false,
+    "clinical_validation_claimed": false,
+    "finnish_revised": false,
+    "g5_created": false,
+    "g4_pass_claimed": false,
+    "critic_a_actual_model": "NOT_INDEPENDENTLY_RECORDED",
+    "critic_b_actual_model": "Cursor Grok 4.6",
+    "unexpected_files": 0
+  },
+  "post_packaging_repository_validation": {
+    "scope": "repository_after_final_zip_sealed",
+    "completed_at_utc": "2026-09-08T14:26:06.535012+00:00",
+    "tests_passed": 358,
+    "all_commands_passed": true,
+    "commands": [
+      {
+        "command": [
+          "python",
+          "scripts/validate_g4_critics.py"
+        ],
+        "exit_code": 0,
+        "stdout": "{\n  \"run_id\": \"G4-20260908-001\",\n  \"status\": \"PASS\",\n  \"combined_findings_sha256\": \"29d8ec2a0f8588de7a331088be0181eb169c84337e390d273957f2b86e1e5f19\"\n}\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "pytest",
+          "-p",
+          "no:cacheprovider"
+        ],
+        "exit_code": 0,
+        "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.12.14, pytest-8.4.2, pluggy-1.6.0\nrootdir: F:\\-DEV-\\120.Samin-PDF\nconfigfile: pyproject.toml\ntestpaths: tests\ncollected 358 items\n\ntests\\test_adjudication.py ............................                  [  7%]\ntests\\test_artifacts.py ..............................                   [ 16%]\ntests\\test_authority_attribution.py .................................... [ 26%]\n.......................                                                  [ 32%]\ntests\\test_canonical_units.py ......................                     [ 38%]\ntests\\test_coverage.py ....                                              [ 39%]\ntests\\test_forward_candidates.py ............                            [ 43%]\ntests\\test_g1_b_audit_package.py .......                                 [ 45%]\ntests\\test_g1_b_correction.py .....                                      [ 46%]\ntests\\test_g1_b_r2_audit_package.py .....                                [ 48%]\ntests\\test_g1_t1_isolation.py .                                          [ 48%]\ntests\\test_g2_synthesis.py .....                                         [ 49%]\ntests\\test_g3_backtranslation.py ......                                  [ 51%]\ntests\\test_g4_critics.py ......                                          [ 53%]\ntests\\test_governance.py ...                                             [ 53%]\ntests\\test_r5_security.py .............................                  [ 62%]\ntests\\test_requirements.py ....................................          [ 72%]\ntests\\test_review_reduction.py ............                              [ 75%]\ntests\\test_reviews_and_gates.py ..............                           [ 79%]\ntests\\test_runs_and_reports.py ....                                      [ 80%]\ntests\\test_sources.py .......                                            [ 82%]\ntests\\test_terminology.py .....................                          [ 88%]\ntests\\test_terminology_closure.py ......                                 [ 89%]\ntests\\test_terminology_enrichment.py ............................        [ 97%]\ntests\\test_units.py ........                                             [100%]\n\n======================= 358 passed in 66.13s (0:01:06) ========================\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "spict4all.cli",
+          "--root",
+          ".",
+          "verify-sources"
+        ],
+        "exit_code": 0,
+        "stdout": "PASS 20260521-Word-template-SPICT-4ALL-translations-2026.docx aea5e489ffc93f57ab3666572f65044fba8375aa5dda897d0ef2988c3a9f8581 66914 bytes\nPASS 20260130-Using-SPICT-4ALL-2025.docx 1b8ee715051ca53a27d0a2261a7f879face8a57727fbfd12fc6a830ef1c155ca 111045 bytes\nPASS 20260521-Word-template-SPICT-4ALL-translations-2026.pdf d22418ca1d1b68a2be762bcdf48ae0e6ad41ac41c8e3d76b419e9062d4357f72 223468 bytes\nPASS 20260521-Edits-for-SPICT-4ALL-translations-2025-and-2026.docx 0fff175b57c66f0dd45cd18c58b599758122e5285892c07da52ddf8a9130a27d 68949 bytes\nPASS canonical units: 53 unique, contiguous, hash-matched, source-resolved; exceptions=1\nPASS source requirements: 1 unique, schema-valid, provenance-linked, exact-text and change-spec completeness verified; marked paragraph elements=18, yellow runs=32, green runs=4, accent6 runs=1; requirement_ids=S4A-REQ-2026-001 (derived from data, not a Python allow-list)\nPASS governance data: 2 files hash-matched\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "spict4all.cli",
+          "--root",
+          ".",
+          "validate-requirements"
+        ],
+        "exit_code": 0,
+        "stdout": "PASS source requirements: 1 unique, schema-valid, provenance-linked, exact-text and change-spec completeness verified; marked paragraph elements=18, yellow runs=32, green runs=4, accent6 runs=1; requirement_ids=S4A-REQ-2026-001 (derived from data, not a Python allow-list)\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "spict4all.cli",
+          "--root",
+          ".",
+          "validate-canonical"
+        ],
+        "exit_code": 0,
+        "stdout": "PASS canonical units: 53 source-resolved; direct=52, normalized=1, exceptions=1\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "spict4all.cli",
+          "--root",
+          ".",
+          "validate-governance"
+        ],
+        "exit_code": 0,
+        "stdout": "PASS governance data: 2 files hash-matched\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "spict4all.cli",
+          "--root",
+          ".",
+          "validate-terminology"
+        ],
+        "exit_code": 0,
+        "stdout": "PASS terminology evidence: sources=5, extracted=136, source_provided_english=41, conflicts=6, approved=0, relevance_matches=0\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "compileall",
+          "-q",
+          "src",
+          "scripts",
+          "tests"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "mypy",
+          "--strict",
+          "src/spict4all"
+        ],
+        "exit_code": 0,
+        "stdout": "Success: no issues found in 33 source files\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "ruff",
+          "check",
+          "src",
+          "scripts",
+          "tests"
+        ],
+        "exit_code": 0,
+        "stdout": "All checks passed!\n",
+        "stderr": ""
+      }
+    ]
+  },
+  "original_payload_unchanged": true,
+  "critic_outputs_unchanged": true,
+  "g2_finnish_unchanged": true,
+  "g3_back_translation_unchanged": true,
+  "human_approval_present": false,
+  "clinical_validation_claimed": false,
+  "finnish_revised": false,
+  "g5_created": false,
+  "g4_pass_claimed": false,
+  "critic_a_actual_model": "NOT_INDEPENDENTLY_RECORDED",
+  "critic_b_actual_model": "Cursor Grok 4.6",
+  "secret_screening": "PASS: explicit allowlisted content, known credential-pattern scan; no caches or credential stores included",
+  "git_state_after_packaging": "git rev-parse HEAD\n694012ffb1f49b9b9e9878078cfa0da4e98f23ce\n\ngit branch --show-current\nmain\n\ngit status --short --untracked-files=all\n M src/spict4all/g1_t1_isolation.py\n M src/spict4all/g2_synthesis.py\n M src/spict4all/g3_backtranslation.py\n M tests/conftest.py\n M tests/test_g1_t1_isolation.py\n M tests/test_g2_synthesis.py\n?? deliverables/audit/SPICT4ALL-FI-G4-independent-critics-audit-20260908.zip\n?? deliverables/audit/SPICT4ALL-FI-G4-independent-critics-audit-20260908.zip.members.sha256\n?? deliverables/audit/SPICT4ALL-FI-G4-independent-critics-audit-20260908.zip.sha256\n?? scripts/create_g4_critics_audit.py\n?? scripts/validate_g4_critics.py\n?? scripts/verify_g4_critics_audit.py\n?? scripts/write_g4_critics_metadata.py\n?? src/spict4all/g4_critics.py\n?? tests/test_g4_critics.py\n?? work/critics/G4-20260908-001/G4_REVIEW_REPORT.md\n?? work/critics/G4-20260908-001/combined_findings.jsonl\n?? work/critics/G4-20260908-001/critic-a.jsonl\n?? work/critics/G4-20260908-001/critic-b.jsonl\n?? work/critics/G4-20260908-001/review_input.jsonl\n?? work/critics/G4-20260908-001/run_metadata.json\n?? work/critics/G4-20260908-001/validation_results.json\n\nNo commit performed. No push performed. G5 was not created.\nNo Finnish candidate was changed. No G3 output was changed. No critic output was changed. No human adjudication.\nCritic A and Critic B were run independently. Neither critic saw the other critic's findings. This consolidation does not alter either critic output, does not reconcile proposed Finnish wording into a new candidate, and is not human adjudication.\nCritic B and G2 synthesis both used Cursor Grok 4.6. This same-family limitation does not invalidate Critic B. Independent cross-family review evidence cannot be claimed from Critic A in this package because Critic A's actual model is not independently recorded.\n"
+}

@@ -1,0 +1,54 @@
+{
+  "clinical_validation_claimed": false,
+  "created_at_utc": "2026-09-08T14:23:09.312368Z",
+  "critic_a_actual_model": "NOT_INDEPENDENTLY_RECORDED",
+  "critic_a_provenance_limitation": "No operator-stated actual model for Critic A is recorded in WP-G4-CONSOLIDATION-AUDIT-001. This package does not infer Critic A's model from config/model_roles.yaml or from critic prompt files.",
+  "critic_b_actual_model": "Cursor Grok 4.6",
+  "critic_b_provenance_basis": "Recorded from the operator Critic B review prompt for G4-20260908-001 (ACTUAL MODEL: Cursor Grok 4.6). No independent API request log is packaged.",
+  "critic_outputs_changed": false,
+  "finnish_revised": false,
+  "g2_actual_model": "Cursor Grok 4.6",
+  "g3_changed": false,
+  "g4_status": "INDEPENDENT_CRITICS_COMPLETE_AWAITING_G5",
+  "g5_created": false,
+  "human_adjudication_performed": false,
+  "independence_statement": "Critic A and Critic B were run independently. Neither critic saw the other critic's findings. This consolidation does not alter either critic output, does not reconcile proposed Finnish wording into a new candidate, and is not human adjudication.",
+  "inputs": [
+    {
+      "bytes": 7659,
+      "path": "F:\\-DEV-\\120.Samin-PDF\\work\\backtranslation\\G3-20260908-001\\back_translation.jsonl",
+      "sha256": "e674a7f0a69ed05c554eaade38e4dbd8025c1f34df0499a8fc4cc9a15c99f00f"
+    },
+    {
+      "bytes": 33689,
+      "path": "F:\\-DEV-\\120.Samin-PDF\\work\\critics\\G4-20260908-001\\critic-a.jsonl",
+      "sha256": "e527f6b999d3e06aeaa883de26264a9b29dc3e394c2f9f8d5437797dbba72daf"
+    },
+    {
+      "bytes": 45523,
+      "path": "F:\\-DEV-\\120.Samin-PDF\\work\\critics\\G4-20260908-001\\critic-b.jsonl",
+      "sha256": "ba0bb2822a4cb711d51388e025deb73ea25980f22a435e81e7bc9864d1ace52e"
+    },
+    {
+      "bytes": 27845,
+      "path": "F:\\-DEV-\\120.Samin-PDF\\work\\critics\\G4-20260908-001\\review_input.jsonl",
+      "sha256": "5a07c32c9680032eaa69f268b8160c3460f1b2ebdf7c9a6b547688b81d4f526f"
+    },
+    {
+      "bytes": 79131,
+      "path": "F:\\-DEV-\\120.Samin-PDF\\work\\synthesis\\G2-20260908-001\\candidates.jsonl",
+      "sha256": "76462191d3ad2a83c878982a1460443f322437e547b747f6267f4a29d887c619"
+    }
+  ],
+  "output": {
+    "bytes": 70891,
+    "path": "F:\\-DEV-\\120.Samin-PDF\\work\\critics\\G4-20260908-001\\combined_findings.jsonl",
+    "sha256": "29d8ec2a0f8588de7a331088be0181eb169c84337e390d273957f2b86e1e5f19"
+  },
+  "role": "G4 critic consolidation (Critic A actual model: NOT_INDEPENDENTLY_RECORDED; Critic B actual model: Cursor Grok 4.6)",
+  "run_id": "G4-20260908-001",
+  "same_family_limitation": "Critic B and G2 synthesis both used Cursor Grok 4.6. This same-family limitation does not invalidate Critic B. Independent cross-family review evidence cannot be claimed from Critic A in this package because Critic A's actual model is not independently recorded.",
+  "status": "DRAFT",
+  "tool_version": "0.1.0",
+  "work_package": "WP-G4-CONSOLIDATION-AUDIT-001"
+}
