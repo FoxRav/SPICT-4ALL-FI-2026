@@ -57,6 +57,7 @@ def test_portal_rejects_changed_data(tmp_path: Path, mutation: str) -> None:
     ("review-portal/worker/wrangler.toml", 'GITHUB_EVIDENCE_REPOSITORY = "FoxRav/SPICT-4ALL-FI-2026-review-evidence"', 'GITHUB_EVIDENCE_REPOSITORY = ""'),
     ("review-portal/worker/wrangler.toml", 'PUBLICATION_AUTHORIZED = "true"', 'PUBLICATION_AUTHORIZED = "false"'),
     ("review-portal/worker/wrangler.toml", 'workers_dev = true', 'workers_dev = false'),
+    ("review-portal/worker/wrangler.toml", 'preview_urls = false', 'preview_urls = true'),
     ("review-portal/worker/wrangler.toml", 'ALLOWED_ORIGIN = "https://foxrav.github.io"', 'ALLOWED_ORIGIN = "*"'),
     ("review-portal/site/review/sami/index.html", 'minlength="24"', 'minlength="1"'),
     ("review-portal/worker/wrangler.toml", '["GITHUB_TOKEN", "REVIEW_ACCESS_CODE"]', '["GITHUB_TOKEN"]'),
@@ -83,3 +84,20 @@ def test_force_tracked_local_secret_file_rejected_without_reading(tmp_path: Path
     subprocess.run(["git", "add", "-f", ".dev.vars"], cwd=tmp_path, check=True)
     with pytest.raises(AssertionError, match="tracked"):
         MODULE.validate_local_secrets(tmp_path)
+
+
+@pytest.mark.parametrize("endpoint", [
+    "",
+    "http://spict-sami-review.mmvirta75.workers.dev/submit",
+    "https://other.workers.dev/submit",
+    "https://spict-sami-review.mmvirta75.workers.dev/other",
+    "https://user:password@spict-sami-review.mmvirta75.workers.dev/submit",
+    "https://spict-sami-review.mmvirta75.workers.dev/submit?query=1",
+    "https://spict-sami-review.mmvirta75.workers.dev/submit#fragment",
+    "https://spict-sami-review.mmvirta75.workers.dev:443/submit",
+])
+def test_production_endpoint_rejects_variants(tmp_path: Path, endpoint: str) -> None:
+    test_activation_safety_regressions(
+        tmp_path, "review-portal/site/review/sami/runtime-config.js",
+        "https://spict-sami-review.mmvirta75.workers.dev/submit", endpoint,
+    )

@@ -2,6 +2,11 @@ PUBLICATION_STATUS: CONTROLLED_G5_REVIEWER_ACTIVATION_CONFIGURED
 
 Controlled G5 reviewer portal activation is configured with workers_dev = true
 and PUBLICATION_AUTHORIZED = "true". This work package performs no deployment.
+Production Worker: DEPLOYED (Project Owner reported).
+Worker version: 2623a7f5-eb6c-45ab-a164-f01c6468867e
+Endpoint: https://spict-sami-review.mmvirta75.workers.dev/submit
+GitHub Pages frontend: NOT YET DEPLOYED.
+preview_urls = false is configured locally; no deployment is performed to apply it here.
 This is NOT SPICT approval, NOT clinical validation and NOT final publication.
 The six-item domain-review candidate remains frozen at:
 6a1a270a9d41953000b401256af0d58f7a3c0576
@@ -18,4 +23,5 @@ site artifact may be deployed, and no push-triggered deployment is allowed.
 
 Configured evidence repository: FoxRav/SPICT-4ALL-FI-2026-review-evidence.
 The Worker must verify it is PRIVATE before every Issue creation.
-No secret values, runtime URL or Pages workflow are changed by this work package.
+The frontend runtime URL is configured to the production endpoint above.
+No secret values or Pages workflow are changed by this work package.

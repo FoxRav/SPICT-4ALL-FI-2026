@@ -15,6 +15,11 @@ Run: `G5-20260908-001`. Units: 017, 021, 025, 026, 045, 049 (S4A-2026 prefix).
 ## Controlled G5 reviewer activation
 
 See PUBLICATION_STATUS.md. Controlled G5 reviewer portal activation is configured;
+the production Worker is DEPLOYED, as reported by the Project Owner, at
+https://spict-sami-review.mmvirta75.workers.dev/submit
+(version 2623a7f5-eb6c-45ab-a164-f01c6468867e).
+The GitHub Pages frontend is NOT YET DEPLOYED; default-branch workflow bootstrap
+is still required as described below.
 this is NOT SPICT approval, NOT clinical validation and NOT final publication.
 The six-item candidate remains frozen at the SHA above. Submission requires
 REVIEW_ACCESS_CODE; incoming GitHub Issues are evidence only, not adjudication.
@@ -38,8 +43,9 @@ npm --prefix review-portal/worker test
 .venv\Scripts\python -m http.server 8000 --bind 127.0.0.1 --directory review-portal/site
 ```
 
-Open `http://127.0.0.1:8000/review/sami/`. Submission is disabled with
-"Submission endpoint not configured". No secret is needed for UI preview.
+Open `http://127.0.0.1:8000/review/sami/`. No secret is needed for UI preview.
+The runtime now points to the production endpoint. Do not submit during a local
+UI preview; production CORS accepts only https://foxrav.github.io.
 The builder reads frozen Git blobs and refuses live evidence drift. Deterministic
 JSON uses UTF-8, sorted keys, two-space indentation, LF, and a trailing newline.
 The SHA-256 covers the exact review-data.json bytes. Metadata is separate to avoid
@@ -82,7 +88,8 @@ closed if the configured secret falls outside that range. No actual code is incl
 Nonsecret Worker vars: `ALLOWED_ORIGIN` (production `https://foxrav.github.io`),
 `GITHUB_EVIDENCE_REPOSITORY` (configured value
 `FoxRav/SPICT-4ALL-FI-2026-review-evidence`), `PUBLICATION_AUTHORIZED`
-(exact `true` for controlled G5 reviewer use). `workers_dev` is `true`.
+(exact `true` for controlled G5 reviewer use). `workers_dev` is `true` and
+`preview_urls` is `false` in local configuration. This change is not deployed here.
 Origin matching is exact; wildcard is refused. For local Worker integration use a
 separate local environment and localhost origin, never production credentials.
 Wrangler observability is disabled; our code does not collect IPs or log payloads.
@@ -91,9 +98,10 @@ Hosting providers may maintain their own service logs independently.
 For a separately authorized deployment: install an approved Wrangler version,
 authenticate to the correct Cloudflare account, provision secrets and deploy with
 `npx wrangler deploy`. workers.dev is already enabled in configuration.
-Then put the actual HTTPS `/submit` URL into runtime-config.js `workerSubmitUrl`.
-Do not invent a URL. Adjust the validator's initial-blank-config check in that
-separate authorized activation change. No token or access code belongs in config.
+runtime-config.js `workerSubmitUrl` is already set to the exact production endpoint:
+https://spict-sami-review.mmvirta75.workers.dev/submit
+The validator requires that HTTPS host and `/submit` path with no credentials,
+query or fragment. No token or access code belongs in config.
 
 DEFAULT_BRANCH_WORKFLOW_BOOTSTRAP_REQUIRED
 

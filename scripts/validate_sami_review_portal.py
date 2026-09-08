@@ -5,6 +5,7 @@ import re
 import subprocess
 import tomllib
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from build_sami_review_portal import ROOT, artifacts
 
@@ -34,7 +35,20 @@ def validate(root: Path = ROOT) -> None:
     for value in ("ACCEPT_CURRENT", "ACCEPT_WITH_EDIT", "NEEDS_FURTHER_CLINICAL_OR_TERMINOLOGY_REVIEW"):
         assert value in js
     assert "innerHTML" not in js and "eval(" not in js
-    assert 'workerSubmitUrl: ""' in (site / "runtime-config.js").read_text()
+    runtime = (site / "runtime-config.js").read_text(encoding="utf-8")
+    match = re.fullmatch(
+        r'\s*window\.REVIEW_RUNTIME_CONFIG\s*=\s*Object\.freeze\(\{\s*'
+        r'workerSubmitUrl:\s*"([^"]+)"\s*\}\);\s*', runtime,
+    )
+    assert match, "Unexpected runtime configuration"
+    endpoint = match.group(1)
+    url = urlsplit(endpoint)
+    assert url.scheme == "https"
+    assert url.hostname == "spict-sami-review.mmvirta75.workers.dev"
+    assert url.path == "/submit"
+    assert url.username is None and url.password is None
+    assert not url.query and not url.fragment
+    assert endpoint == "https://spict-sami-review.mmvirta75.workers.dev/submit"
     assert "PUBLICATION_STATUS: CONTROLLED_G5_REVIEWER_ACTIVATION_CONFIGURED" in (root / "review-portal/PUBLICATION_STATUS.md").read_text()
     workflow = (root / ".github/workflows/pages-review.yml").read_text()
     assert "workflow_dispatch:" in workflow and "push:" not in workflow
@@ -62,6 +76,7 @@ def validate(root: Path = ROOT) -> None:
     wrangler = (root / "review-portal/worker/wrangler.toml").read_text()
     worker_config = tomllib.loads(wrangler)
     assert worker_config["workers_dev"] is True
+    assert worker_config["preview_urls"] is False
     assert worker_config["secrets"] == {"required": ["GITHUB_TOKEN", "REVIEW_ACCESS_CODE"]}
     worker_vars = worker_config["vars"]
     assert worker_vars == {
