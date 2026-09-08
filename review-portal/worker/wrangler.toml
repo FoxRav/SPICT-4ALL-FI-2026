@@ -5,7 +5,7 @@ workers_dev = false
 
 [vars]
 ALLOWED_ORIGIN = "https://foxrav.github.io"
-GITHUB_EVIDENCE_REPOSITORY = ""
+GITHUB_EVIDENCE_REPOSITORY = "FoxRav/SPICT-4ALL-FI-2026-review-evidence"
 PUBLICATION_AUTHORIZED = "false"
 
 [observability]

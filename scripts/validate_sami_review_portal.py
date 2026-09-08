@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+import tomllib
 from pathlib import Path
 
 from build_sami_review_portal import ROOT, artifacts
@@ -44,7 +45,12 @@ def validate(root: Path = ROOT) -> None:
     assert 'edit.maxLength = 2000' in js and 'rationale.maxLength = 1200' in js
     assert "issue-link" not in html and "result.issue_url" not in js
     wrangler = (root / "review-portal/worker/wrangler.toml").read_text()
-    assert 'GITHUB_EVIDENCE_REPOSITORY = ""' in wrangler
+    worker_vars = tomllib.loads(wrangler)["vars"]
+    assert worker_vars == {
+        "GITHUB_EVIDENCE_REPOSITORY": "FoxRav/SPICT-4ALL-FI-2026-review-evidence",
+        "PUBLICATION_AUTHORIZED": "false",
+        "ALLOWED_ORIGIN": "https://foxrav.github.io",
+    }
     assert 'GITHUB_REPOSITORY' not in wrangler
     for path in (root / "review-portal").rglob("*"):
         if not path.is_file():

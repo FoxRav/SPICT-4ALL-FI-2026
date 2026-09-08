@@ -52,7 +52,10 @@ def test_portal_rejects_changed_data(tmp_path: Path, mutation: str) -> None:
     ("review-portal/README.md", "DEFAULT_BRANCH_WORKFLOW_BOOTSTRAP_REQUIRED", "omitted"),
     ("review-portal/PUBLICATION_STATUS.md", "DEFAULT_BRANCH_WORKFLOW_BOOTSTRAP_REQUIRED", "omitted"),
     (".github/workflows/pages-review.yml", "11bd71901bbe5b1630ceea73d27597364c9af683", "v4"),
-    ("review-portal/worker/wrangler.toml", 'GITHUB_EVIDENCE_REPOSITORY = ""', 'GITHUB_EVIDENCE_REPOSITORY = "public/repo"'),
+    ("review-portal/worker/wrangler.toml", 'GITHUB_EVIDENCE_REPOSITORY = "FoxRav/SPICT-4ALL-FI-2026-review-evidence"', 'GITHUB_EVIDENCE_REPOSITORY = "public/repo"'),
+    ("review-portal/worker/wrangler.toml", 'GITHUB_EVIDENCE_REPOSITORY = "FoxRav/SPICT-4ALL-FI-2026-review-evidence"', 'GITHUB_EVIDENCE_REPOSITORY = ""'),
+    ("review-portal/worker/wrangler.toml", 'PUBLICATION_AUTHORIZED = "false"', 'PUBLICATION_AUTHORIZED = "true"'),
+    ("review-portal/worker/wrangler.toml", 'ALLOWED_ORIGIN = "https://foxrav.github.io"', 'ALLOWED_ORIGIN = "*"'),
     ("review-portal/site/review/sami/index.html", 'minlength="24"', 'minlength="1"'),
 ])
 def test_activation_safety_regressions(tmp_path: Path, target: str, old: str, new: str) -> None:
