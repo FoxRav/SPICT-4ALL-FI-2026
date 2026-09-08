@@ -1,7 +1,7 @@
 name = "spict-sami-review"
 main = "src/index.js"
 compatibility_date = "2026-09-08"
-workers_dev = false
+workers_dev = true
 
 [secrets]
 required = ["GITHUB_TOKEN", "REVIEW_ACCESS_CODE"]
@@ -9,7 +9,7 @@ required = ["GITHUB_TOKEN", "REVIEW_ACCESS_CODE"]
 [vars]
 ALLOWED_ORIGIN = "https://foxrav.github.io"
 GITHUB_EVIDENCE_REPOSITORY = "FoxRav/SPICT-4ALL-FI-2026-review-evidence"
-PUBLICATION_AUTHORIZED = "false"
+PUBLICATION_AUTHORIZED = "true"
 
 [observability]
 enabled = false

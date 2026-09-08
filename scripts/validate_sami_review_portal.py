@@ -35,7 +35,7 @@ def validate(root: Path = ROOT) -> None:
         assert value in js
     assert "innerHTML" not in js and "eval(" not in js
     assert 'workerSubmitUrl: ""' in (site / "runtime-config.js").read_text()
-    assert "PUBLICATION_STATUS: BLOCKED_PENDING_SPICT_PERMISSION_CONFIRMATION" in (root / "review-portal/PUBLICATION_STATUS.md").read_text()
+    assert "PUBLICATION_STATUS: CONTROLLED_G5_REVIEWER_ACTIVATION_CONFIGURED" in (root / "review-portal/PUBLICATION_STATUS.md").read_text()
     workflow = (root / ".github/workflows/pages-review.yml").read_text()
     assert "workflow_dispatch:" in workflow and "push:" not in workflow
     assert "SPICT_REVIEW_PORTAL_PUBLICATION_AUTHORIZED" in workflow
@@ -61,11 +61,12 @@ def validate(root: Path = ROOT) -> None:
     assert "issue-link" not in html and "result.issue_url" not in js
     wrangler = (root / "review-portal/worker/wrangler.toml").read_text()
     worker_config = tomllib.loads(wrangler)
+    assert worker_config["workers_dev"] is True
     assert worker_config["secrets"] == {"required": ["GITHUB_TOKEN", "REVIEW_ACCESS_CODE"]}
     worker_vars = worker_config["vars"]
     assert worker_vars == {
         "GITHUB_EVIDENCE_REPOSITORY": "FoxRav/SPICT-4ALL-FI-2026-review-evidence",
-        "PUBLICATION_AUTHORIZED": "false",
+        "PUBLICATION_AUTHORIZED": "true",
         "ALLOWED_ORIGIN": "https://foxrav.github.io",
     }
     assert 'GITHUB_REPOSITORY' not in wrangler

@@ -12,10 +12,13 @@ Frozen review candidate: `6a1a270a9d41953000b401256af0d58f7a3c0576`.
 This constant must never be replaced with a portal implementation commit.
 Run: `G5-20260908-001`. Units: 017, 021, 025, 026, 045, 049 (S4A-2026 prefix).
 
-## Publication block
+## Controlled G5 reviewer activation
 
-See PUBLICATION_STATUS.md. Both deployments remain blocked pending explicit
-Project Owner confirmation of SPICT source-publication permission. Pages is public,
+See PUBLICATION_STATUS.md. Controlled G5 reviewer portal activation is configured;
+this is NOT SPICT approval, NOT clinical validation and NOT final publication.
+The six-item candidate remains frozen at the SHA above. Submission requires
+REVIEW_ACCESS_CODE; incoming GitHub Issues are evidence only, not adjudication.
+This work package performs no deployment or Issue creation. Pages is public,
 including its JSON data; the submission code does not protect page reading.
 The evidence repository MUST be PRIVATE before activation. The Worker verifies
 its privacy through the GitHub repository API before each Issue creation. Missing,
@@ -44,7 +47,7 @@ a self-referential hash. Source SHA-256 remains mapped by unit in Worker config 
 is copied into normalized submission evidence. Public unit JSON uses an exact
 field whitelist and excludes critic alternatives.
 
-## Configuration and future activation (do not execute while blocked)
+## Configuration and deployment reference (no deployment in this work package)
 
 ### Local development secret handling
 
@@ -60,7 +63,8 @@ REVIEW_ACCESS_CODE="..."
 Never paste a PAT into source files. Local `wrangler dev` may load this file;
 this does not deploy the Worker. No local secrets file is supplied by this project.
 The `[secrets] required` declaration lists only the two required secret names.
-Publication remains blocked with `PUBLICATION_AUTHORIZED = "false"`.
+Controlled reviewer use is configured with `PUBLICATION_AUTHORIZED = "true"`
+and `workers_dev = true`; secret values are not included in configuration.
 Validation checks ignore behavior and rejects tracked local secret files without
 reading their contents; ignored local secret values are excluded from file scans.
 
@@ -68,7 +72,7 @@ Required Worker secrets: `GITHUB_TOKEN`, `REVIEW_ACCESS_CODE`. Set them with
 `npx wrangler secret put GITHUB_TOKEN` and `npx wrangler secret put REVIEW_ACCESS_CODE`
 from review-portal/worker, entering values interactively. Never put secrets in
 files, command arguments, URLs, frontend config, logs, or Issues. Use a fine-grained
-GitHub PAT restricted only to the intended future PRIVATE repository
+GitHub PAT restricted only to the configured PRIVATE repository
 FoxRav/SPICT-4ALL-FI-2026-review-evidence, with **Issues: Read and write**
 (and GitHub's implicit metadata read permission). No broader permission is needed.
 The production access code must be cryptographically random, 24–256 characters,
@@ -76,17 +80,17 @@ and shared with Sami separately; rotate it after the review. The Worker fails
 closed if the configured secret falls outside that range. No actual code is included.
 
 Nonsecret Worker vars: `ALLOWED_ORIGIN` (production `https://foxrav.github.io`),
-`GITHUB_EVIDENCE_REPOSITORY` (initially blank; intended future value
+`GITHUB_EVIDENCE_REPOSITORY` (configured value
 `FoxRav/SPICT-4ALL-FI-2026-review-evidence`), `PUBLICATION_AUTHORIZED`
-(initially `false`; set to exact `true` only after permission confirmation).
+(exact `true` for controlled G5 reviewer use). `workers_dev` is `true`.
 Origin matching is exact; wildcard is refused. For local Worker integration use a
 separate local environment and localhost origin, never production credentials.
 Wrangler observability is disabled; our code does not collect IPs or log payloads.
 Hosting providers may maintain their own service logs independently.
 
-After permission: install an approved Wrangler version, authenticate to the correct
-Cloudflare account, provision secrets, set authorized vars, configure an HTTPS route
-or deliberately enable workers.dev, and deploy with `npx wrangler deploy`.
+For a separately authorized deployment: install an approved Wrangler version,
+authenticate to the correct Cloudflare account, provision secrets and deploy with
+`npx wrangler deploy`. workers.dev is already enabled in configuration.
 Then put the actual HTTPS `/submit` URL into runtime-config.js `workerSubmitUrl`.
 Do not invent a URL. Adjust the validator's initial-blank-config check in that
 separate authorized activation change. No token or access code belongs in config.
