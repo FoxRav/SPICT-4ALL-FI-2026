@@ -1,0 +1,14 @@
+git rev-parse HEAD
+d1561e15f73d15654df630f80725bd5bf665971e
+
+git branch --show-current
+main
+
+git status --short --untracked-files=all
+ M src/spict4all/g1_t1_isolation.py
+ M tests/conftest.py
+ M tests/test_g1_t1_isolation.py
+?? scripts/create_g1_gate_closure.py
+?? scripts/verify_g1_gate_closure.py
+
+No push performed. Finnish translation candidates were not rewritten. G2 was not started.

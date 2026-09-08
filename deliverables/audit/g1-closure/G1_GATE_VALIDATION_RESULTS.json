@@ -1,0 +1,214 @@
+{
+  "work_package": "WP-G1-GATE-CLOSURE-001",
+  "checked_at_utc": "2026-09-08T12:08:05.558250+00:00",
+  "stage": "BEFORE_SEALING",
+  "tests_passed": 341,
+  "live_evidence": "PASS",
+  "source_universe_equality": "PASS",
+  "candidate_hashes": {
+    "work/agent-a/candidates.jsonl": "82d06571c855c87d04e015bf905b1943c5fcd31e68827695fd4cfceb52f4c2cd",
+    "work/agent-b/candidates.jsonl": "0bb36348713bf951fb5166c4ebed53d66afc6f3436c5790d790d0a53fe23f640",
+    "work/agent-b/runs/G1-B-20260908-002/candidates.jsonl": "6033c9970d0b61fd64dfc5c0350b6c97a9ba3cf35725d2f8db7aee79752a25a1"
+  },
+  "upstream_zip_hashes": {
+    "SPICT4ALL-FI-G1-A-forward-translation-audit-20260908.zip": {
+      "path": "deliverables/audit/SPICT4ALL-FI-G1-A-forward-translation-audit-20260908.zip",
+      "sha256": "cfffef8b6adac0586d00c3ca450143626a710ec40cff2b7d99b969f0a7970cd2",
+      "bytes": 2938533,
+      "verification_status": "PASS",
+      "nested_in_closure_zip": false
+    },
+    "SPICT4ALL-FI-G1-B-R2-forward-translation-audit-20260908.zip": {
+      "path": "deliverables/audit/SPICT4ALL-FI-G1-B-R2-forward-translation-audit-20260908.zip",
+      "sha256": "459f79ede3abde0c0e64a9e7c63b4549a4c1911c1bbe702b2f63ec6485729f4b",
+      "bytes": 2992334,
+      "verification_status": "PASS",
+      "nested_in_closure_zip": false
+    }
+  },
+  "upstream_g1_a_verification": {
+    "zip": "SPICT4ALL-FI-G1-A-forward-translation-audit-20260908.zip",
+    "bytes": 2938533,
+    "sha256": "cfffef8b6adac0586d00c3ca450143626a710ec40cff2b7d99b969f0a7970cd2",
+    "member_count": 169,
+    "member_hashes": "PASS: every member",
+    "crc": "PASS",
+    "manifest_membership": "PASS",
+    "candidate_coverage": "PASS: exactly 54, 53 canonical + 1 requirement; no duplicates/missing/extra",
+    "source_hashes_exact_english_frozen_records": "PASS",
+    "all_candidates_draft_nonblank": true,
+    "approved_glossary_rows": 0,
+    "official_sources": 4,
+    "terminology_sources": 5,
+    "run_input_hashes": "PASS: archive-relative resolution",
+    "original_artifact_manifest": "PASS",
+    "authority_states_preserved": true,
+    "independence_contamination": "PASS: no prohibited member paths; explicit current-worktree allowlist",
+    "secret_screening": "PASS: known credential patterns; no credential stores selected",
+    "independent_source_provenance": {
+      "schema": "PASS",
+      "coverage": 54,
+      "source_provenance": "PASS: recomputed from frozen DOCX and governance",
+      "checkout_independent": true
+    }
+  },
+  "upstream_g1_b_r2_verification": {
+    "zip": "SPICT4ALL-FI-G1-B-R2-forward-translation-audit-20260908.zip",
+    "bytes": 2992334,
+    "sha256": "459f79ede3abde0c0e64a9e7c63b4549a4c1911c1bbe702b2f63ec6485729f4b",
+    "members": 175,
+    "member_hashes": "PASS (every member, including audit metadata)",
+    "crc": "PASS",
+    "source_integrity": "PASS (4 frozen official files; original and corrected hashes match frozen units/requirements)",
+    "candidate_coverage": "PASS (54/54; 53 canonical + 1 source requirement)",
+    "original_run_unchanged": true,
+    "corrected_run_id": "G1-B-20260908-002",
+    "changed_unit_ids": [
+      "S4A-2026-001",
+      "S4A-2026-004",
+      "S4A-2026-014",
+      "S4A-2026-017",
+      "S4A-2026-042"
+    ],
+    "independence_contamination": "PASS (no Agent A, synthesis, back-translation, critic, or sibling-worktree members)",
+    "approved_glossary_rows": 0,
+    "recorded_schema_status": "READY_FOR_SYNTHESIS",
+    "human_approval_present": false,
+    "actual_model": "Cursor Grok 4.6",
+    "translation_evidence_unchanged": true,
+    "unexpected_files": 0,
+    "nested_archives": 0
+  },
+  "later_gate_files": [],
+  "t1_baseline": "2aa066fdba27fa083ff9ad78f285c0751d3f085f",
+  "t1_validator_files_unchanged": true,
+  "human_approval_present": false,
+  "clinical_validation_claimed": false,
+  "g2_started": false,
+  "repository_validation": {
+    "scope": "repository_before_sealing",
+    "completed_at_utc": "2026-09-08T12:08:05.508044+00:00",
+    "tests_passed": 341,
+    "all_commands_passed": true,
+    "commands": [
+      {
+        "command": [
+          "python",
+          "-m",
+          "pytest",
+          "-p",
+          "no:cacheprovider"
+        ],
+        "exit_code": 0,
+        "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.12.14, pytest-8.4.2, pluggy-1.6.0\nrootdir: F:\\-DEV-\\120.Samin-PDF\nconfigfile: pyproject.toml\ntestpaths: tests\ncollected 341 items\n\ntests\\test_adjudication.py ............................                  [  8%]\ntests\\test_artifacts.py ..............................                   [ 17%]\ntests\\test_authority_attribution.py .................................... [ 27%]\n.......................                                                  [ 34%]\ntests\\test_canonical_units.py ......................                     [ 40%]\ntests\\test_coverage.py ....                                              [ 41%]\ntests\\test_forward_candidates.py ............                            [ 45%]\ntests\\test_g1_b_audit_package.py .......                                 [ 47%]\ntests\\test_g1_b_correction.py .....                                      [ 48%]\ntests\\test_g1_b_r2_audit_package.py .....                                [ 50%]\ntests\\test_g1_t1_isolation.py .                                          [ 50%]\ntests\\test_governance.py ...                                             [ 51%]\ntests\\test_r5_security.py .............................                  [ 60%]\ntests\\test_requirements.py ....................................          [ 70%]\ntests\\test_review_reduction.py ............                              [ 74%]\ntests\\test_reviews_and_gates.py ..............                           [ 78%]\ntests\\test_runs_and_reports.py ....                                      [ 79%]\ntests\\test_sources.py .......                                            [ 81%]\ntests\\test_terminology.py .....................                          [ 87%]\ntests\\test_terminology_closure.py ......                                 [ 89%]\ntests\\test_terminology_enrichment.py ............................        [ 97%]\ntests\\test_units.py ........                                             [100%]\n\n============================ 341 passed in 51.30s =============================\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "spict4all.cli",
+          "--root",
+          ".",
+          "verify-sources"
+        ],
+        "exit_code": 0,
+        "stdout": "PASS 20260521-Word-template-SPICT-4ALL-translations-2026.docx aea5e489ffc93f57ab3666572f65044fba8375aa5dda897d0ef2988c3a9f8581 66914 bytes\nPASS 20260130-Using-SPICT-4ALL-2025.docx 1b8ee715051ca53a27d0a2261a7f879face8a57727fbfd12fc6a830ef1c155ca 111045 bytes\nPASS 20260521-Word-template-SPICT-4ALL-translations-2026.pdf d22418ca1d1b68a2be762bcdf48ae0e6ad41ac41c8e3d76b419e9062d4357f72 223468 bytes\nPASS 20260521-Edits-for-SPICT-4ALL-translations-2025-and-2026.docx 0fff175b57c66f0dd45cd18c58b599758122e5285892c07da52ddf8a9130a27d 68949 bytes\nPASS canonical units: 53 unique, contiguous, hash-matched, source-resolved; exceptions=1\nPASS source requirements: 1 unique, schema-valid, provenance-linked, exact-text and change-spec completeness verified; marked paragraph elements=18, yellow runs=32, green runs=4, accent6 runs=1; requirement_ids=S4A-REQ-2026-001 (derived from data, not a Python allow-list)\nPASS governance data: 2 files hash-matched\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "spict4all.cli",
+          "--root",
+          ".",
+          "validate-requirements"
+        ],
+        "exit_code": 0,
+        "stdout": "PASS source requirements: 1 unique, schema-valid, provenance-linked, exact-text and change-spec completeness verified; marked paragraph elements=18, yellow runs=32, green runs=4, accent6 runs=1; requirement_ids=S4A-REQ-2026-001 (derived from data, not a Python allow-list)\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "spict4all.cli",
+          "--root",
+          ".",
+          "validate-canonical"
+        ],
+        "exit_code": 0,
+        "stdout": "PASS canonical units: 53 source-resolved; direct=52, normalized=1, exceptions=1\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "spict4all.cli",
+          "--root",
+          ".",
+          "validate-governance"
+        ],
+        "exit_code": 0,
+        "stdout": "PASS governance data: 2 files hash-matched\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "spict4all.cli",
+          "--root",
+          ".",
+          "validate-terminology"
+        ],
+        "exit_code": 0,
+        "stdout": "PASS terminology evidence: sources=5, extracted=136, source_provided_english=41, conflicts=6, approved=0, relevance_matches=0\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "compileall",
+          "-q",
+          "src",
+          "scripts",
+          "tests"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "mypy",
+          "--strict",
+          "src/spict4all"
+        ],
+        "exit_code": 0,
+        "stdout": "Success: no issues found in 29 source files\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "ruff",
+          "check",
+          "src",
+          "scripts",
+          "tests"
+        ],
+        "exit_code": 0,
+        "stdout": "All checks passed!\n",
+        "stderr": ""
+      }
+    ]
+  },
+  "post_sealing_results": "SPICT4ALL-FI-G1-gate-closure-audit-20260908.zip.verification.json"
+}

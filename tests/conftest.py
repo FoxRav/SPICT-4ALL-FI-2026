@@ -7,7 +7,7 @@ from typing import Any
 
 import pytest
 
-from spict4all.g1_t1_isolation import hide_g1_agent_b_work_files
+from spict4all.g1_t1_isolation import hide_g1_work_files
 from spict4all.hashing import sha256_text
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -27,15 +27,16 @@ def isolate_g1_work_from_t1_inventory(
 ) -> Iterator[None]:
     """Keep historical T1 inventory exact without weakening T1 validators.
 
-    G1 Agent B work files stay on disk for G1 tests. T1 tests that scan `work/`
-    see only the T1 placeholder lock, via an isolated hide/restore fixture.
+    G1 Agent A and Agent B work files stay on disk for G1 tests. T1 tests that
+    scan `work/` see only the T1 placeholder lock, via an isolated hide/restore
+    fixture. Scratch copies of `work/` inherit that pre-G1 view.
     """
 
     if Path(request.path).name not in T1_WORK_INVENTORY_FILES:
         yield
         return
-    aside = tmp_path_factory.mktemp("g1_b_t1_isolation")
-    with hide_g1_agent_b_work_files(REPO_ROOT, aside):
+    aside = tmp_path_factory.mktemp("g1_t1_isolation")
+    with hide_g1_work_files(REPO_ROOT, aside):
         yield
 
 
