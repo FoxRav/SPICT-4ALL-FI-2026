@@ -18,16 +18,15 @@ See PUBLICATION_STATUS.md. Controlled G5 reviewer portal activation is configure
 the production Worker is DEPLOYED, as reported by the Project Owner, at
 https://spict-sami-review.mmvirta75.workers.dev/submit
 (version 4513d228-89c9-4a3a-b1b1-8f9e7108e172).
-The GitHub Pages frontend is NOT YET DEPLOYED; default-branch workflow bootstrap
-is still required as described below.
+The GitHub Pages frontend is DEPLOYED for controlled G5 reviewer use.
 this is NOT SPICT approval, NOT clinical validation and NOT final publication.
 The six-item candidate remains frozen at the SHA above. Submission requires
 REVIEW_ACCESS_CODE; incoming GitHub Issues are evidence only, not adjudication.
-This work package performs no deployment or Issue creation. Pages is public,
+Production deployment is complete. Synthetic E2E Issues are test evidence only and must never be imported as human adjudication. Pages is public,
 including its JSON data; the submission code does not protect page reading.
 The evidence repository MUST be PRIVATE before activation. The Worker verifies
 its privacy through the GitHub repository API before each Issue creation. Missing,
-public, mismatched or unverifiable repositories fail closed; no Issue is created. No permission, deployment, or review is implied here.
+public, mismatched or unverifiable repositories fail closed; no Issue is created. No SPICT approval, clinical validation, or G5 gate pass is implied by deployment.
 
 ## Reproduce and preview
 
@@ -53,7 +52,7 @@ a self-referential hash. Source SHA-256 remains mapped by unit in Worker config 
 is copied into normalized submission evidence. Public unit JSON uses an exact
 field whitelist and excludes critic alternatives.
 
-## Configuration and deployment reference (no deployment in this work package)
+## Configuration and deployment reference
 
 ### Local development secret handling
 
@@ -95,7 +94,7 @@ separate local environment and localhost origin, never production credentials.
 Wrangler observability is disabled; our code does not collect IPs or log payloads.
 Hosting providers may maintain their own service logs independently.
 
-For a separately authorized deployment: install an approved Wrangler version,
+For a Worker redeployment: install an approved Wrangler version,
 authenticate to the correct Cloudflare account, provision secrets and deploy with
 `npx wrangler deploy`. workers.dev is already enabled in configuration.
 runtime-config.js `workerSubmitUrl` is already set to the exact production endpoint:
@@ -103,20 +102,19 @@ https://spict-sami-review.mmvirta75.workers.dev/submit
 The validator requires that HTTPS host and `/submit` path with no credentials,
 query or fragment. No token or access code belongs in config.
 
-DEFAULT_BRANCH_WORKFLOW_BOOTSTRAP_REQUIRED
+## GitHub Pages deployment
 
-GitHub workflow_dispatch requires the workflow file to exist on the default branch.
-After source-publication permission is confirmed, the reviewed inert Pages workflow
-must first exist on default branch main through a separately authorized change.
-Do not modify main now. Only after that bootstrap may the workflow be manually
-dispatched against the explicitly approved portal branch/ref (currently
-g5-human-adjudication). Select GitHub Actions in repository Settings > Pages and set
-repository variable `SPICT_REVIEW_PORTAL_PUBLICATION_AUTHORIZED` to exact `true`,
-review the branch and site-only artifact, and manually dispatch pages-review.yml
-from g5-human-adjudication. The workflow fails before upload if the variable is
-absent/false or the branch is wrong. It never runs on push. A project Pages URL
-includes the repository prefix before `/review/sami/`; all assets use relative URLs.
-Do not trigger this workflow as part of this build.
+The Pages workflow is bootstrapped on main and was manually dispatched from
+g5-human-adjudication. The production reviewer page is:
+
+https://foxrav.github.io/SPICT-4ALL-FI-2026/review/sami/
+
+The repository variable SPICT_REVIEW_PORTAL_PUBLICATION_AUTHORIZED is exact true.
+The github-pages environment permits the review branch. Deployment remains manual
+through workflow_dispatch; there is no push-triggered publication.
+
+Production E2E passed using synthetic Issue #3. Synthetic test Issues are never
+human review evidence and must not be imported into G5 adjudication.
 
 ## Submission semantics
 
@@ -161,4 +159,4 @@ Verified with git ls-remote against the official actions repositories on 2026-09
 | actions/upload-pages-artifact | v3.0.1 | 56afc609e74202658d3ffba0e8f6dda462b719fa |
 | actions/deploy-pages | v4.0.5 | d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e |
 
-No evidence repository has been created as part of this work.
+The evidence repository is `FoxRav/SPICT-4ALL-FI-2026-review-evidence` and must remain private.
