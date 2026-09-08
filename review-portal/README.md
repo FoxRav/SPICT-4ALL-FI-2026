@@ -17,7 +17,7 @@ Run: `G5-20260908-001`. Units: 017, 021, 025, 026, 045, 049 (S4A-2026 prefix).
 See PUBLICATION_STATUS.md. Controlled G5 reviewer portal activation is configured;
 the production Worker is DEPLOYED, as reported by the Project Owner, at
 https://spict-sami-review.mmvirta75.workers.dev/submit
-(version 2623a7f5-eb6c-45ab-a164-f01c6468867e).
+(version 4513d228-89c9-4a3a-b1b1-8f9e7108e172).
 The GitHub Pages frontend is NOT YET DEPLOYED; default-branch workflow bootstrap
 is still required as described below.
 this is NOT SPICT approval, NOT clinical validation and NOT final publication.
@@ -89,7 +89,7 @@ Nonsecret Worker vars: `ALLOWED_ORIGIN` (production `https://foxrav.github.io`),
 `GITHUB_EVIDENCE_REPOSITORY` (configured value
 `FoxRav/SPICT-4ALL-FI-2026-review-evidence`), `PUBLICATION_AUTHORIZED`
 (exact `true` for controlled G5 reviewer use). `workers_dev` is `true` and
-`preview_urls` is `false` in local configuration. This change is not deployed here.
+`preview_urls` is `false` and is deployed.
 Origin matching is exact; wildcard is refused. For local Worker integration use a
 separate local environment and localhost origin, never production credentials.
 Wrangler observability is disabled; our code does not collect IPs or log payloads.
