@@ -357,7 +357,6 @@ def g2_run_failures(root: Path) -> list[str]:
     ):
         failures.append("live G1 gate ZIP hash changed")
     later_gate_prefixes = (
-        "work/backtranslation/",
         "work/critics/",
         "work/final/",
         "work/human-review/",

@@ -1,0 +1,167 @@
+{
+  "archive_verification": {
+    "zip": "SPICT4ALL-FI-G3-blind-backtranslation-audit-20260908.zip",
+    "bytes": 34785,
+    "sha256": "b5f693da5645f6a917c932c741da6b527b247597ec26d3f2ecfff90d963a66df",
+    "members": 20,
+    "member_hashes": "PASS (every member, including audit metadata)",
+    "crc": "PASS",
+    "manifest_membership": "PASS",
+    "nested_archives": 0,
+    "coverage": "PASS (54/54)",
+    "id_order_match": true,
+    "g2_candidate_fi_derivation": "PASS",
+    "human_approval_present": false,
+    "clinical_validation_claimed": false,
+    "semantic_comparison_with_source_performed": false,
+    "g4_started": false,
+    "actual_model": "GPT-5.6 Sol",
+    "reasoning_effort": "High",
+    "environment": "ChatGPT Temporary Chat",
+    "unexpected_files": 0
+  },
+  "post_packaging_repository_validation": {
+    "scope": "repository_after_final_zip_sealed",
+    "completed_at_utc": "2026-09-08T13:07:26.653709+00:00",
+    "tests_passed": 352,
+    "all_commands_passed": true,
+    "commands": [
+      {
+        "command": [
+          "python",
+          "scripts/validate_g3_backtranslation.py"
+        ],
+        "exit_code": 0,
+        "stdout": "{\n  \"run_id\": \"G3-20260908-001\",\n  \"status\": \"PASS\",\n  \"expected_count\": 54,\n  \"back_translation_sha256\": \"e674a7f0a69ed05c554eaade38e4dbd8025c1f34df0499a8fc4cc9a15c99f00f\"\n}\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "pytest",
+          "-p",
+          "no:cacheprovider"
+        ],
+        "exit_code": 0,
+        "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.12.14, pytest-8.4.2, pluggy-1.6.0\nrootdir: F:\\-DEV-\\120.Samin-PDF\nconfigfile: pyproject.toml\ntestpaths: tests\ncollected 352 items\n\ntests\\test_adjudication.py ............................                  [  7%]\ntests\\test_artifacts.py ..............................                   [ 16%]\ntests\\test_authority_attribution.py .................................... [ 26%]\n.......................                                                  [ 33%]\ntests\\test_canonical_units.py ......................                     [ 39%]\ntests\\test_coverage.py ....                                              [ 40%]\ntests\\test_forward_candidates.py ............                            [ 44%]\ntests\\test_g1_b_audit_package.py .......                                 [ 46%]\ntests\\test_g1_b_correction.py .....                                      [ 47%]\ntests\\test_g1_b_r2_audit_package.py .....                                [ 48%]\ntests\\test_g1_t1_isolation.py .                                          [ 49%]\ntests\\test_g2_synthesis.py .....                                         [ 50%]\ntests\\test_g3_backtranslation.py ......                                  [ 52%]\ntests\\test_governance.py ...                                             [ 53%]\ntests\\test_r5_security.py .............................                  [ 61%]\ntests\\test_requirements.py ....................................          [ 71%]\ntests\\test_review_reduction.py ............                              [ 75%]\ntests\\test_reviews_and_gates.py ..............                           [ 78%]\ntests\\test_runs_and_reports.py ....                                      [ 80%]\ntests\\test_sources.py .......                                            [ 82%]\ntests\\test_terminology.py .....................                          [ 88%]\ntests\\test_terminology_closure.py ......                                 [ 89%]\ntests\\test_terminology_enrichment.py ............................        [ 97%]\ntests\\test_units.py ........                                             [100%]\n\n======================= 352 passed in 62.69s (0:01:02) ========================\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "spict4all.cli",
+          "--root",
+          ".",
+          "verify-sources"
+        ],
+        "exit_code": 0,
+        "stdout": "PASS 20260521-Word-template-SPICT-4ALL-translations-2026.docx aea5e489ffc93f57ab3666572f65044fba8375aa5dda897d0ef2988c3a9f8581 66914 bytes\nPASS 20260130-Using-SPICT-4ALL-2025.docx 1b8ee715051ca53a27d0a2261a7f879face8a57727fbfd12fc6a830ef1c155ca 111045 bytes\nPASS 20260521-Word-template-SPICT-4ALL-translations-2026.pdf d22418ca1d1b68a2be762bcdf48ae0e6ad41ac41c8e3d76b419e9062d4357f72 223468 bytes\nPASS 20260521-Edits-for-SPICT-4ALL-translations-2025-and-2026.docx 0fff175b57c66f0dd45cd18c58b599758122e5285892c07da52ddf8a9130a27d 68949 bytes\nPASS canonical units: 53 unique, contiguous, hash-matched, source-resolved; exceptions=1\nPASS source requirements: 1 unique, schema-valid, provenance-linked, exact-text and change-spec completeness verified; marked paragraph elements=18, yellow runs=32, green runs=4, accent6 runs=1; requirement_ids=S4A-REQ-2026-001 (derived from data, not a Python allow-list)\nPASS governance data: 2 files hash-matched\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "spict4all.cli",
+          "--root",
+          ".",
+          "validate-requirements"
+        ],
+        "exit_code": 0,
+        "stdout": "PASS source requirements: 1 unique, schema-valid, provenance-linked, exact-text and change-spec completeness verified; marked paragraph elements=18, yellow runs=32, green runs=4, accent6 runs=1; requirement_ids=S4A-REQ-2026-001 (derived from data, not a Python allow-list)\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "spict4all.cli",
+          "--root",
+          ".",
+          "validate-canonical"
+        ],
+        "exit_code": 0,
+        "stdout": "PASS canonical units: 53 source-resolved; direct=52, normalized=1, exceptions=1\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "spict4all.cli",
+          "--root",
+          ".",
+          "validate-governance"
+        ],
+        "exit_code": 0,
+        "stdout": "PASS governance data: 2 files hash-matched\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "spict4all.cli",
+          "--root",
+          ".",
+          "validate-terminology"
+        ],
+        "exit_code": 0,
+        "stdout": "PASS terminology evidence: sources=5, extracted=136, source_provided_english=41, conflicts=6, approved=0, relevance_matches=0\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "compileall",
+          "-q",
+          "src",
+          "scripts",
+          "tests"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "mypy",
+          "--strict",
+          "src/spict4all"
+        ],
+        "exit_code": 0,
+        "stdout": "Success: no issues found in 32 source files\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "python",
+          "-m",
+          "ruff",
+          "check",
+          "src",
+          "scripts",
+          "tests"
+        ],
+        "exit_code": 0,
+        "stdout": "All checks passed!\n",
+        "stderr": ""
+      }
+    ]
+  },
+  "original_payload_unchanged": true,
+  "g3_jsonl_unchanged": true,
+  "g2_finnish_candidates_unchanged": true,
+  "human_approval_present": false,
+  "clinical_validation_claimed": false,
+  "semantic_comparison_with_source_performed": false,
+  "g4_started": false,
+  "actual_model": "GPT-5.6 Sol",
+  "secret_screening": "PASS: explicit allowlisted content, known credential-pattern scan; no caches or credential stores included",
+  "git_state_after_packaging": "git rev-parse HEAD\n1d08b3d277bf780e7d49ce45e973646e031ba050\n\ngit branch --show-current\nmain\n\ngit status --short --untracked-files=all\n M src/spict4all/g1_t1_isolation.py\n M src/spict4all/g2_synthesis.py\n M tests/conftest.py\n M tests/test_g1_t1_isolation.py\n M tests/test_g2_synthesis.py\n?? deliverables/audit/SPICT4ALL-FI-G3-blind-backtranslation-audit-20260908.zip\n?? deliverables/audit/SPICT4ALL-FI-G3-blind-backtranslation-audit-20260908.zip.members.sha256\n?? deliverables/audit/SPICT4ALL-FI-G3-blind-backtranslation-audit-20260908.zip.sha256\n?? scripts/create_g3_backtranslation_audit.py\n?? scripts/validate_g3_backtranslation.py\n?? scripts/verify_g3_backtranslation_audit.py\n?? scripts/write_g3_backtranslation_metadata.py\n?? src/spict4all/g3_backtranslation.py\n?? tests/test_g3_backtranslation.py\n?? work/backtranslation/G3-20260908-001/G3_BACKTRANSLATION_REPORT.md\n?? work/backtranslation/G3-20260908-001/back_translation.jsonl\n?? work/backtranslation/G3-20260908-001/blind_input.jsonl\n?? work/backtranslation/G3-20260908-001/run_metadata.json\n?? work/backtranslation/G3-20260908-001/validation_results.json\n\nNo commit performed. No push performed. G4 was not started.\nG3 JSONL was not rewritten. No semantic comparison with original English was performed.\n"
+}

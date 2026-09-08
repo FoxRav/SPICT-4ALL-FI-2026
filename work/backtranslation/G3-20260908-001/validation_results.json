@@ -1,0 +1,24 @@
+{
+  "actual_model": "GPT-5.6 Sol",
+  "back_translation_count": 54,
+  "back_translation_sha256": "e674a7f0a69ed05c554eaade38e4dbd8025c1f34df0499a8fc4cc9a15c99f00f",
+  "blind_input_count": 54,
+  "blind_input_sha256": "bbe32669ae4d0f25c3013f24573f14c2823021a96cbffc1ced4fe3f0f456f634",
+  "clinical_validation_claimed": false,
+  "environment": "ChatGPT Temporary Chat",
+  "g2_candidate_fi_derivation": "PASS",
+  "g2_candidates_sha256": "76462191d3ad2a83c878982a1460443f322437e547b747f6267f4a29d887c619",
+  "g4_started": false,
+  "human_approval_present": false,
+  "id_order_match": true,
+  "jsonl_rewritten": false,
+  "mechanical_checks": "PASS",
+  "reasoning_effort": "High",
+  "recorded_uncertainty_unit_ids": [
+    "S4A-2026-025"
+  ],
+  "run_id": "G3-20260908-001",
+  "semantic_comparison_with_source_performed": false,
+  "semantic_correctness": "Not claimed. No source-equivalence comparison was performed in G3.",
+  "title_and_requirement_preserved": true
+}

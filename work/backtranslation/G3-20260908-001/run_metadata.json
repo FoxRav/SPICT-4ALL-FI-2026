@@ -1,0 +1,28 @@
+{
+  "actual_model": "GPT-5.6 Sol",
+  "blinding_claim": "The back-translator received only the Finnish-only blind input (work/backtranslation/G3-20260908-001/blind_input.jsonl: unit_id and text_fi). This G3 audit does not claim independent observation of the Temporary Chat session beyond the operator-recorded method and the on-disk artifacts.",
+  "configured_role_model": "GPT-5.6 Sol Medium",
+  "created_at_utc": "2026-09-08T13:03:19.415911Z",
+  "environment": "ChatGPT Temporary Chat",
+  "g4_started": false,
+  "inputs": [
+    {
+      "bytes": 6549,
+      "path": "F:\\-DEV-\\120.Samin-PDF\\work\\backtranslation\\G3-20260908-001\\blind_input.jsonl",
+      "sha256": "bbe32669ae4d0f25c3013f24573f14c2823021a96cbffc1ced4fe3f0f456f634"
+    }
+  ],
+  "model_provenance_basis": "Recorded from WP-G3-BLIND-BACKTRANSLATION-AUDIT-001 as the operator-stated ChatGPT Temporary Chat session that produced back_translation.jsonl. No independent API request log is packaged.",
+  "output": {
+    "bytes": 7659,
+    "path": "F:\\-DEV-\\120.Samin-PDF\\work\\backtranslation\\G3-20260908-001\\back_translation.jsonl",
+    "sha256": "e674a7f0a69ed05c554eaade38e4dbd8025c1f34df0499a8fc4cc9a15c99f00f"
+  },
+  "reasoning_effort": "High",
+  "role": "Blind back-translator (actual model: GPT-5.6 Sol; reasoning_effort: High; environment: ChatGPT Temporary Chat)",
+  "run_id": "G3-20260908-001",
+  "semantic_comparison_with_source_performed": false,
+  "status": "DRAFT",
+  "tool_version": "0.1.0",
+  "work_package": "WP-G3-BLIND-BACKTRANSLATION-AUDIT-001"
+}

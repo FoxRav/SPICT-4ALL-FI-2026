@@ -1,0 +1,54 @@
+{"unit_id": "S4A-2026-000", "text_fi": "Tukea antavan ja palliatiivisen hoidon tunnusmerkkityökalu (SPICT-4ALL-……)"}
+{"unit_id": "S4A-2026-001", "text_fi": "SPICT auttaa meitä etsimään ihmisiä, joilla on elinikää lyhentäviä terveydentiloja ja joiden terveydentila on heikentynyt. Nämä ihmiset tarvitsevat nyt enemmän apua ja hoitoa sekä suunnitelman tulevasta hoidosta."}
+{"unit_id": "S4A-2026-002", "text_fi": "Onko tällä henkilöllä merkkejä huonosta terveydentilasta tai terveysongelmia, jotka pahenevat?"}
+{"unit_id": "S4A-2026-003", "text_fi": "Kiireellinen tai päivystyksellinen sairaalaan otto(t) tai käynnit."}
+{"unit_id": "S4A-2026-004", "text_fi": "Toimintakyky on heikentynyt tavanomaisissa toimissa; vointi ei ole yhtä hyvä kuin ennen.\n(Henkilö viettää usein yli puolet päivästä vuoteessa tai tuolissa.)"}
+{"unit_id": "S4A-2026-005", "text_fi": "Tarvitsee muilta enemmän apua ja hoitoa lisääntyvien fyysisen terveyden ja/tai mielenterveyden ongelmien vuoksi."}
+{"unit_id": "S4A-2026-006", "text_fi": "Henkilöstä huolehtiva ihminen tarvitsee enemmän apua ja tukea."}
+{"unit_id": "S4A-2026-007", "text_fi": "On selvästi laihtunut muutaman viime kuukauden aikana; tai pysyy liian laihana."}
+{"unit_id": "S4A-2026-008", "text_fi": "Hänellä on hankalia oireita suurimman osan ajasta, vaikka hänen terveysongelmiaan hoidetaan hyvin."}
+{"unit_id": "S4A-2026-009", "text_fi": "Henkilö (tai perhe) pyytää palliatiivista hoitoa; valitsee hoidon vähentämisen, lopettamisen tai ottamatta jättämisen; tai toivoo keskittymistä elämänlaatuun."}
+{"unit_id": "S4A-2026-010", "text_fi": "Onko tällä henkilöllä jokin näistä terveysongelmista?"}
+{"unit_id": "S4A-2026-011", "text_fi": "Syöpä"}
+{"unit_id": "S4A-2026-012", "text_fi": "Sydämen tai verenkierron ongelmat"}
+{"unit_id": "S4A-2026-013", "text_fi": "Munuaisongelmat"}
+{"unit_id": "S4A-2026-014", "text_fi": "Toimintakyky on heikentynyt tavanomaisissa toimissa, ja terveys heikkenee."}
+{"unit_id": "S4A-2026-015", "text_fi": "Sydämen vajaatoiminta tai sydämen verisuonisairaus. Hengenahdistusta tai rintakipua levätessä, liikkuessa tai kävellessä muutaman askeleen."}
+{"unit_id": "S4A-2026-016", "text_fi": "Munuaiset eivät toimi hyvin; yleinen terveys heikkenee."}
+{"unit_id": "S4A-2026-017", "text_fi": "Ei ole riittävän hyväkuntoinen syöpähoitoon, tai hoito on oireiden helpottamiseksi."}
+{"unit_id": "S4A-2026-018", "text_fi": "Jalkaongelmia huonon verenkierron vuoksi; leikkaus ei ole mahdollinen."}
+{"unit_id": "S4A-2026-019", "text_fi": "Munuaisdialyysin lopettaminen tai palliatiivisen hoidon valitseminen dialyysin aloittamisen sijaan."}
+{"unit_id": "S4A-2026-020", "text_fi": "Dialyysin lopettaminen tai aloittamatta jättäminen"}
+{"unit_id": "S4A-2026-021", "text_fi": "Dementia tai hauraus"}
+{"unit_id": "S4A-2026-022", "text_fi": "Hengitysongelmat"}
+{"unit_id": "S4A-2026-023", "text_fi": "Maksaongelmat"}
+{"unit_id": "S4A-2026-024", "text_fi": "Ei pysty pukeutumaan, kävelemään tai syömään ilman apua."}
+{"unit_id": "S4A-2026-025", "text_fi": "Vointi on huonompi pitkäaikaisten keuhko-ongelmien yhteydessä. Hengenahdistusta levätessä, liikkuessa tai kävellessä muutaman askeleen silloinkin, kun rintakehä on parhaimmillaan."}
+{"unit_id": "S4A-2026-026", "text_fi": "Kuluneen vuoden aikana pahentuneita maksaongelmia, joihin liittyy lisäongelmia, kuten:"}
+{"unit_id": "S4A-2026-027", "text_fi": "nesteen kertymistä vatsaan"}
+{"unit_id": "S4A-2026-028", "text_fi": "ajoittaista sekavuutta"}
+{"unit_id": "S4A-2026-029", "text_fi": "munuaiset eivät toimi hyvin"}
+{"unit_id": "S4A-2026-030", "text_fi": "infektioita"}
+{"unit_id": "S4A-2026-031", "text_fi": "verenvuotoa ruokatorvesta"}
+{"unit_id": "S4A-2026-032", "text_fi": "Syö ja juo vähemmän; nielemisvaikeuksia."}
+{"unit_id": "S4A-2026-033", "text_fi": "Tarvitsee käyttää happea suuren osan päivästä ja yöstä."}
+{"unit_id": "S4A-2026-034", "text_fi": "Virtsarakon ja suolen hallinta on heikkoa."}
+{"unit_id": "S4A-2026-035", "text_fi": "On tarvinnut sairaalassa hoitoa hengityskoneella."}
+{"unit_id": "S4A-2026-036", "text_fi": "Ei pysty viestimään puhumalla; ei vastaa juurikaan muihin ihmisiin."}
+{"unit_id": "S4A-2026-037", "text_fi": "Toistuvia kaatumisia; reisiluun murtuma."}
+{"unit_id": "S4A-2026-038", "text_fi": "Toistuvia infektioita; keuhkokuume"}
+{"unit_id": "S4A-2026-039", "text_fi": "Hermoston ongelmat"}
+{"unit_id": "S4A-2026-040", "text_fi": "Muut terveydentilat"}
+{"unit_id": "S4A-2026-041", "text_fi": "Fyysinen terveys ja mielenterveys heikkenevät."}
+{"unit_id": "S4A-2026-042", "text_fi": "Ihmiset, joiden terveydentila on heikentynyt ja joilla on muita elinikää lyhentäviä fyysisiä sairauksia, mielenterveyden sairauksia tai terveydentiloja. Hoitoa ei ole saatavilla tai se ei tehoa hyvin."}
+{"unit_id": "S4A-2026-043", "text_fi": "Enemmän ongelmia puhumisessa ja viestimisessä; nieleminen vaikeutuu."}
+{"unit_id": "S4A-2026-044", "text_fi": "Mitä voimme tehdä tämän henkilön ja hänen perheensä auttamiseksi."}
+{"unit_id": "S4A-2026-045", "text_fi": "Rintakehän infektioita tai keuhkokuume; hengitysongelmia."}
+{"unit_id": "S4A-2026-046", "text_fi": "Aloita keskustelu henkilön ja hänen perheensä tai hänestä huolehtivan ihmisen kanssa siitä, mitä apua tarvitaan nyt ja miksi suunnitelmien tekeminen on tärkeää siltä varalta, että asiat muuttuvat."}
+{"unit_id": "S4A-2026-047", "text_fi": "Jatkuva toimintarajoite, johon liittyy lisääntyviä fyysisen terveyden ja/tai mielenterveyden ongelmia yhden tai useamman aivohalvauksen jälkeen."}
+{"unit_id": "S4A-2026-048", "text_fi": "Pyydä apua ja neuvoa sairaanhoitajalta, lääkäriltä, sosiaalityöntekijältä tai muulta henkilökunnalta, jos henkilö tai perhe tarvitsee hoitonsa ja tukensa tarkastelua."}
+{"unit_id": "S4A-2026-049", "text_fi": "Tarkastelemme henkilön lääkkeitä ja muita hoitoja, jotta voimme antaa parasta hoitoa. Kokonaisvaltainen hoito kattaa oireet sekä tunne-elämään, sosiaaliseen elämään, toimintakykyyn, talouteen, henkisiin ja hengellisiin kysymyksiin sekä kulttuuriin liittyvät ongelmat."}
+{"unit_id": "S4A-2026-050", "text_fi": "Pyydä asiantuntija-apua, jos oireita tai ongelmia on vaikea hallita."}
+{"unit_id": "S4A-2026-051", "text_fi": "Hoitosuunnitelmat jaetaan henkilökunnalle, jonka tarvitsee nähdä ne, ja ne pidetään ajan tasalla."}
+{"unit_id": "S4A-2026-052", "text_fi": "SPICT – 4ALL 2026"}
+{"unit_id": "S4A-REQ-2026-001", "text_fi": "Maksansiirto ei ole mahdollinen."}

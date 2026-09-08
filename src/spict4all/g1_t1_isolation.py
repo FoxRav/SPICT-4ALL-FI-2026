@@ -1,9 +1,9 @@
 """Hide post-T1 work files from historical T1 work-inventory checks.
 
-T1 validators must keep the T1 work_files lock exact. G1 and G2 evidence live
-under work/agent-a/, work/agent-b/ and work/synthesis/ and must not be
-accommodated by weakening T1. Tests hide those files only while T1 inventory
-is evaluated.
+T1 validators must keep the T1 work_files lock exact. G1, G2 and G3 evidence
+live under work/agent-a/, work/agent-b/, work/synthesis/ and
+work/backtranslation/ and must not be accommodated by weakening T1. Tests hide
+those files only while T1 inventory is evaluated.
 """
 
 from __future__ import annotations
@@ -18,15 +18,17 @@ G1_WORK_RELATIVES = (
     Path("work") / "agent-a",
     Path("work") / "agent-b",
     Path("work") / "synthesis",
+    Path("work") / "backtranslation",
 )
 
 
 @contextmanager
 def hide_g1_work_files(root: Path, aside: Path) -> Iterator[list[Path]]:
-    """Move non-placeholder G1/G2 work files aside, then restore them.
+    """Move non-placeholder G1/G2/G3 work files aside, then restore them.
 
-    Empty directories may remain under the agent and synthesis trees; T1
-    inventory counts files only. Placeholder .gitkeep files stay in place.
+    Empty directories may remain under the agent, synthesis and backtranslation
+    trees; T1 inventory counts files only. Placeholder .gitkeep files stay in
+    place.
     Aside paths are keyed from `root` so same-named files cannot collide.
     """
 
