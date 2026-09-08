@@ -10,13 +10,14 @@ def test_hide_g1_files_leaves_placeholder_and_restores(tmp_path: Path) -> None:
         Path("work") / "agent-a" / "candidates.jsonl": "a\n",
         Path("work") / "agent-b" / "candidates.jsonl": "b\n",
         Path("work") / "agent-b" / "runs" / "G1-B-20260908-002" / "candidates.jsonl": "x\n",
+        Path("work") / "synthesis" / "G2-20260908-001" / "candidates.jsonl": "s\n",
     }
     gitkeeps: list[Path] = []
     for relative, text in contents.items():
         path = tmp_path / relative
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
-    for agent in ("agent-a", "agent-b"):
+    for agent in ("agent-a", "agent-b", "synthesis"):
         gitkeep = tmp_path / "work" / agent / ".gitkeep"
         gitkeep.write_bytes(b"")
         gitkeeps.append(gitkeep)
@@ -28,6 +29,9 @@ def test_hide_g1_files_leaves_placeholder_and_restores(tmp_path: Path) -> None:
         assert set(remaining) == set(gitkeeps)
         assert (aside / "work" / "agent-a" / "candidates.jsonl").read_text(encoding="utf-8") == "a\n"
         assert (aside / "work" / "agent-b" / "candidates.jsonl").read_text(encoding="utf-8") == "b\n"
+        assert (
+            aside / "work" / "synthesis" / "G2-20260908-001" / "candidates.jsonl"
+        ).read_text(encoding="utf-8") == "s\n"
     for relative, text in contents.items():
         assert (tmp_path / relative).read_text(encoding="utf-8") == text
     for gitkeep in gitkeeps:

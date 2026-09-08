@@ -1,0 +1,33 @@
+{
+  "run_id": "G2-20260908-001",
+  "actual_model": "Cursor Grok 4.6",
+  "tests_note": "Repository tests and validators are recorded in the G2 audit package.",
+  "candidate_count": 54,
+  "decision_count": 54,
+  "canonical_count": 53,
+  "source_requirement_count": 1,
+  "classifications": {
+    "A_B_AGREE": 17,
+    "SELECT_A": 12,
+    "SELECT_B": 15,
+    "COMBINE_A_B": 10,
+    "NEW_SYNTHESIS": 0
+  },
+  "exact_ab_agreements": 17,
+  "exact_ab_disagreements": 37,
+  "human_approval_present": false,
+  "clinical_validation_claimed": false,
+  "g3_started": false,
+  "title_authority_unresolved": true,
+  "requirement_noncanonical_unresolved": true,
+  "candidate_sha256": "76462191d3ad2a83c878982a1460443f322437e547b747f6267f4a29d887c619",
+  "synthesis_decisions_sha256": "760ddd2854712c9557438b8cfb4743200f55cf5b497cbb46aa0a9f10ad9f0d6d",
+  "frozen_input_hashes": {
+    "work/agent-a/candidates.jsonl": "82d06571c855c87d04e015bf905b1943c5fcd31e68827695fd4cfceb52f4c2cd",
+    "work/agent-b/runs/G1-B-20260908-002/candidates.jsonl": "6033c9970d0b61fd64dfc5c0350b6c97a9ba3cf35725d2f8db7aee79752a25a1",
+    "work/agent-b/candidates.jsonl": "0bb36348713bf951fb5166c4ebed53d66afc6f3436c5790d790d0a53fe23f640",
+    "deliverables/audit/SPICT4ALL-FI-G1-gate-closure-audit-20260908.zip": "6e8846bc233070f3b18f7a3fbba81cb2bd4c04090afa5fbfe9be5aa0fc4fd0ef"
+  },
+  "mechanical_checks": "PASS",
+  "semantic_correctness": "Not claimed. Mechanical checks are not clinical validation."
+}

@@ -1,0 +1,51 @@
+{
+  "actual_model": "Cursor Grok 4.6",
+  "agent_a_model": "GPT-6",
+  "agent_b_model": "Cursor Grok 4.6",
+  "authoritative_b_run": "work/agent-b/runs/G1-B-20260908-002/candidates.jsonl",
+  "configured_role_model": "Claude Opus 5 High",
+  "created_at_utc": "2026-09-08T12:32:38.488607Z",
+  "inputs": [
+    {
+      "bytes": 893,
+      "path": "F:\\-DEV-\\120.Samin-PDF\\data\\source_requirements.jsonl",
+      "sha256": "7893316538c8866c2b8d8f7fbce0940b282d445436003575758409ac72b8a023"
+    },
+    {
+      "bytes": 22694,
+      "path": "F:\\-DEV-\\120.Samin-PDF\\data\\source_units.jsonl",
+      "sha256": "f4751a7e67ff42338fc5c23a842cc7af07c03f2c6a394dea1819f26546c127a5"
+    },
+    {
+      "bytes": 535603,
+      "path": "F:\\-DEV-\\120.Samin-PDF\\deliverables\\audit\\SPICT4ALL-FI-G1-gate-closure-audit-20260908.zip",
+      "sha256": "6e8846bc233070f3b18f7a3fbba81cb2bd4c04090afa5fbfe9be5aa0fc4fd0ef"
+    },
+    {
+      "bytes": 10983,
+      "path": "F:\\-DEV-\\120.Samin-PDF\\terminology\\adjudication\\T1_2_HUMAN_REVIEW_REDUCTION_REPORT.md",
+      "sha256": "2b9e11301a5c88add69dd58bee501af0b40cccdc0812753d712f8de18d43543e"
+    },
+    {
+      "bytes": 1231,
+      "path": "F:\\-DEV-\\120.Samin-PDF\\terminology\\adjudication\\human_terminology_decisions.tsv",
+      "sha256": "d390a5b2a13a786bc246867c4c0c7fe7d1966e68e01c06a3a7d3bdc5487e9a25"
+    },
+    {
+      "bytes": 108647,
+      "path": "F:\\-DEV-\\120.Samin-PDF\\work\\agent-a\\candidates.jsonl",
+      "sha256": "82d06571c855c87d04e015bf905b1943c5fcd31e68827695fd4cfceb52f4c2cd"
+    },
+    {
+      "bytes": 80587,
+      "path": "F:\\-DEV-\\120.Samin-PDF\\work\\agent-b\\runs\\G1-B-20260908-002\\candidates.jsonl",
+      "sha256": "6033c9970d0b61fd64dfc5c0350b6c97a9ba3cf35725d2f8db7aee79752a25a1"
+    }
+  ],
+  "role": "G2 synthesis reviewer (actual model: Cursor Grok 4.6)",
+  "run_id": "G2-20260908-001",
+  "same_family_limitation": "Forward Translator B and the G2 synthesis reviewer both used Cursor Grok 4.6. B wording has no preferential authority. Both A and B were judged independently against the exact frozen English source.",
+  "status": "DRAFT",
+  "tool_version": "0.1.0",
+  "work_package": "WP-G2-SYNTHESIS-001"
+}
