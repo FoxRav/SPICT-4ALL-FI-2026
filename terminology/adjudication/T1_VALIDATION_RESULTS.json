@@ -1,0 +1,169 @@
+{
+  "work_package": "WP-T1-TERMINOLOGY-ADJUDICATION-PREP-001",
+  "commands": [
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools.ps1",
+        "-Task",
+        "Test"
+      ],
+      "exit_code": 0,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.12.14, pytest-8.4.2, pluggy-1.6.0\nrootdir: F:\\-DEV-\\120.Samin-PDF\nconfigfile: pyproject.toml\ntestpaths: tests\ncollected 265 items\n\ntests\\test_adjudication.py ............................                  [ 10%]\ntests\\test_artifacts.py ..............................                   [ 21%]\ntests\\test_authority_attribution.py .................................... [ 35%]\n.......................                                                  [ 44%]\ntests\\test_canonical_units.py ......................                     [ 52%]\ntests\\test_coverage.py ....                                              [ 53%]\ntests\\test_governance.py ...                                             [ 55%]\ntests\\test_r5_security.py .............................                  [ 66%]\ntests\\test_requirements.py ....................................          [ 79%]\ntests\\test_reviews_and_gates.py ..............                           [ 84%]\ntests\\test_runs_and_reports.py ....                                      [ 86%]\ntests\\test_sources.py .......                                            [ 89%]\ntests\\test_terminology.py .....................                          [ 96%]\ntests\\test_units.py ........                                             [100%]\n\n============================ 265 passed in 24.68s =============================\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools.ps1",
+        "-Task",
+        "VerifySources"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS 20260521-Word-template-SPICT-4ALL-translations-2026.docx aea5e489ffc93f57ab3666572f65044fba8375aa5dda897d0ef2988c3a9f8581 66914 bytes\nPASS 20260130-Using-SPICT-4ALL-2025.docx 1b8ee715051ca53a27d0a2261a7f879face8a57727fbfd12fc6a830ef1c155ca 111045 bytes\nPASS 20260521-Word-template-SPICT-4ALL-translations-2026.pdf d22418ca1d1b68a2be762bcdf48ae0e6ad41ac41c8e3d76b419e9062d4357f72 223468 bytes\nPASS 20260521-Edits-for-SPICT-4ALL-translations-2025-and-2026.docx 0fff175b57c66f0dd45cd18c58b599758122e5285892c07da52ddf8a9130a27d 68949 bytes\nPASS canonical units: 53 unique, contiguous, hash-matched, source-resolved; exceptions=1\nPASS source requirements: 1 unique, schema-valid, provenance-linked, exact-text and change-spec completeness verified; marked paragraph elements=18, yellow runs=32, green runs=4, accent6 runs=1; requirement_ids=S4A-REQ-2026-001 (derived from data, not a Python allow-list)\nPASS governance data: 2 files hash-matched\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools.ps1",
+        "-Task",
+        "ValidateRequirements"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS source requirements: 1 unique, schema-valid, provenance-linked, exact-text and change-spec completeness verified; marked paragraph elements=18, yellow runs=32, green runs=4, accent6 runs=1; requirement_ids=S4A-REQ-2026-001 (derived from data, not a Python allow-list)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools.ps1",
+        "-Task",
+        "ValidateCanonical"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS canonical units: 53 source-resolved; direct=52, normalized=1, exceptions=1\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools.ps1",
+        "-Task",
+        "ValidateGovernance"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS governance data: 2 files hash-matched\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools.ps1",
+        "-Task",
+        "ValidateTerminology"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS terminology evidence: sources=5, extracted=136, source_provided_english=41, conflicts=6, approved=0, relevance_matches=0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "F:\\-DEV-\\120.Samin-PDF\\.venv\\Scripts\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "F:\\-DEV-\\120.Samin-PDF\\.venv\\Scripts\\python.exe",
+        "-m",
+        "mypy",
+        "--strict",
+        "src/spict4all"
+      ],
+      "exit_code": 0,
+      "stdout": "Success: no issues found in 21 source files\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "F:\\-DEV-\\120.Samin-PDF\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "exit_code": 0,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "F:\\-DEV-\\120.Samin-PDF\\.venv\\Scripts\\python.exe",
+        "scripts/validate_t1_adjudication.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"concepts\": 29,\n  \"clinical_risk\": {\n    \"HIGH\": 21,\n    \"MEDIUM\": 8\n  },\n  \"candidate_origins\": {\n    \"MODEL_PROPOSED_FROM_EVIDENCE\": 9,\n    \"NO_RELIABLE_TERMINOLOGY_EVIDENCE\": 16,\n    \"SOURCE_DERIVED_FINNISH_ONLY\": 4,\n    \"SOURCE_EXPLICIT\": 0\n  },\n  \"semantic_connections\": 13,\n  \"mapping_edges\": 31,\n  \"relevant_conflicts\": 3,\n  \"must_decide\": 5,\n  \"approved\": 0\n}\n",
+      "stderr": ""
+    }
+  ],
+  "t1_counts": {
+    "concepts": 29,
+    "clinical_risk": {
+      "HIGH": 21,
+      "MEDIUM": 8
+    },
+    "candidate_origins": {
+      "MODEL_PROPOSED_FROM_EVIDENCE": 9,
+      "NO_RELIABLE_TERMINOLOGY_EVIDENCE": 16,
+      "SOURCE_DERIVED_FINNISH_ONLY": 4,
+      "SOURCE_EXPLICIT": 0
+    },
+    "semantic_connections": 13,
+    "mapping_edges": 31,
+    "relevant_conflicts": 3,
+    "must_decide": 5,
+    "approved": 0
+  },
+  "protected_input_files_unchanged": 42,
+  "translation_work_files_unchanged": true,
+  "approved_terminology_count": 0,
+  "human_choices_preselected": 0,
+  "tsv_export": "Artifact Tool exact cell round-trip; quoted UTF-8 TSV readback verified by Python csv",
+  "git_status_before_results_file": "?? scripts/build_t1_adjudication.py\n?? scripts/build_t1_tables.mjs\n?? scripts/validate_t1_adjudication.py\n?? src/spict4all/adjudication.py\n?? terminology/adjudication/T1_TERMINOLOGY_ADJUDICATION_REPORT.md\n?? terminology/adjudication/TERMINOLOGY_ADJUDICATION_QUEUE.tsv\n?? terminology/adjudication/TERMINOLOGY_HUMAN_REVIEW.md\n?? terminology/adjudication/human_terminology_decisions.tsv\n?? terminology/adjudication/input_integrity.json\n?? terminology/adjudication/model_mapping_plan.json\n?? terminology/adjudication/semantic_search_scope.json\n?? terminology/adjudication/source_screening.jsonl\n?? terminology/adjudication/terminology_adjudication_evidence.jsonl\n?? tests/test_adjudication.py\n",
+  "no_commit_or_push": true
+}

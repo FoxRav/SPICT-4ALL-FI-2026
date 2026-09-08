@@ -1,0 +1,340 @@
+{
+  "type": "MODEL_SEMANTIC_MAPPING",
+  "approved": 0,
+  "decisions": [
+    {
+      "decision_id": "T-001",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-001"
+      ],
+      "coverage": "PARTIAL_OR_CONTEXTUAL",
+      "after_status": "EXISTING_EVIDENCE_PLUS_CONTEXT",
+      "uncertainty": "Adjektiivin määritelmä tukee oireita lievittävää merkitystä; ei määrittele koko palliatiivista hoitoa eikä tee siitä saattohoidon synonyymiä.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-002",
+      "evidence_ids": [],
+      "coverage": "NO_USEFUL_EVIDENCE",
+      "after_status": "MODEL_PROPOSED_FROM_EVIDENCE",
+      "uncertainty": "Haku ei tuottanut riittävän täsmällistä käsitemääritelmää. Elinajan lyheneminen, ennuste ja yksittäinen sairaus eivät ole automaattisesti sama käsite.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-003",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-002"
+      ],
+      "coverage": "PARTIAL_OR_CONTEXTUAL",
+      "after_status": "STILL_INSUFFICIENT_PARTIAL_EVIDENCE",
+      "uncertainty": "Omaishoitaja esiintyy sopimuksen ja palvelusuunnitelman yhteydessä. SPICT carer voi tarkoittaa laajempaa läheisen auttajan roolia; sopimusta ei saa lisätä edellytykseksi.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-004",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-003"
+      ],
+      "coverage": "PARTIAL_OR_CONTEXTUAL",
+      "after_status": "EXISTING_EVIDENCE_PLUS_CONTEXT",
+      "uncertainty": "Hoito- ja palvelusuunnitelma on kontekstuaalinen esimerkki. SPICT care plans ei rajaudu omaishoitoon eikä ole automaattisesti hoitotahto.",
+      "must_review_with_sami": false
+    },
+    {
+      "decision_id": "T-005",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-004"
+      ],
+      "coverage": "PARTIAL_OR_CONTEXTUAL",
+      "after_status": "EXISTING_EVIDENCE_PLUS_CONTEXT",
+      "uncertainty": "DNAR on rajattu elvytystä koskeva päätös eikä tarkoita kaiken hoidon lopettamista. Vähentäminen, lopettaminen ja aloittamatta jättäminen sekä henkilön valinnat on säilytettävä erillisinä.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-006",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-005",
+        "TERM-EVID-WEB-006-006"
+      ],
+      "coverage": "CORE_TERM_SUPPORTED",
+      "after_status": "NEW_CORE_TERMINOLOGY_EVIDENCE_FOR_REVIEW",
+      "uncertainty": "Dialyysi määritellään myös munuaisten vajaatoiminnan hoitona. Hemodialyysi on vertailuun tarkoitettu alalaji; sitä ei saa valita koko dialyysin vastineeksi.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-007",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-007"
+      ],
+      "coverage": "PARTIAL_OR_CONTEXTUAL",
+      "after_status": "STILL_INSUFFICIENT_PARTIAL_EVIDENCE",
+      "uncertainty": "Elämänlaatu esiintyy terveyskäsitteen yhteydessä, mutta katkelma ei määrittele sitä kattavasti eikä anna englanninkielistä termiparia.",
+      "must_review_with_sami": false
+    },
+    {
+      "decision_id": "T-008",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-008"
+      ],
+      "coverage": "CORE_TERM_SUPPORTED",
+      "after_status": "NEW_CORE_TERMINOLOGY_EVIDENCE_FOR_REVIEW",
+      "uncertainty": "Sanasto määrittelee dementian oireyhtymiksi. Lähteen vaihtoehtoinen ilmaus tylsistyminen ei ole suositus selkokieliseksi vastineeksi; ei pidä samastaa kaikkeen muistisairauteen.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-009",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-009"
+      ],
+      "coverage": "PARTIAL_OR_CONTEXTUAL",
+      "after_status": "STILL_INSUFFICIENT_PARTIAL_EVIDENCE",
+      "uncertainty": "Hauraus-raihnausoireyhtymä/gerastenia määritellään vanhuuteen liittyväksi. SPICT frailty-käsitteen laajuus ja ymmärrettävyys vaativat asiantuntijapäätöksen; ikärajausta ei saa lisätä.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-010",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-010"
+      ],
+      "coverage": "CORE_TERM_SUPPORTED",
+      "after_status": "NEW_CORE_TERMINOLOGY_EVIDENCE_FOR_REVIEW",
+      "uncertainty": "Sydämen vajaatoiminta on lähteen hakusana. Vaikeusaste ja lähdelauseen ehdot on arvioitava erikseen; sydäninsuffisienssi on tekninen vertailutermi.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-011",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-011",
+        "TERM-EVID-WEB-006-012",
+        "TERM-EVID-WEB-006-013",
+        "TERM-EVID-WEB-006-014",
+        "TERM-EVID-WEB-006-015"
+      ],
+      "coverage": "PARTIAL_OR_CONTEXTUAL",
+      "after_status": "STILL_INSUFFICIENT_PARTIAL_EVIDENCE",
+      "uncertainty": "Maksansiirto esiintyy hoitotoimenpiteenä, maksasiirre siirrettävänä elimenä; siirre ja transplantaatio määritellään erikseen. Elinsiirto on yleisempi. Lopullista suomenkielistä valintaa ei tehdä. S4A-REQ-2026-001 jää ratkaisemattomaksi SPICT-lähdevaatimukseksi.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-012",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-016"
+      ],
+      "coverage": "PARTIAL_OR_CONTEXTUAL",
+      "after_status": "EXISTING_EVIDENCE_PLUS_CONTEXT",
+      "uncertainty": "Hengenahdistus on subjektiivinen oire; respiratory problems on laajempi. Rasitusta, vaikeutta ja syy-yhteyksiä ei saa päätellä sanastosta.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-013",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-017"
+      ],
+      "coverage": "CORE_TERM_SUPPORTED",
+      "after_status": "NEW_CORE_TERMINOLOGY_EVIDENCE_FOR_REVIEW",
+      "uncertainty": "Respiraattori määritellään hengitystä tehostavaksi laitteeksi. Laitetyyppi ja maallikon ymmärtämä hengityskone/hengityslaite vaativat ihmisen valinnan; invasiivisuutta ei saa olettaa.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-014",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-018"
+      ],
+      "coverage": "PARTIAL_OR_CONTEXTUAL",
+      "after_status": "EXISTING_EVIDENCE_PLUS_CONTEXT",
+      "uncertainty": "Hoidon määritelmä sisältää oireiden lievittämisen; katkelma ei kata kaikkia SPICT-oireita eikä ole valmis lausekäännös.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-015",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-019"
+      ],
+      "coverage": "PARTIAL_OR_CONTEXTUAL",
+      "after_status": "STILL_INSUFFICIENT_PARTIAL_EVIDENCE",
+      "uncertainty": "Hoitovaste kuvaa saavutettua muutosta. Hoidon puuttuminen, heikko teho ja tehoton hoito eivät ole keskenään sama asia; lähdelauseiden erot säilytettävä.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-016",
+      "evidence_ids": [],
+      "coverage": "NO_USEFUL_EVIDENCE",
+      "after_status": "MODEL_PROPOSED_FROM_EVIDENCE",
+      "uncertainty": "Holistinen-haku ei antanut käyttökelpoista hoidon käsitemääritelmää. Laaja terveyskäsitys ei yksin todista holistic care -vastaavuutta.",
+      "must_review_with_sami": false
+    },
+    {
+      "decision_id": "T-017",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-020"
+      ],
+      "coverage": "PARTIAL_OR_CONTEXTUAL",
+      "after_status": "EXISTING_EVIDENCE_PLUS_CONTEXT",
+      "uncertainty": "Kuntoutuksen määritelmä tukee omatoimisuuden kontekstia; se ei määrittele jatkuvaa toimintarajoitetta eikä korvaa lähteen toimintakykykuvausta.",
+      "must_review_with_sami": false
+    },
+    {
+      "decision_id": "T-018",
+      "evidence_ids": [],
+      "coverage": "NO_USEFUL_EVIDENCE",
+      "after_status": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "uncertainty": "Kohdennetusta hausta ei löytynyt käyttökelpoista näyttöä. Hengelliset ja eksistentiaaliset tarpeet sekä henkilön oma merkitys vaativat erillistä asiantuntemusta.",
+      "must_review_with_sami": false
+    },
+    {
+      "decision_id": "T-019",
+      "evidence_ids": [],
+      "coverage": "NO_USEFUL_EVIDENCE",
+      "after_status": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "uncertainty": "Kohdennetusta hausta ei löytynyt käyttökelpoista näyttöä. Kulttuuriin liittyviä ongelmia ei saa supistaa diagnoosiksi tai kieliongelmaksi.",
+      "must_review_with_sami": false
+    },
+    {
+      "decision_id": "T-020",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-021"
+      ],
+      "coverage": "PARTIAL_OR_CONTEXTUAL",
+      "after_status": "EXISTING_EVIDENCE_PLUS_CONTEXT",
+      "uncertainty": "Tarkkailuosasto on sairaalan osasto. Katkelma ei määrittele kiireellisyyttä, päivystyskäyntiä tai sairaalaan ottamista kokonaisuutena; nämä erot jäävät ensihoidon ammattilaisen tarkistettaviksi.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-021",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-022"
+      ],
+      "coverage": "PARTIAL_OR_CONTEXTUAL",
+      "after_status": "EXISTING_EVIDENCE_PLUS_CONTEXT",
+      "uncertainty": "Konsultaatio koskee neuvon kysymistä; specialist help voi sisältää muitakin tukimuotoja. Lähteen termi ei yksin ratkaise erikoisalan avun laajuutta.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-022",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-023"
+      ],
+      "coverage": "PARTIAL_OR_CONTEXTUAL",
+      "after_status": "EXISTING_EVIDENCE_PLUS_CONTEXT",
+      "uncertainty": "Potilas määritellään terveyspalvelusuhteen kautta; person ei automaattisesti rajaa henkilöä potilaaksi. Vanhoja potilas/asiakas-ristiriitoja ei ratkaista tällä määritelmällä.",
+      "must_review_with_sami": false
+    },
+    {
+      "decision_id": "T-023",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-024"
+      ],
+      "coverage": "PARTIAL_OR_CONTEXTUAL",
+      "after_status": "EXISTING_EVIDENCE_PLUS_CONTEXT",
+      "uncertainty": "Hoito kattaa useita toimia. Help and care needed ei supistu kliiniseen hoitoon tai muodolliseen palvelutarpeeseen; vanha palvelutarve-ristiriita jää avoimeksi.",
+      "must_review_with_sami": false
+    },
+    {
+      "decision_id": "T-024",
+      "evidence_ids": [],
+      "coverage": "NO_USEFUL_EVIDENCE",
+      "after_status": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "uncertainty": "Haku ei tuottanut riittäviä ammattinimikkeiden määritelmiä. Eri henkilöstöryhmät ja other staff -vaihtoehto on säilytettävä; tehtävänimikepäätös vaatii ihmisen.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-025",
+      "evidence_ids": [],
+      "coverage": "NO_USEFUL_EVIDENCE",
+      "after_status": "SOURCE_DERIVED_FINNISH_ONLY",
+      "uncertainty": "Inoperaabeli-haku ei palauttanut tuloksia. Teknistä diagnoosiluonteista termiä ei lisätä lähteen surgery is not possible -ilmaukseen.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-026",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-025"
+      ],
+      "coverage": "PARTIAL_OR_CONTEXTUAL",
+      "after_status": "STILL_INSUFFICIENT_PARTIAL_EVIDENCE",
+      "uncertainty": "Hoidon määritelmä mainitsee lääkityksen ja muita toimia. Tämä on osittainen tuki, ei lääke-käsitteen määritelmä eikä peruste häivyttää medicines and other treatments -erottelua.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-027",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-026"
+      ],
+      "coverage": "PARTIAL_OR_CONTEXTUAL",
+      "after_status": "STILL_INSUFFICIENT_PARTIAL_EVIDENCE",
+      "uncertainty": "Aivohalvauksen sanastomääritelmä painottaa halvausoiretta; stroke voi esiintyä myös ilman tätä. Tarvitaan kliininen laajuustarkistus. One or more -määrää ei saa kadottaa.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-028",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-027"
+      ],
+      "coverage": "CORE_TERM_SUPPORTED",
+      "after_status": "NEW_CORE_TERMINOLOGY_EVIDENCE_FOR_REVIEW",
+      "uncertainty": "Dysfagian määritelmä on nielemishäiriö. Maallikkokielinen vaikeuden kuvaus ja syömisen/juomisen konteksti jäävät valittaviksi; teknistä termiä ei automaattisesti siirretä SPICTiin.",
+      "must_review_with_sami": true
+    },
+    {
+      "decision_id": "T-029",
+      "evidence_ids": [
+        "TERM-EVID-WEB-006-028"
+      ],
+      "coverage": "PARTIAL_OR_CONTEXTUAL",
+      "after_status": "STILL_INSUFFICIENT_PARTIAL_EVIDENCE",
+      "uncertainty": "Sekavuustila on määritelty tajunnan/orientaation häiriöksi. Being confused at times ei itsessään todista delirium-diagnoosia; ajallinen vaihtelu säilytettävä.",
+      "must_review_with_sami": true
+    }
+  ],
+  "new_scope_conflicts": [
+    {
+      "conflict_id": "T1.1-SCOPE-001",
+      "decision_id": "T-003",
+      "type": "MODEL_IDENTIFIED_SCOPE_TENSION",
+      "status": "HUMAN_REVIEW_REQUIRED",
+      "note": "Omaishoitaja esiintyy sopimuksen ja palvelusuunnitelman yhteydessä. SPICT carer voi tarkoittaa laajempaa läheisen auttajan roolia; sopimusta ei saa lisätä edellytykseksi."
+    },
+    {
+      "conflict_id": "T1.1-SCOPE-002",
+      "decision_id": "T-005",
+      "type": "MODEL_IDENTIFIED_SCOPE_TENSION",
+      "status": "HUMAN_REVIEW_REQUIRED",
+      "note": "DNAR on rajattu elvytystä koskeva päätös eikä tarkoita kaiken hoidon lopettamista. Vähentäminen, lopettaminen ja aloittamatta jättäminen sekä henkilön valinnat on säilytettävä erillisinä."
+    },
+    {
+      "conflict_id": "T1.1-SCOPE-003",
+      "decision_id": "T-009",
+      "type": "MODEL_IDENTIFIED_SCOPE_TENSION",
+      "status": "HUMAN_REVIEW_REQUIRED",
+      "note": "Hauraus-raihnausoireyhtymä/gerastenia määritellään vanhuuteen liittyväksi. SPICT frailty-käsitteen laajuus ja ymmärrettävyys vaativat asiantuntijapäätöksen; ikärajausta ei saa lisätä."
+    },
+    {
+      "conflict_id": "T1.1-SCOPE-004",
+      "decision_id": "T-011",
+      "type": "MODEL_IDENTIFIED_SCOPE_TENSION",
+      "status": "HUMAN_REVIEW_REQUIRED",
+      "note": "Maksansiirto esiintyy hoitotoimenpiteenä, maksasiirre siirrettävänä elimenä; siirre ja transplantaatio määritellään erikseen. Elinsiirto on yleisempi. Lopullista suomenkielistä valintaa ei tehdä. S4A-REQ-2026-001 jää ratkaisemattomaksi SPICT-lähdevaatimukseksi."
+    },
+    {
+      "conflict_id": "T1.1-SCOPE-005",
+      "decision_id": "T-022",
+      "type": "MODEL_IDENTIFIED_SCOPE_TENSION",
+      "status": "HUMAN_REVIEW_REQUIRED",
+      "note": "Potilas määritellään terveyspalvelusuhteen kautta; person ei automaattisesti rajaa henkilöä potilaaksi. Vanhoja potilas/asiakas-ristiriitoja ei ratkaista tällä määritelmällä."
+    },
+    {
+      "conflict_id": "T1.1-SCOPE-006",
+      "decision_id": "T-027",
+      "type": "MODEL_IDENTIFIED_SCOPE_TENSION",
+      "status": "HUMAN_REVIEW_REQUIRED",
+      "note": "Aivohalvauksen sanastomääritelmä painottaa halvausoiretta; stroke voi esiintyä myös ilman tätä. Tarvitaan kliininen laajuustarkistus. One or more -määrää ei saa kadottaa."
+    },
+    {
+      "conflict_id": "T1.1-SCOPE-007",
+      "decision_id": "T-029",
+      "type": "MODEL_IDENTIFIED_SCOPE_TENSION",
+      "status": "HUMAN_REVIEW_REQUIRED",
+      "note": "Sekavuustila on määritelty tajunnan/orientaation häiriöksi. Being confused at times ei itsessään todista delirium-diagnoosia; ajallinen vaihtelu säilytettävä."
+    }
+  ]
+}

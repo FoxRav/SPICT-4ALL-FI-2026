@@ -1,0 +1,214 @@
+{
+  "executed_at_utc": "2026-09-07T18:04:04.197640+00:00",
+  "commands": [
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools.ps1",
+        "-Task",
+        "Test"
+      ],
+      "exit_code": 0,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.12.14, pytest-8.4.2, pluggy-1.6.0\nrootdir: F:\\-DEV-\\120.Samin-PDF\nconfigfile: pyproject.toml\ntestpaths: tests\ncollected 305 items\n\ntests\\test_adjudication.py ............................                  [  9%]\ntests\\test_artifacts.py ..............................                   [ 19%]\ntests\\test_authority_attribution.py .................................... [ 30%]\n.......................                                                  [ 38%]\ntests\\test_canonical_units.py ......................                     [ 45%]\ntests\\test_coverage.py ....                                              [ 46%]\ntests\\test_governance.py ...                                             [ 47%]\ntests\\test_r5_security.py .............................                  [ 57%]\ntests\\test_requirements.py ....................................          [ 69%]\ntests\\test_review_reduction.py ............                              [ 73%]\ntests\\test_reviews_and_gates.py ..............                           [ 77%]\ntests\\test_runs_and_reports.py ....                                      [ 79%]\ntests\\test_sources.py .......                                            [ 81%]\ntests\\test_terminology.py .....................                          [ 88%]\ntests\\test_terminology_enrichment.py ............................        [ 97%]\ntests\\test_units.py ........                                             [100%]\n\n============================ 305 passed in 39.08s =============================\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools.ps1",
+        "-Task",
+        "VerifySources"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS 20260521-Word-template-SPICT-4ALL-translations-2026.docx aea5e489ffc93f57ab3666572f65044fba8375aa5dda897d0ef2988c3a9f8581 66914 bytes\nPASS 20260130-Using-SPICT-4ALL-2025.docx 1b8ee715051ca53a27d0a2261a7f879face8a57727fbfd12fc6a830ef1c155ca 111045 bytes\nPASS 20260521-Word-template-SPICT-4ALL-translations-2026.pdf d22418ca1d1b68a2be762bcdf48ae0e6ad41ac41c8e3d76b419e9062d4357f72 223468 bytes\nPASS 20260521-Edits-for-SPICT-4ALL-translations-2025-and-2026.docx 0fff175b57c66f0dd45cd18c58b599758122e5285892c07da52ddf8a9130a27d 68949 bytes\nPASS canonical units: 53 unique, contiguous, hash-matched, source-resolved; exceptions=1\nPASS source requirements: 1 unique, schema-valid, provenance-linked, exact-text and change-spec completeness verified; marked paragraph elements=18, yellow runs=32, green runs=4, accent6 runs=1; requirement_ids=S4A-REQ-2026-001 (derived from data, not a Python allow-list)\nPASS governance data: 2 files hash-matched\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools.ps1",
+        "-Task",
+        "ValidateRequirements"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS source requirements: 1 unique, schema-valid, provenance-linked, exact-text and change-spec completeness verified; marked paragraph elements=18, yellow runs=32, green runs=4, accent6 runs=1; requirement_ids=S4A-REQ-2026-001 (derived from data, not a Python allow-list)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools.ps1",
+        "-Task",
+        "ValidateCanonical"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS canonical units: 53 source-resolved; direct=52, normalized=1, exceptions=1\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools.ps1",
+        "-Task",
+        "ValidateGovernance"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS governance data: 2 files hash-matched\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools.ps1",
+        "-Task",
+        "ValidateTerminology"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS terminology evidence: sources=5, extracted=136, source_provided_english=41, conflicts=6, approved=0, relevance_matches=0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "F:\\-DEV-\\120.Samin-PDF\\.venv\\Scripts\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "F:\\-DEV-\\120.Samin-PDF\\.venv\\Scripts\\python.exe",
+        "-m",
+        "mypy",
+        "--strict",
+        "src/spict4all"
+      ],
+      "exit_code": 0,
+      "stdout": "Success: no issues found in 24 source files\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "F:\\-DEV-\\120.Samin-PDF\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "exit_code": 0,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "F:\\-DEV-\\120.Samin-PDF\\.venv\\Scripts\\python.exe",
+        "scripts/validate_t1_adjudication.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"concepts\": 29,\n  \"clinical_risk\": {\n    \"HIGH\": 21,\n    \"MEDIUM\": 8\n  },\n  \"candidate_origins\": {\n    \"MODEL_PROPOSED_FROM_EVIDENCE\": 9,\n    \"NO_RELIABLE_TERMINOLOGY_EVIDENCE\": 16,\n    \"SOURCE_DERIVED_FINNISH_ONLY\": 4,\n    \"SOURCE_EXPLICIT\": 0\n  },\n  \"semantic_connections\": 13,\n  \"mapping_edges\": 31,\n  \"relevant_conflicts\": 3,\n  \"must_decide\": 5,\n  \"approved\": 0\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "F:\\-DEV-\\120.Samin-PDF\\.venv\\Scripts\\python.exe",
+        "scripts/validate_t1_1_enrichment.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"concepts_searched\": 29,\n  \"search_attempts\": 49,\n  \"unique_search_results_screened\": 79,\n  \"unique_pages_scraped\": 28,\n  \"useful_evidence_records\": 28,\n  \"concepts_enriched\": 23,\n  \"no_sufficient_evidence_before\": 16,\n  \"no_sufficient_evidence_after\": 11,\n  \"still_insufficient_ids\": [\n    \"T-003\",\n    \"T-007\",\n    \"T-009\",\n    \"T-011\",\n    \"T-015\",\n    \"T-018\",\n    \"T-019\",\n    \"T-024\",\n    \"T-026\",\n    \"T-027\",\n    \"T-029\"\n  ],\n  \"original_no_evidence_now_with_zero_useful_evidence\": 3,\n  \"high_risk_enriched\": 18,\n  \"must_review_with_sami\": 21,\n  \"external_human_review_required\": 29,\n  \"new_scope_conflicts\": 7,\n  \"original_conflicts_resolved\": 0,\n  \"approved\": 0\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "F:\\-DEV-\\120.Samin-PDF\\.venv\\Scripts\\python.exe",
+        "scripts/validate_t1_2_reduction.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"work_package\": \"WP-T1.2-HUMAN-REVIEW-REDUCTION-001\",\n  \"assessment_type\": \"MODEL_REVIEW_ROUTING\",\n  \"original_concepts\": 29,\n  \"previous_sami_count\": 21,\n  \"final_sami_count\": 3,\n  \"previous_queue_dispositions\": {\n    \"EVIDENCED_OR_OBVIOUS\": 8,\n    \"HUMAN_DECIDED\": 2,\n    \"SAMI\": 2,\n    \"G1_G2_SYNTHESIS\": 5,\n    \"DISCUSSED_RECORDING_NEEDED\": 1,\n    \"STYLISTIC_OR_EQUIVALENT\": 3\n  },\n  \"all_concept_dispositions\": {\n    \"EVIDENCED_OR_OBVIOUS\": 9,\n    \"HUMAN_DECIDED\": 3,\n    \"SAMI\": 3,\n    \"G1_G2_SYNTHESIS\": 9,\n    \"DISCUSSED_RECORDING_NEEDED\": 1,\n    \"STYLISTIC_OR_EQUIVALENT\": 4\n  },\n  \"frailty_status\": \"ALREADY_DISCUSSED_DISPOSITION_NEEDS_RECORDING\",\n  \"frailty_final_term\": null,\n  \"new_term_approvals_by_model\": 0\n}\n",
+      "stderr": ""
+    }
+  ],
+  "work_package": "WP-T1.2-HUMAN-REVIEW-REDUCTION-001",
+  "reduction": {
+    "work_package": "WP-T1.2-HUMAN-REVIEW-REDUCTION-001",
+    "assessment_type": "MODEL_REVIEW_ROUTING",
+    "original_concepts": 29,
+    "previous_sami_count": 21,
+    "final_sami_count": 3,
+    "previous_queue_dispositions": {
+      "EVIDENCED_OR_OBVIOUS": 8,
+      "HUMAN_DECIDED": 2,
+      "SAMI": 2,
+      "G1_G2_SYNTHESIS": 5,
+      "DISCUSSED_RECORDING_NEEDED": 1,
+      "STYLISTIC_OR_EQUIVALENT": 3
+    },
+    "all_concept_dispositions": {
+      "EVIDENCED_OR_OBVIOUS": 9,
+      "HUMAN_DECIDED": 3,
+      "SAMI": 3,
+      "G1_G2_SYNTHESIS": 9,
+      "DISCUSSED_RECORDING_NEEDED": 1,
+      "STYLISTIC_OR_EQUIVALENT": 4
+    },
+    "frailty_status": "ALREADY_DISCUSSED_DISPOSITION_NEEDS_RECORDING",
+    "frailty_final_term": null,
+    "new_term_approvals_by_model": 0
+  },
+  "tests_passed": 305,
+  "new_tests": 12,
+  "exact_human_rows_updated": [
+    "T-002",
+    "T-013",
+    "T-016"
+  ],
+  "historical_evidence_unchanged": true,
+  "official_sources_unchanged": true,
+  "model_term_approvals": 0,
+  "glossary_approved_rows": 0,
+  "g1_run": false,
+  "translation_candidates_generated": 0,
+  "no_commit_or_push": true,
+  "tsv_verification": "Artifact Tool exact cell round-trip and Python CSV equality; prior human bytes retained with original SHA-256.",
+  "git_status": " M README.md\n?? scripts/build_t1_1_enrichment.py\n?? scripts/build_t1_1_tables.mjs\n?? scripts/build_t1_2_tables.mjs\n?? scripts/build_t1_adjudication.py\n?? scripts/build_t1_tables.mjs\n?? scripts/validate_t1_1_enrichment.py\n?? scripts/validate_t1_2_reduction.py\n?? scripts/validate_t1_adjudication.py\n?? src/spict4all/adjudication.py\n?? src/spict4all/human_terminology_decisions.py\n?? src/spict4all/review_reduction.py\n?? src/spict4all/terminology_enrichment.py\n?? terminology/adjudication/T1_2_HUMAN_REVIEW_REDUCTION_REPORT.md\n?? terminology/adjudication/T1_2_MINIMAL_SAMI_QUEUE.tsv\n?? terminology/adjudication/T1_2_SAMI_REVIEW.md\n?? terminology/adjudication/T1_2_human_decisions_before.tsv\n?? terminology/adjudication/T1_2_input_integrity.json\n?? terminology/adjudication/T1_2_reclassification.json\n?? terminology/adjudication/T1_TERMINOLOGY_ADJUDICATION_REPORT.md\n?? terminology/adjudication/T1_VALIDATION_RESULTS.json\n?? terminology/adjudication/TERMINOLOGY_ADJUDICATION_QUEUE.tsv\n?? terminology/adjudication/TERMINOLOGY_HUMAN_REVIEW.md\n?? terminology/adjudication/enrichment/T1_1_TERVEYSKIRJASTO_ENRICHMENT_REPORT.md\n?? terminology/adjudication/enrichment/T1_1_UPDATED_ADJUDICATION_QUEUE.tsv\n?? terminology/adjudication/enrichment/T1_1_VALIDATION_RESULTS.json\n?? terminology/adjudication/enrichment/T1_1_input_integrity.json\n?? terminology/adjudication/enrichment/T1_1_integrity_path_corrections.json\n?? terminology/adjudication/enrichment/TERM-SRC-006-terveyskirjasto-evidence.jsonl\n?? terminology/adjudication/enrichment/TERMINOLOGY_HUMAN_REVIEW_T1_1.md\n?? terminology/adjudication/enrichment/model_interpretations.json\n?? terminology/adjudication/enrichment/page_receipts.jsonl\n?? terminology/adjudication/enrichment/search_receipts.jsonl\n?? terminology/adjudication/enrichment/web_source_manifest.json\n?? terminology/adjudication/human_terminology_decisions.tsv\n?? terminology/adjudication/input_integrity.json\n?? terminology/adjudication/model_mapping_plan.json\n?? terminology/adjudication/semantic_search_scope.json\n?? terminology/adjudication/source_screening.jsonl\n?? terminology/adjudication/terminology_adjudication_evidence.jsonl\n?? tests/test_adjudication.py\n?? tests/test_review_reduction.py\n?? tests/test_terminology_enrichment.py\n",
+  "unrelated_change_preserved": "README.md was already modified at the start of T1.2 and was not edited by this run.",
+  "new_artifact_sha256": {
+    "terminology/adjudication/T1_2_human_decisions_before.tsv": "be3269d83f394a80889803aef6cbfeb198178cc02d781de630d11f0b02ffc97a",
+    "terminology/adjudication/T1_2_HUMAN_REVIEW_REDUCTION_REPORT.md": "2b9e11301a5c88add69dd58bee501af0b40cccdc0812753d712f8de18d43543e",
+    "terminology/adjudication/T1_2_input_integrity.json": "b31f913d2c277885be7ee6411935c975006675d8f56f57c70b5a9c6d05e3fef2",
+    "terminology/adjudication/T1_2_MINIMAL_SAMI_QUEUE.tsv": "26ed9be3f75b461b52e39a37357d4f991a2903c6a1ddb1d3c5d404947d3ec7c9",
+    "terminology/adjudication/T1_2_reclassification.json": "f7f292ed6ab8cada3885f34425cec36e7f24d6d6d7e91002fda765d2b55fcb11",
+    "terminology/adjudication/T1_2_SAMI_REVIEW.md": "35d82bcd2f67e6c4a06e267ade8c31739a158f43f473ac0468186c4f665a400c"
+  }
+}

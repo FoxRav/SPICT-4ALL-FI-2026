@@ -1,0 +1,7 @@
+{
+  "reason": "Two Finnish filenames were mojibake in the initial T1.1 snapshot path keys. Original snapshot retained. These exact path corrections are resolved against the unchanged original T1 lock by the same SHA-256, not by recalculating expected hashes.",
+  "path_corrections": {
+    "data/Sanasto/hoitosuositukseen-palliatiivinen-hoito-ja-saattohoito-liittyvÃ¤Ã¤-sanastoa.pdf": "data/Sanasto/hoitosuositukseen-palliatiivinen-hoito-ja-saattohoito-liittyvää-sanastoa.pdf",
+    "data/Sanasto/Sosiaali-_ja_terveydenhuollon_uudistamisen_keskeiset_kÃ¤sitteet.csv": "data/Sanasto/Sosiaali-_ja_terveydenhuollon_uudistamisen_keskeiset_käsitteet.csv"
+  }
+}

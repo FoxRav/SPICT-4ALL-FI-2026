@@ -1,0 +1,16 @@
+{
+  "source_id": "TERM-SRC-006",
+  "organisation_publisher": "Kustannus Oy Duodecim",
+  "publisher_basis": "Copyright footer in Firecrawl markdown of ltt03123",
+  "site_name": "Duodecim Terveyskirjasto",
+  "resource_title": "Lääketieteen sanasto",
+  "root_url": "https://www.terveyskirjasto.fi/sisalto/laaketieteen-sanasto/111060",
+  "accessed_date": "2026-09-07",
+  "classification": "TERMINOLOGY_REFERENCE",
+  "evidence_type": "WEB_TERMINOLOGY_REFERENCE",
+  "retrieval_method": "FIRECRAWL",
+  "provenance_status": "SOURCE_FRAGMENTS_RETRIEVED_WITH_RECEIPTS",
+  "can_satisfy_spict_source_requirements": false,
+  "scope": "Targeted dictionary pages plus explicitly labelled contextual articles on the same site. Article collection is retained in receipt metadata.",
+  "registration_note": "Additive web registry. Five frozen local T0 source records and their 136 extracted entries remain unchanged."
+}
