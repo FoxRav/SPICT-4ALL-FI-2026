@@ -1,0 +1,50 @@
+[
+  {
+    "current_candidate_fi": "Ei ole riittävän hyväkuntoinen syöpähoitoon, tai hoito on oireiden helpottamiseksi.",
+    "existing_human_decision_note": "Aiempi Project Owner -sanamuoto on uudelleen arvioitavana.",
+    "neutral_review_question": "Säilyttääkö hyväkuntoinen merkityksen, että henkilö on riittävän hyvässä kunnossa syöpähoitoon, vai voiko se viitata fyysiseen kuntoon?",
+    "review_priority": "MEDIUM",
+    "source_text_en": "Not well enough for cancer treatment or treatment is to help with symptoms.",
+    "unit_id": "S4A-2026-017"
+  },
+  {
+    "current_candidate_fi": "Dementia tai hauraus",
+    "existing_human_decision_note": "Lopullista ihmisen päättämää termiä ei ole kirjattu.",
+    "neutral_review_question": "Mikä ymmärrettävä suomenkielinen ilmaus säilyttää frailty-terveyskäsitteen merkityksen?",
+    "review_priority": "MEDIUM",
+    "source_text_en": "Dementia or frailty",
+    "unit_id": "S4A-2026-021"
+  },
+  {
+    "current_candidate_fi": "Vointi on huonompi pitkäaikaisten keuhko-ongelmien yhteydessä. Hengenahdistusta levätessä, liikkuessa tai kävellessä muutaman askeleen silloinkin, kun rintakehä on parhaimmillaan.",
+    "existing_human_decision_note": "",
+    "neutral_review_question": "Mitä 'when the chest is at its best' tarkoittaa tässä kliinisessä ja yleiskielisessä yhteydessä, ja ilmaiseeko nykyinen suomennos sen oikein?",
+    "review_priority": "HIGH",
+    "source_text_en": "More unwell with long term lung problems. Short of breath when resting, moving or walking a few steps even when the chest is at its best.",
+    "unit_id": "S4A-2026-025"
+  },
+  {
+    "current_candidate_fi": "Kuluneen vuoden aikana pahentuneita maksaongelmia, joihin liittyy lisäongelmia, kuten:",
+    "existing_human_decision_note": "",
+    "neutral_review_question": "Säilyttääkö lisäongelmia sanan 'complications' merkityksen riittävästi, vai tarvitaanko täsmällisempi yleiskielinen termi?",
+    "review_priority": "MEDIUM",
+    "source_text_en": "Worsening liver problems in the past year with complications like:",
+    "unit_id": "S4A-2026-026"
+  },
+  {
+    "current_candidate_fi": "Rintakehän infektioita tai keuhkokuume; hengitysongelmia.",
+    "existing_human_decision_note": "",
+    "neutral_review_question": "Säilyttääkö rintakehän infektioita ilmauksen 'chest infections' tarkoitetun merkityksen?",
+    "review_priority": "BLOCKER",
+    "source_text_en": "Chest infections or pneumonia; breathing problems.",
+    "unit_id": "S4A-2026-045"
+  },
+  {
+    "current_candidate_fi": "Tarkastelemme henkilön lääkkeitä ja muita hoitoja, jotta voimme antaa parasta hoitoa. Kokonaisvaltainen hoito kattaa oireet sekä tunne-elämään, sosiaaliseen elämään, toimintakykyyn, talouteen, henkisiin ja hengellisiin kysymyksiin sekä kulttuuriin liittyvät ongelmat.",
+    "existing_human_decision_note": "Aiempi päätös koski vain holistic care -termiä, ei spiritual-käsitettä.",
+    "neutral_review_question": "Säilyttääkö henkisiin ja hengellisiin englannin yhden 'spiritual'-osa-alueen, vai lisääkö se merkitystä?",
+    "review_priority": "MEDIUM",
+    "source_text_en": "We look at the person’s medicines and other treatments to give the best care. Holistic care includes symptoms, emotional, social, functional, financial, spiritual, cultural problems.",
+    "unit_id": "S4A-2026-049"
+  }
+]
