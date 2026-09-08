@@ -1,0 +1,231 @@
+{
+  "executed_at_utc": "2026-09-07T17:52:10.489463+00:00",
+  "commands": [
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools.ps1",
+        "-Task",
+        "Test"
+      ],
+      "exit_code": 0,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.12.14, pytest-8.4.2, pluggy-1.6.0\nrootdir: F:\\-DEV-\\120.Samin-PDF\nconfigfile: pyproject.toml\ntestpaths: tests\ncollected 293 items\n\ntests\\test_adjudication.py ............................                  [  9%]\ntests\\test_artifacts.py ..............................                   [ 19%]\ntests\\test_authority_attribution.py .................................... [ 32%]\n.......................                                                  [ 39%]\ntests\\test_canonical_units.py ......................                     [ 47%]\ntests\\test_coverage.py ....                                              [ 48%]\ntests\\test_governance.py ...                                             [ 49%]\ntests\\test_r5_security.py .............................                  [ 59%]\ntests\\test_requirements.py ....................................          [ 72%]\ntests\\test_reviews_and_gates.py ..............                           [ 76%]\ntests\\test_runs_and_reports.py ....                                      [ 78%]\ntests\\test_sources.py .......                                            [ 80%]\ntests\\test_terminology.py .....................                          [ 87%]\ntests\\test_terminology_enrichment.py ............................        [ 97%]\ntests\\test_units.py ........                                             [100%]\n\n============================ 293 passed in 36.05s =============================\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools.ps1",
+        "-Task",
+        "VerifySources"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS 20260521-Word-template-SPICT-4ALL-translations-2026.docx aea5e489ffc93f57ab3666572f65044fba8375aa5dda897d0ef2988c3a9f8581 66914 bytes\nPASS 20260130-Using-SPICT-4ALL-2025.docx 1b8ee715051ca53a27d0a2261a7f879face8a57727fbfd12fc6a830ef1c155ca 111045 bytes\nPASS 20260521-Word-template-SPICT-4ALL-translations-2026.pdf d22418ca1d1b68a2be762bcdf48ae0e6ad41ac41c8e3d76b419e9062d4357f72 223468 bytes\nPASS 20260521-Edits-for-SPICT-4ALL-translations-2025-and-2026.docx 0fff175b57c66f0dd45cd18c58b599758122e5285892c07da52ddf8a9130a27d 68949 bytes\nPASS canonical units: 53 unique, contiguous, hash-matched, source-resolved; exceptions=1\nPASS source requirements: 1 unique, schema-valid, provenance-linked, exact-text and change-spec completeness verified; marked paragraph elements=18, yellow runs=32, green runs=4, accent6 runs=1; requirement_ids=S4A-REQ-2026-001 (derived from data, not a Python allow-list)\nPASS governance data: 2 files hash-matched\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools.ps1",
+        "-Task",
+        "ValidateRequirements"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS source requirements: 1 unique, schema-valid, provenance-linked, exact-text and change-spec completeness verified; marked paragraph elements=18, yellow runs=32, green runs=4, accent6 runs=1; requirement_ids=S4A-REQ-2026-001 (derived from data, not a Python allow-list)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools.ps1",
+        "-Task",
+        "ValidateCanonical"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS canonical units: 53 source-resolved; direct=52, normalized=1, exceptions=1\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools.ps1",
+        "-Task",
+        "ValidateGovernance"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS governance data: 2 files hash-matched\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "tools.ps1",
+        "-Task",
+        "ValidateTerminology"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS terminology evidence: sources=5, extracted=136, source_provided_english=41, conflicts=6, approved=0, relevance_matches=0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "F:\\-DEV-\\120.Samin-PDF\\.venv\\Scripts\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "F:\\-DEV-\\120.Samin-PDF\\.venv\\Scripts\\python.exe",
+        "-m",
+        "mypy",
+        "--strict",
+        "src/spict4all"
+      ],
+      "exit_code": 0,
+      "stdout": "Success: no issues found in 22 source files\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "F:\\-DEV-\\120.Samin-PDF\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "exit_code": 0,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "F:\\-DEV-\\120.Samin-PDF\\.venv\\Scripts\\python.exe",
+        "scripts/validate_t1_adjudication.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"concepts\": 29,\n  \"clinical_risk\": {\n    \"HIGH\": 21,\n    \"MEDIUM\": 8\n  },\n  \"candidate_origins\": {\n    \"MODEL_PROPOSED_FROM_EVIDENCE\": 9,\n    \"NO_RELIABLE_TERMINOLOGY_EVIDENCE\": 16,\n    \"SOURCE_DERIVED_FINNISH_ONLY\": 4,\n    \"SOURCE_EXPLICIT\": 0\n  },\n  \"semantic_connections\": 13,\n  \"mapping_edges\": 31,\n  \"relevant_conflicts\": 3,\n  \"must_decide\": 5,\n  \"approved\": 0\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "F:\\-DEV-\\120.Samin-PDF\\.venv\\Scripts\\python.exe",
+        "scripts/validate_t1_1_enrichment.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"concepts_searched\": 29,\n  \"search_attempts\": 49,\n  \"unique_search_results_screened\": 79,\n  \"unique_pages_scraped\": 28,\n  \"useful_evidence_records\": 28,\n  \"concepts_enriched\": 23,\n  \"no_sufficient_evidence_before\": 16,\n  \"no_sufficient_evidence_after\": 11,\n  \"still_insufficient_ids\": [\n    \"T-003\",\n    \"T-007\",\n    \"T-009\",\n    \"T-011\",\n    \"T-015\",\n    \"T-018\",\n    \"T-019\",\n    \"T-024\",\n    \"T-026\",\n    \"T-027\",\n    \"T-029\"\n  ],\n  \"original_no_evidence_now_with_zero_useful_evidence\": 3,\n  \"high_risk_enriched\": 18,\n  \"must_review_with_sami\": 21,\n  \"external_human_review_required\": 29,\n  \"new_scope_conflicts\": 7,\n  \"original_conflicts_resolved\": 0,\n  \"approved\": 0\n}\n",
+      "stderr": ""
+    }
+  ],
+  "work_package": "WP-T1.1-TERVEYSKIRJASTO-TERMINOLOGY-ENRICHMENT-001",
+  "counts": {
+    "concepts_searched": 29,
+    "search_attempts": 49,
+    "unique_search_results_screened": 79,
+    "unique_pages_scraped": 28,
+    "useful_evidence_records": 28,
+    "concepts_enriched": 23,
+    "no_sufficient_evidence_before": 16,
+    "no_sufficient_evidence_after": 11,
+    "still_insufficient_ids": [
+      "T-003",
+      "T-007",
+      "T-009",
+      "T-011",
+      "T-015",
+      "T-018",
+      "T-019",
+      "T-024",
+      "T-026",
+      "T-027",
+      "T-029"
+    ],
+    "original_no_evidence_now_with_zero_useful_evidence": 3,
+    "high_risk_enriched": 18,
+    "must_review_with_sami": 21,
+    "external_human_review_required": 29,
+    "new_scope_conflicts": 7,
+    "original_conflicts_resolved": 0,
+    "approved": 0
+  },
+  "tests_passed": 293,
+  "new_tests": 28,
+  "protected_input_files_unchanged": 52,
+  "source_fragments_verified_against_firecrawl_article_markdown": 28,
+  "human_decision_fields_populated": 0,
+  "approved_terminology": 0,
+  "translation_candidates_generated": 0,
+  "no_commit_or_push": true,
+  "tsv_verification": "Artifact Tool exact cell round-trip; UTF-8 TSV compared to unchanged original fields plus deterministic enrichment fields. TSV does not preserve visual formatting.",
+  "integrity_snapshot_note": "Two mojibake path keys corrected by separate T1_1_integrity_path_corrections.json, with original expected hashes checked against unchanged original T1 lock. Initial snapshot retained.",
+  "unrelated_worktree_change": "README.md changed externally during this task; not edited or reverted by this run.",
+  "files_created": [
+    "scripts/build_t1_1_enrichment.py",
+    "scripts/build_t1_1_tables.mjs",
+    "scripts/validate_t1_1_enrichment.py",
+    "src/spict4all/terminology_enrichment.py",
+    "terminology/adjudication/enrichment/T1_1_TERVEYSKIRJASTO_ENRICHMENT_REPORT.md",
+    "terminology/adjudication/enrichment/T1_1_UPDATED_ADJUDICATION_QUEUE.tsv",
+    "terminology/adjudication/enrichment/T1_1_VALIDATION_RESULTS.json",
+    "terminology/adjudication/enrichment/T1_1_input_integrity.json",
+    "terminology/adjudication/enrichment/T1_1_integrity_path_corrections.json",
+    "terminology/adjudication/enrichment/TERM-SRC-006-terveyskirjasto-evidence.jsonl",
+    "terminology/adjudication/enrichment/TERMINOLOGY_HUMAN_REVIEW_T1_1.md",
+    "terminology/adjudication/enrichment/model_interpretations.json",
+    "terminology/adjudication/enrichment/page_receipts.jsonl",
+    "terminology/adjudication/enrichment/search_receipts.jsonl",
+    "terminology/adjudication/enrichment/web_source_manifest.json",
+    "tests/test_terminology_enrichment.py"
+  ],
+  "artifact_sha256": {
+    "scripts/build_t1_1_enrichment.py": "2ed53be4a0fb028b9492a9dc09380369034a3ac4262f077f403cea89f529723c",
+    "scripts/build_t1_1_tables.mjs": "1a92cef9999223f451bd09791cb91cb6e7eee5ec7f3be4d052a1ebc58b8767ca",
+    "scripts/validate_t1_1_enrichment.py": "a18bd7231a0985df2b92c069a866212d08105fe57538682d3c81f4b016e10d26",
+    "src/spict4all/terminology_enrichment.py": "197a8cb10fdf9121ab92712478e81716073e46b1661ed52e404debab52dbdf30",
+    "terminology/adjudication/enrichment/T1_1_TERVEYSKIRJASTO_ENRICHMENT_REPORT.md": "dd62dcc52c9cf8fb2a8bfffe3b79b5f92d5648d05151b2ca9f6452a350ec591f",
+    "terminology/adjudication/enrichment/T1_1_UPDATED_ADJUDICATION_QUEUE.tsv": "71699f969192ab185d4942ebbad99ab5d692095718dfcedb113e6f150611e92f",
+    "terminology/adjudication/enrichment/T1_1_input_integrity.json": "deb201dddc3ef22b04b49c95151b9fc294219a3ff41d38049761843a2cd6e6f9",
+    "terminology/adjudication/enrichment/T1_1_integrity_path_corrections.json": "734a23825addbe9a5a56251138775d19b2c4ba16e8b8df1c2f1265703d4124ab",
+    "terminology/adjudication/enrichment/TERM-SRC-006-terveyskirjasto-evidence.jsonl": "2ca54edd8d1f30f1caf74be0a805412de17dacf7b784975a83a4aa75cbc09bd9",
+    "terminology/adjudication/enrichment/TERMINOLOGY_HUMAN_REVIEW_T1_1.md": "253905165978d336fe1700480ebe4b8148a0addcbfbfadee5e537b15b0d66da1",
+    "terminology/adjudication/enrichment/model_interpretations.json": "4c1ede75a0f8d5740c0c9bbd279d8ca911762229497d91e64f967b664e1dd0b7",
+    "terminology/adjudication/enrichment/page_receipts.jsonl": "4356d15e3a12b0dd8e330852068d2d0086954f0a8a76ea671211fd84dbb8e9d6",
+    "terminology/adjudication/enrichment/search_receipts.jsonl": "37ccfab4e9251f70f0d4533e291ed13d0b62bf8ae097d9ec5282b2847ea97c0d",
+    "terminology/adjudication/enrichment/web_source_manifest.json": "3a90b5b72ef49e01940d5b6c70cff045ec2702d417420e11bc9781355a5381fb",
+    "tests/test_terminology_enrichment.py": "63b7f9a09eb7eb9fb82a15f6931b33f6b813f0a750b53a02e32a80843201d17f"
+  },
+  "git_status_before_validation_record": " M README.md\n?? scripts/build_t1_1_enrichment.py\n?? scripts/build_t1_1_tables.mjs\n?? scripts/build_t1_adjudication.py\n?? scripts/build_t1_tables.mjs\n?? scripts/validate_t1_1_enrichment.py\n?? scripts/validate_t1_adjudication.py\n?? src/spict4all/adjudication.py\n?? src/spict4all/terminology_enrichment.py\n?? terminology/adjudication/T1_TERMINOLOGY_ADJUDICATION_REPORT.md\n?? terminology/adjudication/T1_VALIDATION_RESULTS.json\n?? terminology/adjudication/TERMINOLOGY_ADJUDICATION_QUEUE.tsv\n?? terminology/adjudication/TERMINOLOGY_HUMAN_REVIEW.md\n?? terminology/adjudication/enrichment/T1_1_TERVEYSKIRJASTO_ENRICHMENT_REPORT.md\n?? terminology/adjudication/enrichment/T1_1_UPDATED_ADJUDICATION_QUEUE.tsv\n?? terminology/adjudication/enrichment/T1_1_input_integrity.json\n?? terminology/adjudication/enrichment/T1_1_integrity_path_corrections.json\n?? terminology/adjudication/enrichment/TERM-SRC-006-terveyskirjasto-evidence.jsonl\n?? terminology/adjudication/enrichment/TERMINOLOGY_HUMAN_REVIEW_T1_1.md\n?? terminology/adjudication/enrichment/model_interpretations.json\n?? terminology/adjudication/enrichment/page_receipts.jsonl\n?? terminology/adjudication/enrichment/search_receipts.jsonl\n?? terminology/adjudication/enrichment/web_source_manifest.json\n?? terminology/adjudication/human_terminology_decisions.tsv\n?? terminology/adjudication/input_integrity.json\n?? terminology/adjudication/model_mapping_plan.json\n?? terminology/adjudication/semantic_search_scope.json\n?? terminology/adjudication/source_screening.jsonl\n?? terminology/adjudication/terminology_adjudication_evidence.jsonl\n?? tests/test_adjudication.py\n?? tests/test_terminology_enrichment.py\n"
+}

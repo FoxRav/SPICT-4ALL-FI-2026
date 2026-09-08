@@ -1,0 +1,45 @@
+{
+  "work_package": "WP-T1.3-CLOSE-PRE-G1-001",
+  "decision_maker": "Project Owner",
+  "provenance": "Explicit Project Owner disposition in the WP-T1.3 user message; recorded 2026-09-08",
+  "t1_status": "READY_FOR_G1",
+  "concepts_reviewed": 29,
+  "mandatory_pre_g1_sami_items": 0,
+  "terminology_blockers_to_g1": 0,
+  "g1_started": false,
+  "glossary_entries_approved_by_this_work_package": 0,
+  "dispositions": [
+    {
+      "decision_id": "T-003",
+      "concept_en": "carer",
+      "mandatory_pre_g1": false,
+      "route": "INDEPENDENT_FORWARD_TRANSLATION_AND_SYNTHESIS",
+      "mandatory_finnish_term": null,
+      "note": "Resolve contextually; no mandatory Finnish glossary term."
+    },
+    {
+      "decision_id": "T-018",
+      "concept_en": "spiritual problems",
+      "mandatory_pre_g1": false,
+      "route": "INDEPENDENT_FORWARD_TRANSLATION_AND_SYNTHESIS",
+      "mandatory_finnish_term": null,
+      "note": "Ordinary meaning is sufficiently clear; no further terminology research or expert escalation."
+    },
+    {
+      "decision_id": "T-027",
+      "concept_en": "one or more strokes",
+      "mandatory_pre_g1": false,
+      "route": "INDEPENDENT_FORWARD_TRANSLATION_AND_SYNTHESIS",
+      "mandatory_finnish_term": null,
+      "note": "Ordinary Finnish translation evidence is sufficient; no further expert escalation."
+    },
+    {
+      "decision_id": "T-009",
+      "concept_en": "frailty",
+      "mandatory_pre_g1": false,
+      "route": "ALREADY_DISCUSSED_TRANSLATION_AND_SYNTHESIS",
+      "mandatory_finnish_term": null,
+      "note": "Already discussed; missing final human wording/disposition is not invented. Not a pre-G1 blocker. A/B and synthesis may resolve it unless a genuinely material clinical ambiguity emerges later."
+    }
+  ]
+}

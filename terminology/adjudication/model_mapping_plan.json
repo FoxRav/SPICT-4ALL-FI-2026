@@ -1,0 +1,613 @@
+{
+  "work_package": "WP-T1-TERMINOLOGY-ADJUDICATION-PREP-001",
+  "analysis_type": "MODEL_SEMANTIC_MAPPING",
+  "approval_count": 0,
+  "decisions": [
+    {
+      "decision_id": "T-001",
+      "concept_en": "palliative care",
+      "source_unit_ids": [
+        "S4A-2026-000",
+        "S4A-2026-009",
+        "S4A-2026-019"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "Palliatiivinen hoito",
+      "candidate_origin": "SOURCE_DERIVED_FINNISH_ONLY",
+      "terminology_evidence_ids": [
+        "TERM-EVID-PDF-004",
+        "TERM-EVID-PDF-007",
+        "TERM-EVID-PDF-005",
+        "TERM-EVID-PDF-008"
+      ],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: The two Finnish titles/keyword lists name palliative care and saattohoito separately but provide no extracted definition or English pair. The proposed correspondence is model interpretation; these fragments alone do not prove interchangeability or clinical scope. Ask the human team to prevent automatic substitution of saattohoito for every occurrence. The title still requires a separate source-authority disposition.",
+      "recommended_for_human_review": "MUST_DECIDE_BEFORE_G1",
+      "alternative_fi": "saattohoito (source term for contrast only; not established as an equivalent)",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-002",
+      "concept_en": "life shortening health conditions",
+      "source_unit_ids": [
+        "S4A-2026-001",
+        "S4A-2026-042"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "elämää lyhentävät terveysongelmat",
+      "candidate_origin": "MODEL_PROPOSED_FROM_EVIDENCE",
+      "terminology_evidence_ids": [
+        "TERM-EVID-004-ROW-0079"
+      ],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: The Finnish definition of terveysongelma includes disease, symptom or another health deviation. The life-shortening modifier and the combined candidate are model-proposed, not supplied by that source. Preserve the life-shortening scope, physical/mental alternatives and absence of an asserted terminal phase.",
+      "recommended_for_human_review": "MUST_DECIDE_BEFORE_G1",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-003",
+      "concept_en": "carer",
+      "source_unit_ids": [
+        "S4A-2026-006",
+        "S4A-2026-046"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "",
+      "candidate_origin": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "terminology_evidence_ids": [],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: No extracted entry establishes the role of a carer or a Finnish equivalent. Staff/professional/client entries do not establish this relationship. Ask whether the project needs a term that includes informal support without silently introducing an employment or formal caregiver-benefit status.",
+      "recommended_for_human_review": "MUST_DECIDE_BEFORE_G1",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-004",
+      "concept_en": "care plans / planning future care",
+      "source_unit_ids": [
+        "S4A-2026-001",
+        "S4A-2026-046",
+        "S4A-2026-051"
+      ],
+      "clinical_risk": "MEDIUM",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "hoitosuunnitelma",
+      "candidate_origin": "MODEL_PROPOSED_FROM_EVIDENCE",
+      "terminology_evidence_ids": [
+        "TERM-EVID-PDF-006",
+        "TERM-EVID-004-ROW-0017",
+        "TERM-EVID-004-ROW-0084"
+      ],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: The PDF explicitly pairs hoitosuunnitelma with advance care planning, not with the broader SPICT care plans. The CSV defines collaborative planning and a specific Kanta-related plan. Reusing the Finnish wording for SPICT is MODEL_SEMANTIC_MAPPING; neither advance care planning nor the named information-system document may be imposed on all SPICT plans. Preserve sharing, updates and contingency planning.",
+      "recommended_for_human_review": "MUST_DECIDE_BEFORE_G1",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-005",
+      "concept_en": "reduce, stop or not have treatment / stopping or not starting dialysis",
+      "source_unit_ids": [
+        "S4A-2026-009",
+        "S4A-2026-019",
+        "S4A-2026-020"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "hoidon vähentäminen / hoidon lopettaminen / hoidon aloittamatta jättäminen",
+      "candidate_origin": "MODEL_PROPOSED_FROM_EVIDENCE",
+      "terminology_evidence_ids": [
+        "TERM-EVID-004-ROW-0021",
+        "TERM-EVID-004-ROW-0019"
+      ],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: The source defines hoito broadly and collaborative goals. The three Finnish action labels are model constructions, not a source-provided equivalence. Preserve reduction, withdrawal and non-initiation as separate alternatives; preserve person/family agency and choosing palliative care instead of starting dialysis. A terminology decision cannot become a treatment recommendation.",
+      "recommended_for_human_review": "MUST_DECIDE_BEFORE_G1",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-006",
+      "concept_en": "kidney dialysis",
+      "source_unit_ids": [
+        "S4A-2026-019",
+        "S4A-2026-020"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "MEDIUM",
+      "candidate_fi": "",
+      "candidate_origin": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "terminology_evidence_ids": [],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: No dialysis entry or definition occurs in the 136-entry evidence set. General treatment terminology cannot identify the procedure. Human review should check the procedure term independently from the choices recorded in T-005.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-007",
+      "concept_en": "quality of life",
+      "source_unit_ids": [
+        "S4A-2026-009"
+      ],
+      "clinical_risk": "MEDIUM",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "",
+      "candidate_origin": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "terminology_evidence_ids": [],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: The extracted keyword laatu concerns a quality recommendation and does not establish quality of life. No reliable term/definition for this concept was extracted. Preserve the person or family wish to focus on quality of life without substituting service quality.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-008",
+      "concept_en": "dementia",
+      "source_unit_ids": [
+        "S4A-2026-021"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "",
+      "candidate_origin": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "terminology_evidence_ids": [],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: No dementia term or definition occurs in the extracted set. Preserve its distinction from frailty and the source alternative or; do not label every listed functional sign as a dementia diagnosis.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-009",
+      "concept_en": "frailty",
+      "source_unit_ids": [
+        "S4A-2026-021"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "",
+      "candidate_origin": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "terminology_evidence_ids": [],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: No frailty term or definition occurs in the extracted set. General functional limitation or rehabilitation entries do not establish a frailty equivalent. Preserve its distinction from dementia; clinical review is needed before controlling a Finnish term.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-010",
+      "concept_en": "heart failure",
+      "source_unit_ids": [
+        "S4A-2026-015"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "MEDIUM",
+      "candidate_fi": "",
+      "candidate_origin": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "terminology_evidence_ids": [],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: No heart-failure entry occurs in the extracted set. Preserve the alternative heart blood vessel disease and the symptom conditions at rest, movement or a few steps. A general heart-problem label is not evidence for this diagnosis.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-011",
+      "concept_en": "liver transplant",
+      "source_unit_ids": [
+        "S4A-REQ-2026-001"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "MEDIUM",
+      "candidate_fi": "",
+      "candidate_origin": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "terminology_evidence_ids": [],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: No transplant entry occurs in the extracted set. Preserve not possible without converting it to refusal or a decision to stop treatment. This change-spec requirement remains noncanonical, authority-unresolved, publication-blocking and non-insertable; terminology review cannot add it to the canonical template.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-012",
+      "concept_en": "short of breath / respiratory problems",
+      "source_unit_ids": [
+        "S4A-2026-015",
+        "S4A-2026-022",
+        "S4A-2026-025",
+        "S4A-2026-045"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "Hengenahdistus",
+      "candidate_origin": "SOURCE_DERIVED_FINNISH_ONLY",
+      "terminology_evidence_ids": [
+        "TERM-EVID-PDF-001"
+      ],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: The Finnish-only glossary defines Dyspnea as Hengenahdistus, vaikeutunut hengitys. The candidate quotes wording from that definition, not an explicit English label. It may support short of breath; it cannot narrow every respiratory or breathing problem to this one symptom. Preserve the rest/movement thresholds and even when the chest is at its best.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "vaikeutunut hengitys (same source definition; human must assess context)",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-013",
+      "concept_en": "breathing machine",
+      "source_unit_ids": [
+        "S4A-2026-035"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "",
+      "candidate_origin": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "terminology_evidence_ids": [],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: The extracted medical-device entry has no definition and cannot identify the kind of breathing support meant here. No reliable device-specific terminology evidence is available. Do not add invasive ventilation, a named device or permanent dependence to the source.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-014",
+      "concept_en": "symptoms / treatment to help with symptoms",
+      "source_unit_ids": [
+        "S4A-2026-008",
+        "S4A-2026-017",
+        "S4A-2026-049",
+        "S4A-2026-050"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "MEDIUM",
+      "candidate_fi": "oireet / oireita lievittävä hoito",
+      "candidate_origin": "MODEL_PROPOSED_FROM_EVIDENCE",
+      "terminology_evidence_ids": [
+        "TERM-EVID-004-ROW-0079",
+        "TERM-EVID-004-ROW-0021"
+      ],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: The Finnish health-problem definition mentions oire; the hoito definition includes alleviating problems and suffering. The plural and symptom-treatment phrase are model-proposed. Preserve troublesome symptoms despite good treatment, cancer treatment to help symptoms, and escalation when difficult to manage; do not equate symptom treatment with imminent dying.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-015",
+      "concept_en": "no treatment available / treatment will not work well",
+      "source_unit_ids": [
+        "S4A-2026-042"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "",
+      "candidate_origin": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "terminology_evidence_ids": [],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: General availability and care-assessment entries do not establish this clinical treatment-option distinction. Leave the candidate blank. Preserve no available treatment versus poor expected effect; do not replace not work well with absolute futility or refusal.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-016",
+      "concept_en": "holistic care",
+      "source_unit_ids": [
+        "S4A-2026-049"
+      ],
+      "clinical_risk": "MEDIUM",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "kokonaisvaltainen hoito",
+      "candidate_origin": "MODEL_PROPOSED_FROM_EVIDENCE",
+      "terminology_evidence_ids": [
+        "TERM-EVID-004-ROW-0021",
+        "TERM-EVID-004-ROW-0084"
+      ],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: The broad hoito definition and a kokonaisvaltainen suunnitelma provide related Finnish wording. The candidate is model composition, not a source-supplied pair for holistic care. The evidence does not itself establish all seven SPICT domains; symptoms, emotional, social, functional, financial, spiritual and cultural problems must all remain visible.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-017",
+      "concept_en": "functional problems / ongoing disability",
+      "source_unit_ids": [
+        "S4A-2026-004",
+        "S4A-2026-014",
+        "S4A-2026-024",
+        "S4A-2026-034",
+        "S4A-2026-036",
+        "S4A-2026-037",
+        "S4A-2026-041",
+        "S4A-2026-047",
+        "S4A-2026-049"
+      ],
+      "clinical_risk": "MEDIUM",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "toimintakyvyn ongelmat",
+      "candidate_origin": "MODEL_PROPOSED_FROM_EVIDENCE",
+      "terminology_evidence_ids": [
+        "TERM-EVID-004-ROW-0004",
+        "TERM-EVID-004-ROW-0043"
+      ],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: The assistive-device and rehabilitation definitions use toimintakyky and functional limitation. They are context evidence, not source labels for impairment or disability. The candidate is a model construction. Preserve actual activities, assistance needs and ongoing post-stroke disability; do not add a rehabilitation intervention to SPICT.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-018",
+      "concept_en": "spiritual problems",
+      "source_unit_ids": [
+        "S4A-2026-049"
+      ],
+      "clinical_risk": "MEDIUM",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "",
+      "candidate_origin": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "terminology_evidence_ids": [],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: No spiritual-care term or definition occurs in the extracted set. Generic social welfare or quality terms are insufficient. Ask the human reviewers to preserve this domain without restricting it to formal religion; this scope reading is model interpretation of the English, not a Finnish source claim.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-019",
+      "concept_en": "cultural problems",
+      "source_unit_ids": [
+        "S4A-2026-049"
+      ],
+      "clinical_risk": "MEDIUM",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "",
+      "candidate_origin": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "terminology_evidence_ids": [],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: No cultural-care terminology entry occurs in the extracted set. Do not infer a Finnish equivalent from administrative social-service vocabulary. Review wording for the stated domain without labelling a culture itself as a problem.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-020",
+      "concept_en": "urgent or emergency hospital admissions or visits",
+      "source_unit_ids": [
+        "S4A-2026-003"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "kiireellinen sairaalahoito / sairaalakäynti",
+      "candidate_origin": "MODEL_PROPOSED_FROM_EVIDENCE",
+      "terminology_evidence_ids": [
+        "TERM-EVID-004-ROW-0022",
+        "TERM-EVID-004-ROW-0023",
+        "TERM-EVID-004-ROW-0057",
+        "TERM-EVID-004-ROW-0059"
+      ],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: Finnish entries distinguish urgent care, emergency-unit care, ward episodes and visits. The combined candidate is model-proposed and provisional: sairaalahoito may describe care rather than the admission event. Human review must preserve urgency/emergency, admission versus visit, and the source singular/plural, without substituting ambulance/prehospital care.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-021",
+      "concept_en": "specialist help",
+      "source_unit_ids": [
+        "S4A-2026-050"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "MEDIUM",
+      "candidate_fi": "asiantuntijan apu",
+      "candidate_origin": "MODEL_PROPOSED_FROM_EVIDENCE",
+      "terminology_evidence_ids": [
+        "TERM-EVID-004-ROW-0038",
+        "TERM-EVID-004-ROW-0039"
+      ],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: Consultation-request/response definitions support seeking advice between professionals. They do not explicitly translate specialist help or require physician-only referral. The candidate is a model proposal whose level of expertise must be assessed against the source escalation trigger; do not replace help with a mandatory referral process.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-022",
+      "concept_en": "person: scope relative to patient / healthcare client",
+      "source_unit_ids": [
+        "S4A-2026-001",
+        "S4A-2026-002",
+        "S4A-2026-005",
+        "S4A-2026-006",
+        "S4A-2026-009",
+        "S4A-2026-010",
+        "S4A-2026-044",
+        "S4A-2026-046",
+        "S4A-2026-048",
+        "S4A-2026-049"
+      ],
+      "clinical_risk": "MEDIUM",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "henkilö",
+      "candidate_origin": "MODEL_PROPOSED_FROM_EVIDENCE",
+      "terminology_evidence_ids": [
+        "TERM-EVID-004-ROW-0076",
+        "TERM-EVID-005-ROW-0008",
+        "TERM-EVID-004-ROW-0075",
+        "TERM-EVID-005-ROW-0007"
+      ],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: The source explicitly pairs patient with potilas and healthcare client with terveydenhuollon asiakas, not person. The candidate henkilö is model-selected from the source definitions to preserve the broader person-centred wording. The two registered definition conflicts remain unresolved; the presence of English labels must not be laundered into a person translation pair.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "potilas / terveydenhuollon asiakas (source terms for scope comparison only)",
+      "conflict_ids": [
+        "TERM-CONFLICT-002",
+        "TERM-CONFLICT-004"
+      ]
+    },
+    {
+      "decision_id": "T-023",
+      "concept_en": "help and care needed",
+      "source_unit_ids": [
+        "S4A-2026-001",
+        "S4A-2026-005",
+        "S4A-2026-006",
+        "S4A-2026-046",
+        "S4A-2026-048"
+      ],
+      "clinical_risk": "MEDIUM",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "hoidon tarve",
+      "candidate_origin": "SOURCE_DERIVED_FINNISH_ONLY",
+      "terminology_evidence_ids": [
+        "TERM-EVID-004-ROW-0065",
+        "TERM-EVID-004-ROW-0064",
+        "TERM-EVID-005-ROW-0026"
+      ],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: The Finnish-only hoidon tarve definition may inform the care component; palvelutarve is broader formal service-need terminology. Neither covers every informal help/support need in SPICT. Both records for the registered palvelutarve conflict are retained for human scope review; apparent markup differences do not authorize automatic resolution.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "palvelutarve (broader source term; not an automatic replacement for all help)",
+      "conflict_ids": [
+        "TERM-CONFLICT-001"
+      ]
+    },
+    {
+      "decision_id": "T-024",
+      "concept_en": "nurse, doctor, social worker or other staff",
+      "source_unit_ids": [
+        "S4A-2026-048"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "",
+      "candidate_origin": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "terminology_evidence_ids": [],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: The extracted terveydenhuollon ammattihenkilö definition is a specific professional category and does not establish an umbrella equivalent covering the entire SPICT list. No reliable candidate for the whole list is proposed. Preserve all named roles and other staff without imposing a legal classification from an undated CSV.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-025",
+      "concept_en": "surgery is not possible",
+      "source_unit_ids": [
+        "S4A-2026-018"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "MEDIUM",
+      "candidate_fi": "Ei leikattavissa oleva",
+      "candidate_origin": "SOURCE_DERIVED_FINNISH_ONLY",
+      "terminology_evidence_ids": [
+        "TERM-EVID-PDF-002"
+      ],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: The Finnish-only definition of Inoperaabeli provides the candidate wording, but the source does not specify whether impossibility is anatomical or due to the person’s overall condition. The human reviewer must assess applicability to this leg/circulation context. Do not turn not possible into unwillingness or a discretionary recommendation.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "Inoperaabeli (source headword; technical wording, not preferred by this run)",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-026",
+      "concept_en": "medicines and other treatments",
+      "source_unit_ids": [
+        "S4A-2026-049"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "MEDIUM",
+      "candidate_fi": "",
+      "candidate_origin": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "terminology_evidence_ids": [],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: The general hoito definition does not supply a reliable medicines-versus-other-treatments pair. Keep the candidate blank and preserve both parts of the review instruction; do not reduce the review to medicines alone.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-027",
+      "concept_en": "one or more strokes",
+      "source_unit_ids": [
+        "S4A-2026-047"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "MEDIUM",
+      "candidate_fi": "",
+      "candidate_origin": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "terminology_evidence_ids": [],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: No stroke terminology entry is present. Generic disability/rehabilitation definitions do not establish the event term. Preserve one or more, ongoing disability and increasing physical and/or mental health problems without adding a stroke subtype.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-028",
+      "concept_en": "difficulty with swallowing",
+      "source_unit_ids": [
+        "S4A-2026-032",
+        "S4A-2026-043"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "MEDIUM",
+      "candidate_fi": "",
+      "candidate_origin": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "terminology_evidence_ids": [],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: No swallowing entry occurs in the extracted set. Do not infer a term from unrelated respiratory vocabulary. Preserve difficulty versus worsening and the eating/drinking context without adding a diagnosis or intervention.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    },
+    {
+      "decision_id": "T-029",
+      "concept_en": "being confused at times",
+      "source_unit_ids": [
+        "S4A-2026-028"
+      ],
+      "clinical_risk": "HIGH",
+      "plain_language_risk": "HIGH",
+      "candidate_fi": "",
+      "candidate_origin": "NO_RELIABLE_TERMINOLOGY_EVIDENCE",
+      "terminology_evidence_ids": [],
+      "model_semantic_mapping_note": "MODEL_SEMANTIC_MAPPING: No confusion entry occurs in the extracted set. The liver-complication context does not authorize replacing the observation with a named diagnosis such as a specific encephalopathy. Preserve intermittency and keep any controlled label subject to human review.",
+      "recommended_for_human_review": "MAY_REMAIN_UNCONTROLLED_FOR_INDEPENDENT_AB",
+      "alternative_fi": "",
+      "conflict_ids": []
+    }
+  ],
+  "conflict_review": [
+    {
+      "conflict_id": "TERM-CONFLICT-001",
+      "relevance": "RELEVANT",
+      "decision_ids": [
+        "T-023"
+      ],
+      "model_relevance_note": "MODEL_SEMANTIC_MAPPING: Potential service-need narrowing of help/care is assessed in T-023.",
+      "source_conflict_status": "HUMAN_REVIEW_REQUIRED",
+      "resolution": ""
+    },
+    {
+      "conflict_id": "TERM-CONFLICT-002",
+      "relevance": "RELEVANT",
+      "decision_ids": [
+        "T-022"
+      ],
+      "model_relevance_note": "MODEL_SEMANTIC_MAPPING: Patient-versus-person scope is assessed in T-022.",
+      "source_conflict_status": "HUMAN_REVIEW_REQUIRED",
+      "resolution": ""
+    },
+    {
+      "conflict_id": "TERM-CONFLICT-003",
+      "relevance": "NOT_INCLUDED",
+      "decision_ids": [],
+      "model_relevance_note": "MODEL_SEMANTIC_MAPPING: The 54 sources do not name the combined healthcare-and-social-welfare system; no controlled system term is proposed.",
+      "source_conflict_status": "HUMAN_REVIEW_REQUIRED",
+      "resolution": ""
+    },
+    {
+      "conflict_id": "TERM-CONFLICT-004",
+      "relevance": "RELEVANT",
+      "decision_ids": [
+        "T-022"
+      ],
+      "model_relevance_note": "MODEL_SEMANTIC_MAPPING: Healthcare-client-versus-person scope is assessed in T-022.",
+      "source_conflict_status": "HUMAN_REVIEW_REQUIRED",
+      "resolution": ""
+    },
+    {
+      "conflict_id": "TERM-CONFLICT-005",
+      "relevance": "NOT_INCLUDED",
+      "decision_ids": [],
+      "model_relevance_note": "MODEL_SEMANTIC_MAPPING: The 54 sources do not name the healthcare system as a terminology decision; care must not be equated with that system.",
+      "source_conflict_status": "HUMAN_REVIEW_REQUIRED",
+      "resolution": ""
+    },
+    {
+      "conflict_id": "TERM-CONFLICT-006",
+      "relevance": "NOT_INCLUDED",
+      "decision_ids": [],
+      "model_relevance_note": "MODEL_SEMANTIC_MAPPING: No source unit names health services as such; help/care/support are not automatically formal health services.",
+      "source_conflict_status": "HUMAN_REVIEW_REQUIRED",
+      "resolution": ""
+    }
+  ]
+}
