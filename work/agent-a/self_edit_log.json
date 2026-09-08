@@ -1,0 +1,14 @@
+{
+  "initial_wording": "translation_input.json",
+  "kind": "TRANSLATOR_A_SELF_EDIT_BEFORE_PACKAGING",
+  "reasons": {
+    "015_and_025": "Explicit breathlessness also at rest.",
+    "026": "Rolling past year, avoiding a previous-calendar-year reading."
+  },
+  "replacements": {
+    "S4A-2026-015": "Sydämen vajaatoiminta tai sydämen verisuonisairaus. Hengenahdistusta tai rintakipua levätessä, liikkuessa tai kävellessä muutaman askeleen.",
+    "S4A-2026-025": "Vointi on huonontunut pitkäaikaisten keuhko-ongelmien yhteydessä. Hengenahdistusta levätessä, liikkuessa tai kävellessä muutaman askeleen silloinkin, kun keuhkojen tilanne on parhaimmillaan.",
+    "S4A-2026-026": "Viimeksi kuluneen vuoden aikana pahentuneita maksaongelmia, joihin liittyy esimerkiksi seuraavia lisäongelmia:"
+  },
+  "timestamp_utc": "2026-09-08T10:38:44.552583Z"
+}

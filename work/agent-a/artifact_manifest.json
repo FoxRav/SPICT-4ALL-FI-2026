@@ -1,0 +1,125 @@
+{
+  "scope": "Agent A outputs only; excludes self, placeholders and ignored temporary/cache files",
+  "files": [
+    {
+      "path": "work/agent-a/build_evidence.py",
+      "sha256": "78b419c3d54ed4ea9ddd84fb2e481b5afa47e752fed7f7cd331e00a311d47629",
+      "bytes": 6881
+    },
+    {
+      "path": "work/agent-a/candidates.jsonl",
+      "sha256": "82d06571c855c87d04e015bf905b1943c5fcd31e68827695fd4cfceb52f4c2cd",
+      "bytes": 108647
+    },
+    {
+      "path": "work/agent-a/checks/20260908T104119369506Z/agent_a_tests.txt",
+      "sha256": "add4f0e04262d6202218950f3f45a7d639eda6414adfc47b43df680b3644209c",
+      "bytes": 101
+    },
+    {
+      "path": "work/agent-a/checks/20260908T104119369506Z/candidate_schema_and_coverage.txt",
+      "sha256": "7a73c2040d2dc27ffa4b0206d2390f01684f40bf36ebd3e0257417da5cf29059",
+      "bytes": 27
+    },
+    {
+      "path": "work/agent-a/checks/20260908T104119369506Z/commands.json",
+      "sha256": "71811bd5af2f113c3905a20606eb9254a22ce8a4b05613b9b640899512f6ae10",
+      "bytes": 4073
+    },
+    {
+      "path": "work/agent-a/checks/20260908T104119369506Z/coverage.txt",
+      "sha256": "1096c8f687626e5ee46a3671e359b3a0c0b7d18cce6742970dd4872e04896218",
+      "bytes": 87
+    },
+    {
+      "path": "work/agent-a/checks/20260908T104119369506Z/evidence_validation.json",
+      "sha256": "d6b8cc00fa27f26bd65daa73d1b7bdad246b0f1ef1b098ffd538cbcb050a67b3",
+      "bytes": 8005
+    },
+    {
+      "path": "work/agent-a/checks/20260908T104119369506Z/repository_lint.txt",
+      "sha256": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0",
+      "bytes": 20
+    },
+    {
+      "path": "work/agent-a/checks/20260908T104119369506Z/repository_tests_in_pre_g1_fixture.txt",
+      "sha256": "cec90893e53ba1ebc36e852c4a5a16993699b1e6642eb559b2662274fd481aa9",
+      "bytes": 427
+    },
+    {
+      "path": "work/agent-a/checks/20260908T104119369506Z/repository_types.txt",
+      "sha256": "14f7b3e492c65485e65612ef5dcf9681b8c12755889c4514a2474a4510f74a10",
+      "bytes": 45
+    },
+    {
+      "path": "work/agent-a/checks/20260908T104119369506Z/t1_closure_in_pre_g1_fixture.txt",
+      "sha256": "bd4830fbc7de50635c7aa51987cc32b3f9bae560df188a8ddbc2bb5890f3444b",
+      "bytes": 192
+    },
+    {
+      "path": "work/agent-a/checks/20260908T104119369506Z/validate-canonical.txt",
+      "sha256": "497d0e0e24e6fef499d27af4f68bcf18a1197ade00c67455fe06bb70006b580d",
+      "bytes": 81
+    },
+    {
+      "path": "work/agent-a/checks/20260908T104119369506Z/validate-governance.txt",
+      "sha256": "63a5b06ef511771522190cf321a2d6173be09da4afff2d4ede946291414f7396",
+      "bytes": 44
+    },
+    {
+      "path": "work/agent-a/checks/20260908T104119369506Z/validate-requirements.txt",
+      "sha256": "ff0e6d57290961a1552aa54f17c5cc3117a6dd3673b9a2a02690c807b2102d83",
+      "bytes": 274
+    },
+    {
+      "path": "work/agent-a/checks/20260908T104119369506Z/validate-terminology.txt",
+      "sha256": "61cbdec00cf7b8ba636172828db2378892dc2c758238803013db09903889ffb2",
+      "bytes": 127
+    },
+    {
+      "path": "work/agent-a/checks/20260908T104119369506Z/verify-sources.txt",
+      "sha256": "0c817b3ddd76289d20689c5f1830eccad9c496b81c181ea1a73c472eb49dea92",
+      "bytes": 953
+    },
+    {
+      "path": "work/agent-a/git_status.txt",
+      "sha256": "78c5c6f10ea82d12ddde6c49bde08a2fe95799a4fef6fa19f1544255ccba953b",
+      "bytes": 1374
+    },
+    {
+      "path": "work/agent-a/REPORT.md",
+      "sha256": "733296b9763c9f0d5729c0f081443f37ed92d101c8a2867d76cc41a7e8abc289",
+      "bytes": 6872
+    },
+    {
+      "path": "work/agent-a/run_checks.py",
+      "sha256": "ba5ca8cd70dc4b922b87b22d03cabb022c66de4da240e7de2cce13457c0a9e9b",
+      "bytes": 3266
+    },
+    {
+      "path": "work/agent-a/run_metadata.json",
+      "sha256": "3ab1cf84c855e74de04e26a31bd1cffbedee5f56781b592e58a5de69c0052fb1",
+      "bytes": 6653
+    },
+    {
+      "path": "work/agent-a/self_edit_log.json",
+      "sha256": "9ee3a88c4218837d8f961b2cf8a38d67cf69b6a96d2e8d122092e2f402bcbc4b",
+      "bytes": 856
+    },
+    {
+      "path": "work/agent-a/test_evidence.py",
+      "sha256": "466e11e7696d636262db0075ac30f9a7bbc365c1358ba2837ef8dd4640bb1c9d",
+      "bytes": 1759
+    },
+    {
+      "path": "work/agent-a/translation_input.json",
+      "sha256": "007e858df1b092afc1a04bc5a5251261b60627c06600cdb584ae3e31f591fdda",
+      "bytes": 5528
+    },
+    {
+      "path": "work/agent-a/validate_evidence.py",
+      "sha256": "545330e4bae9ec9987a206b48184f622e6de846c400e8eac95fbb78b8db649be",
+      "bytes": 6062
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "created_at_utc": "2026-09-08T10:38:44.552583Z",
+  "inputs": [
+    {
+      "bytes": 1781,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\AGENTS.md",
+      "sha256": "3a6f7fa4500256c39b5d71e3a01d2ad9a82820ca5b7a8654192668dc0d079ce9"
+    },
+    {
+      "bytes": 8942,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\README.md",
+      "sha256": "9dd188669007c1867541a65feda34e7e3cdaebe5a1ac43231d0c2be1f36b7efa"
+    },
+    {
+      "bytes": 1335,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\data\\canonical_unit_exceptions.jsonl",
+      "sha256": "c01a6d88c62dc2fdce9d6f6f3406edfad3d298b6213a77ecbbf1686b21ecdf91"
+    },
+    {
+      "bytes": 59033,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\data\\canonical_unit_manifest.json",
+      "sha256": "cfedc3f64aeeda19815695c3881969717b946c835aba1f223f133f8e798c3fd7"
+    },
+    {
+      "bytes": 634,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\data\\governance_integrity_manifest.json",
+      "sha256": "fb5a4dba57a6215130215eed0af5091d3d3a7f2f62200c198743051285c92170"
+    },
+    {
+      "bytes": 893,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\data\\source_requirements.jsonl",
+      "sha256": "7893316538c8866c2b8d8f7fbce0940b282d445436003575758409ac72b8a023"
+    },
+    {
+      "bytes": 22694,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\data\\source_units.jsonl",
+      "sha256": "f4751a7e67ff42338fc5c23a842cc7af07c03f2c6a394dea1819f26546c127a5"
+    },
+    {
+      "bytes": 5206,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\docs\\METHODOLOGY.md",
+      "sha256": "88ca68d827af0a2dbab38affe07e21db2da174a3798954c7770d98fb5114614e"
+    },
+    {
+      "bytes": 1030,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\docs\\MODEL_STRATEGY.md",
+      "sha256": "4d02fc80729861fa0fea02b1562708e19d108c843a7a66659cf064332f5026f9"
+    },
+    {
+      "bytes": 1984,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\docs\\OFFICIAL_TRANSLATION_GUIDANCE.md",
+      "sha256": "53d7e45724aa5333713d77305d917104eddea7665a1ea31cc6e4b8e250cc6c33"
+    },
+    {
+      "bytes": 5217,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\docs\\WORKFLOW.md",
+      "sha256": "94716d77e615faf68ce0a17c14ce61ec2f88a709df7b25b407ea0fbb6ccef953"
+    },
+    {
+      "bytes": 1314,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\prompts\\01-agent-a-forward.md",
+      "sha256": "fd2bbdefad70e965f658f31788549baf53c21470ca286f83016dce668e4cb6ad"
+    },
+    {
+      "bytes": 912,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\pyproject.toml",
+      "sha256": "03d35279f0184b3a0f19fd780a0d69be11756c1196e448a71ad4a4935f657b89"
+    },
+    {
+      "bytes": 417,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\requirements-dev.lock",
+      "sha256": "0a13ec12e8e1121a0151f72f5ad9c87c515bf2c73f9b3090f133799c66301658"
+    },
+    {
+      "bytes": 964,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\schemas\\run_metadata.schema.json",
+      "sha256": "62c36d90bbd7f8532992ad0f862308197c76044b06261c2fc4520524cc3d345b"
+    },
+    {
+      "bytes": 2430,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\schemas\\translation_candidate.schema.json",
+      "sha256": "2a1b4b9f20190400ad3eabbced0b54cf02e499130a5fee8a5bcc0c865f6b218a"
+    },
+    {
+      "bytes": 1419,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\sources\\manifests\\source_manifest.json",
+      "sha256": "53cce075e74c8026ef3a1b175a4e14a3a139358841ffc8eb915345fb4e260fad"
+    },
+    {
+      "bytes": 111045,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\sources\\official\\20260130-Using-SPICT-4ALL-2025.docx",
+      "sha256": "1b8ee715051ca53a27d0a2261a7f879face8a57727fbfd12fc6a830ef1c155ca"
+    },
+    {
+      "bytes": 68949,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\sources\\official\\20260521-Edits-for-SPICT-4ALL-translations-2025-and-2026.docx",
+      "sha256": "0fff175b57c66f0dd45cd18c58b599758122e5285892c07da52ddf8a9130a27d"
+    },
+    {
+      "bytes": 66914,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\sources\\official\\20260521-Word-template-SPICT-4ALL-translations-2026.docx",
+      "sha256": "aea5e489ffc93f57ab3666572f65044fba8375aa5dda897d0ef2988c3a9f8581"
+    },
+    {
+      "bytes": 223468,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\sources\\official\\20260521-Word-template-SPICT-4ALL-translations-2026.pdf",
+      "sha256": "d22418ca1d1b68a2be762bcdf48ae0e6ad41ac41c8e3d76b419e9062d4357f72"
+    },
+    {
+      "bytes": 472,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\sources\\official\\README.md",
+      "sha256": "ed16cc002863d55fdeed9f0a931c5424c3a45e412ca21090b93e29ba90817af6"
+    },
+    {
+      "bytes": 1880,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\terminology\\README.md",
+      "sha256": "d9199646a72d9cbface800368aeea14a67e4007e035daffe79cf990ad7587f39"
+    },
+    {
+      "bytes": 35602,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\terminology\\adjudication\\T1_2_reclassification.json",
+      "sha256": "f7f292ed6ab8cada3885f34425cec36e7f24d6d6d7e91002fda765d2b55fcb11"
+    },
+    {
+      "bytes": 1812,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\terminology\\adjudication\\T1_3_project_owner_disposition.json",
+      "sha256": "38cdc21ecfdcfd00dfc3341469adc4efa9d186dbb4439eceadde7fbed9fd172c"
+    },
+    {
+      "bytes": 3924,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\terminology\\adjudication\\T1_TERMINOLOGY_CLOSURE_REPORT.md",
+      "sha256": "aa0d95cd59ef84471bd17658dd560925b76801a2a320c37f4fe7ccab192dff6a"
+    },
+    {
+      "bytes": 40055,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\terminology\\adjudication\\enrichment\\TERM-SRC-006-terveyskirjasto-evidence.jsonl",
+      "sha256": "2ca54edd8d1f30f1caf74be0a805412de17dacf7b784975a83a4aa75cbc09bd9"
+    },
+    {
+      "bytes": 1231,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\terminology\\adjudication\\human_terminology_decisions.tsv",
+      "sha256": "d390a5b2a13a786bc246867c4c0c7fe7d1966e68e01c06a3a7d3bdc5487e9a25"
+    },
+    {
+      "bytes": 289188,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\terminology\\extracted\\terminology_evidence.jsonl",
+      "sha256": "7f054c9021d58135249191f2414e4abf3ff39f6ad13191577a55f12b61f6af3a"
+    },
+    {
+      "bytes": 2136,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\terminology\\terms.csv",
+      "sha256": "b5f06af94a23b29e9ec0119b32b89a6b20c0b1261003155e70663aaafa2f7d91"
+    },
+    {
+      "bytes": 6881,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\work\\agent-a\\build_evidence.py",
+      "sha256": "78b419c3d54ed4ea9ddd84fb2e481b5afa47e752fed7f7cd331e00a311d47629"
+    },
+    {
+      "bytes": 5528,
+      "path": "F:\\-DEV-\\120.SPICT-G1-A\\work\\agent-a\\translation_input.json",
+      "sha256": "007e858df1b092afc1a04bc5a5251261b60627c06600cdb584ae3e31f591fdda"
+    }
+  ],
+  "role": "Forward Translator A",
+  "run_id": "WP-G1-A-INDEPENDENT-FORWARD-TRANSLATION-001",
+  "status": "DRAFT",
+  "tool_version": "0.1.0"
+}

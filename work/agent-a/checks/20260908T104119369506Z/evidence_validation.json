@@ -1,0 +1,334 @@
+{
+  "canonical": 53,
+  "expected": 54,
+  "items": [
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-000"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-001"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-002"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-003"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-004"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-005"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-006"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-007"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-008"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-009"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-010"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-011"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-012"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-013"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-014"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-015"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-016"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-017"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-018"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-019"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-020"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "Does plain-language hauraus convey the full frailty concept adequately to the target reader? This is a wording uncertainty, not a reopened pre-G1 blocker.",
+      "unit_id": "S4A-2026-021"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-022"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-023"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-024"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-025"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-026"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-027"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-028"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-029"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-030"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-031"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-032"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-033"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-034"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-035"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-036"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-037"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-038"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-039"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-040"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-041"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-042"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-043"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-044"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-045"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-046"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-047"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-048"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-049"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-050"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-051"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-2026-052"
+    },
+    {
+      "lexical_tripwires": "PASS",
+      "structural_checks": "PASS",
+      "uncertainty": "",
+      "unit_id": "S4A-REQ-2026-001"
+    }
+  ],
+  "limitations": "Lexical tripwires cannot prove absence of semantic omissions/additions. Translator self-check only; no human approval or clinical validation.",
+  "result": "PASS",
+  "source_requirements": 1,
+  "translated": 54
+}

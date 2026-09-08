@@ -1,0 +1,8 @@
+{
+  "t1_status": "READY_FOR_G1",
+  "concepts_reviewed": 29,
+  "pre_g1_terminology_blockers": 0,
+  "active_sami_review_count": 0,
+  "new_glossary_approvals": 0,
+  "g1_started": false
+}

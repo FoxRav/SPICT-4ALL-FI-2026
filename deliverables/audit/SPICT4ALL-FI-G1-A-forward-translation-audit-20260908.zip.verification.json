@@ -1,0 +1,259 @@
+{
+  "work_package": "WP-G1-A-AUDIT-PACKAGE-001",
+  "completed_at_utc": "2026-09-08T11:17:35.209316+00:00",
+  "archive_verification": {
+    "zip": "SPICT4ALL-FI-G1-A-forward-translation-audit-20260908.zip",
+    "bytes": 2938533,
+    "sha256": "cfffef8b6adac0586d00c3ca450143626a710ec40cff2b7d99b969f0a7970cd2",
+    "member_count": 169,
+    "member_hashes": "PASS: every member",
+    "crc": "PASS",
+    "manifest_membership": "PASS",
+    "candidate_coverage": "PASS: exactly 54, 53 canonical + 1 requirement; no duplicates/missing/extra",
+    "source_hashes_exact_english_frozen_records": "PASS",
+    "all_candidates_draft_nonblank": true,
+    "approved_glossary_rows": 0,
+    "official_sources": 4,
+    "terminology_sources": 5,
+    "run_input_hashes": "PASS: archive-relative resolution",
+    "original_artifact_manifest": "PASS",
+    "authority_states_preserved": true,
+    "independence_contamination": "PASS: no prohibited member paths; explicit current-worktree allowlist",
+    "secret_screening": "PASS: known credential patterns; no credential stores selected",
+    "independent_source_provenance": {
+      "schema": "PASS",
+      "coverage": 54,
+      "source_provenance": "PASS: recomputed from frozen DOCX and governance",
+      "checkout_independent": true
+    }
+  },
+  "post_packaging_existing_runner": {
+    "args": [
+      "-c",
+      "import sys; from pathlib import Path; sys.path.insert(0,str(Path(\"work/agent-a\").resolve())); import run_checks; run_checks.HERE=Path(sys.argv[1]); run_checks.main()",
+      "F:\\-DEV-\\120.SPICT-G1-A\\tmp\\g1-a-audit-post-20260908T111629165106Z"
+    ],
+    "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+    "exit_code": 0,
+    "stdout": "repository_tests_in_pre_g1_fixture: exit 0\nt1_closure_in_pre_g1_fixture: exit 0\nagent_a_tests: exit 0\nverify-sources: exit 0\nvalidate-terminology: exit 0\nvalidate-canonical: exit 0\nvalidate-requirements: exit 0\nvalidate-governance: exit 0\ncandidate_schema_and_coverage: exit 0\ncoverage: exit 0\nrepository_lint: exit 0\nrepository_types: exit 0\nF:\\-DEV-\\120.SPICT-G1-A\\tmp\\g1-a-audit-post-20260908T111629165106Z\\checks\\20260908T111629763575Z\n",
+    "stderr": ""
+  },
+  "post_packaging_checks": {
+    "fixture_scope": "Authorized source/governance/tooling only. Empty historical work placeholders reconstructed from T1 integrity ledger; no existing work directory copied or traversed.",
+    "results": [
+      {
+        "args": [
+          "-m",
+          "pytest",
+          "-q"
+        ],
+        "cwd": "F:\\-DEV-\\120.SPICT-G1-A\\tmp\\g1-a-audit-post-20260908T111629165106Z\\tmp\\20260908T111629763575Z",
+        "exit_code": 0,
+        "label": "repository_tests_in_pre_g1_fixture",
+        "log": "tmp\\g1-a-audit-post-20260908T111629165106Z\\checks\\20260908T111629763575Z\\repository_tests_in_pre_g1_fixture.txt",
+        "output": "........................................................................ [ 23%]\n........................................................................ [ 46%]\n........................................................................ [ 69%]\n........................................................................ [ 92%]\n.......................                                                  [100%]\n311 passed in 41.80s\n"
+      },
+      {
+        "args": [
+          "scripts/validate_t1_3_closure.py"
+        ],
+        "cwd": "F:\\-DEV-\\120.SPICT-G1-A\\tmp\\g1-a-audit-post-20260908T111629165106Z\\tmp\\20260908T111629763575Z",
+        "exit_code": 0,
+        "label": "t1_closure_in_pre_g1_fixture",
+        "log": "tmp\\g1-a-audit-post-20260908T111629165106Z\\checks\\20260908T111629763575Z\\t1_closure_in_pre_g1_fixture.txt",
+        "output": "{\n  \"t1_status\": \"READY_FOR_G1\",\n  \"concepts_reviewed\": 29,\n  \"pre_g1_terminology_blockers\": 0,\n  \"active_sami_review_count\": 0,\n  \"new_glossary_approvals\": 0,\n  \"g1_started\": false\n}\n"
+      },
+      {
+        "args": [
+          "-m",
+          "pytest",
+          "work/agent-a/test_evidence.py",
+          "-q"
+        ],
+        "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+        "exit_code": 0,
+        "label": "agent_a_tests",
+        "log": "tmp\\g1-a-audit-post-20260908T111629165106Z\\checks\\20260908T111629763575Z\\agent_a_tests.txt",
+        "output": "............                                                             [100%]\n12 passed in 2.88s\n"
+      },
+      {
+        "args": [
+          "-m",
+          "spict4all.cli",
+          "verify-sources"
+        ],
+        "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+        "exit_code": 0,
+        "label": "verify-sources",
+        "log": "tmp\\g1-a-audit-post-20260908T111629165106Z\\checks\\20260908T111629763575Z\\verify-sources.txt",
+        "output": "PASS 20260521-Word-template-SPICT-4ALL-translations-2026.docx aea5e489ffc93f57ab3666572f65044fba8375aa5dda897d0ef2988c3a9f8581 66914 bytes\nPASS 20260130-Using-SPICT-4ALL-2025.docx 1b8ee715051ca53a27d0a2261a7f879face8a57727fbfd12fc6a830ef1c155ca 111045 bytes\nPASS 20260521-Word-template-SPICT-4ALL-translations-2026.pdf d22418ca1d1b68a2be762bcdf48ae0e6ad41ac41c8e3d76b419e9062d4357f72 223468 bytes\nPASS 20260521-Edits-for-SPICT-4ALL-translations-2025-and-2026.docx 0fff175b57c66f0dd45cd18c58b599758122e5285892c07da52ddf8a9130a27d 68949 bytes\nPASS canonical units: 53 unique, contiguous, hash-matched, source-resolved; exceptions=1\nPASS source requirements: 1 unique, schema-valid, provenance-linked, exact-text and change-spec completeness verified; marked paragraph elements=18, yellow runs=32, green runs=4, accent6 runs=1; requirement_ids=S4A-REQ-2026-001 (derived from data, not a Python allow-list)\nPASS governance data: 2 files hash-matched\n"
+      },
+      {
+        "args": [
+          "-m",
+          "spict4all.cli",
+          "validate-terminology"
+        ],
+        "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+        "exit_code": 0,
+        "label": "validate-terminology",
+        "log": "tmp\\g1-a-audit-post-20260908T111629165106Z\\checks\\20260908T111629763575Z\\validate-terminology.txt",
+        "output": "PASS terminology evidence: sources=5, extracted=136, source_provided_english=41, conflicts=6, approved=0, relevance_matches=0\n"
+      },
+      {
+        "args": [
+          "-m",
+          "spict4all.cli",
+          "validate-canonical"
+        ],
+        "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+        "exit_code": 0,
+        "label": "validate-canonical",
+        "log": "tmp\\g1-a-audit-post-20260908T111629165106Z\\checks\\20260908T111629763575Z\\validate-canonical.txt",
+        "output": "PASS canonical units: 53 source-resolved; direct=52, normalized=1, exceptions=1\n"
+      },
+      {
+        "args": [
+          "-m",
+          "spict4all.cli",
+          "validate-requirements"
+        ],
+        "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+        "exit_code": 0,
+        "label": "validate-requirements",
+        "log": "tmp\\g1-a-audit-post-20260908T111629165106Z\\checks\\20260908T111629763575Z\\validate-requirements.txt",
+        "output": "PASS source requirements: 1 unique, schema-valid, provenance-linked, exact-text and change-spec completeness verified; marked paragraph elements=18, yellow runs=32, green runs=4, accent6 runs=1; requirement_ids=S4A-REQ-2026-001 (derived from data, not a Python allow-list)\n"
+      },
+      {
+        "args": [
+          "-m",
+          "spict4all.cli",
+          "validate-governance"
+        ],
+        "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+        "exit_code": 0,
+        "label": "validate-governance",
+        "log": "tmp\\g1-a-audit-post-20260908T111629165106Z\\checks\\20260908T111629763575Z\\validate-governance.txt",
+        "output": "PASS governance data: 2 files hash-matched\n"
+      },
+      {
+        "args": [
+          "-m",
+          "spict4all.cli",
+          "validate-artifact",
+          "work/agent-a/candidates.jsonl",
+          "--schema",
+          "schemas/translation_candidate.schema.json",
+          "--require-coverage"
+        ],
+        "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+        "exit_code": 0,
+        "label": "candidate_schema_and_coverage",
+        "log": "tmp\\g1-a-audit-post-20260908T111629165106Z\\checks\\20260908T111629763575Z\\candidate_schema_and_coverage.txt",
+        "output": "PASS artifact records: 54\n"
+      },
+      {
+        "args": [
+          "-m",
+          "spict4all.cli",
+          "check-coverage",
+          "work/agent-a/candidates.jsonl"
+        ],
+        "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+        "exit_code": 0,
+        "label": "coverage",
+        "log": "tmp\\g1-a-audit-post-20260908T111629165106Z\\checks\\20260908T111629763575Z\\coverage.txt",
+        "output": "{\n  \"source_count\": 54,\n  \"artifact_count\": 54,\n  \"missing\": [],\n  \"extra\": []\n}\n"
+      },
+      {
+        "args": [
+          "-m",
+          "ruff",
+          "check",
+          "src",
+          "scripts",
+          "tests"
+        ],
+        "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+        "exit_code": 0,
+        "label": "repository_lint",
+        "log": "tmp\\g1-a-audit-post-20260908T111629165106Z\\checks\\20260908T111629763575Z\\repository_lint.txt",
+        "output": "All checks passed!\n"
+      },
+      {
+        "args": [
+          "-m",
+          "mypy",
+          "--strict",
+          "src/spict4all"
+        ],
+        "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+        "exit_code": 0,
+        "label": "repository_types",
+        "log": "tmp\\g1-a-audit-post-20260908T111629165106Z\\checks\\20260908T111629763575Z\\repository_types.txt",
+        "output": "Success: no issues found in 25 source files\n"
+      }
+    ],
+    "started_at_utc": "20260908T111629763575Z"
+  },
+  "additional_validators": [
+    {
+      "args": [
+        "scripts/validate_t1_adjudication.py"
+      ],
+      "cwd": "F:\\-DEV-\\120.SPICT-G1-A\\tmp\\g1-a-audit-post-20260908T111629165106Z\\tmp\\20260908T111629763575Z",
+      "exit_code": 0,
+      "stdout": "{\n  \"concepts\": 29,\n  \"clinical_risk\": {\n    \"HIGH\": 21,\n    \"MEDIUM\": 8\n  },\n  \"candidate_origins\": {\n    \"MODEL_PROPOSED_FROM_EVIDENCE\": 9,\n    \"NO_RELIABLE_TERMINOLOGY_EVIDENCE\": 16,\n    \"SOURCE_DERIVED_FINNISH_ONLY\": 4,\n    \"SOURCE_EXPLICIT\": 0\n  },\n  \"semantic_connections\": 13,\n  \"mapping_edges\": 31,\n  \"relevant_conflicts\": 3,\n  \"must_decide\": 5,\n  \"approved\": 0\n}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "scripts/validate_t1_1_enrichment.py"
+      ],
+      "cwd": "F:\\-DEV-\\120.SPICT-G1-A\\tmp\\g1-a-audit-post-20260908T111629165106Z\\tmp\\20260908T111629763575Z",
+      "exit_code": 0,
+      "stdout": "{\n  \"concepts_searched\": 29,\n  \"search_attempts\": 49,\n  \"unique_search_results_screened\": 79,\n  \"unique_pages_scraped\": 28,\n  \"useful_evidence_records\": 28,\n  \"concepts_enriched\": 23,\n  \"no_sufficient_evidence_before\": 16,\n  \"no_sufficient_evidence_after\": 11,\n  \"still_insufficient_ids\": [\n    \"T-003\",\n    \"T-007\",\n    \"T-009\",\n    \"T-011\",\n    \"T-015\",\n    \"T-018\",\n    \"T-019\",\n    \"T-024\",\n    \"T-026\",\n    \"T-027\",\n    \"T-029\"\n  ],\n  \"original_no_evidence_now_with_zero_useful_evidence\": 3,\n  \"high_risk_enriched\": 18,\n  \"must_review_with_sami\": 21,\n  \"external_human_review_required\": 29,\n  \"new_scope_conflicts\": 7,\n  \"original_conflicts_resolved\": 0,\n  \"approved\": 0\n}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "scripts/validate_t1_2_reduction.py"
+      ],
+      "cwd": "F:\\-DEV-\\120.SPICT-G1-A\\tmp\\g1-a-audit-post-20260908T111629165106Z\\tmp\\20260908T111629763575Z",
+      "exit_code": 0,
+      "stdout": "{\n  \"work_package\": \"WP-T1.2-HUMAN-REVIEW-REDUCTION-001\",\n  \"assessment_type\": \"MODEL_REVIEW_ROUTING\",\n  \"original_concepts\": 29,\n  \"previous_sami_count\": 21,\n  \"final_sami_count\": 3,\n  \"previous_queue_dispositions\": {\n    \"EVIDENCED_OR_OBVIOUS\": 8,\n    \"HUMAN_DECIDED\": 2,\n    \"SAMI\": 2,\n    \"G1_G2_SYNTHESIS\": 5,\n    \"DISCUSSED_RECORDING_NEEDED\": 1,\n    \"STYLISTIC_OR_EQUIVALENT\": 3\n  },\n  \"all_concept_dispositions\": {\n    \"EVIDENCED_OR_OBVIOUS\": 9,\n    \"HUMAN_DECIDED\": 3,\n    \"SAMI\": 3,\n    \"G1_G2_SYNTHESIS\": 9,\n    \"DISCUSSED_RECORDING_NEEDED\": 1,\n    \"STYLISTIC_OR_EQUIVALENT\": 4\n  },\n  \"frailty_status\": \"ALREADY_DISCUSSED_DISPOSITION_NEEDS_RECORDING\",\n  \"frailty_final_term\": null,\n  \"new_term_approvals_by_model\": 0\n}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "-m",
+        "ruff",
+        "check",
+        "work/agent-a/build_evidence.py",
+        "work/agent-a/validate_evidence.py",
+        "work/agent-a/test_evidence.py",
+        "work/agent-a/run_checks.py"
+      ],
+      "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+      "exit_code": 0,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "work/agent-a/validate_evidence.py"
+      ],
+      "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+      "exit_code": 0,
+      "stdout": "{\n  \"expected\": 54,\n  \"translated\": 54,\n  \"canonical\": 53,\n  \"source_requirements\": 1,\n  \"result\": \"PASS\",\n  \"limitations\": \"Lexical tripwires cannot prove absence of semantic omissions/additions. Translator self-check only; no human approval or clinical validation.\",\n  \"items\": [\n    {\n      \"unit_id\": \"S4A-2026-000\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-001\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-002\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-003\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-004\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-005\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-006\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-007\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-008\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-009\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-010\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-011\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-012\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-013\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-014\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-015\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-016\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-017\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-018\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-019\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-020\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-021\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"Does plain-language hauraus convey the full frailty concept adequately to the target reader? This is a wording uncertainty, not a reopened pre-G1 blocker.\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-022\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-023\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-024\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-025\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-026\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-027\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-028\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-029\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-030\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-031\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-032\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-033\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-034\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-035\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-036\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-037\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-038\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-039\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-040\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-041\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-042\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-043\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-044\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-045\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-046\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-047\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-048\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-049\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-050\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-051\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-2026-052\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    },\n    {\n      \"unit_id\": \"S4A-REQ-2026-001\",\n      \"structural_checks\": \"PASS\",\n      \"lexical_tripwires\": \"PASS\",\n      \"uncertainty\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  ],
+  "all_packaged_repository_bytes_unchanged": true,
+  "original_run_unchanged": true,
+  "no_translation_changes": true,
+  "no_commit": true,
+  "no_push": true,
+  "no_g2": true,
+  "git_state_after_packaging": "git rev-parse HEAD\n2aa066fdba27fa083ff9ad78f285c0751d3f085f\n\ngit branch --show-current\ng1-forward-a\n\ngit status --short --untracked-files=all\n?? deliverables/audit/SPICT4ALL-FI-G1-A-forward-translation-audit-20260908.zip\n?? deliverables/audit/SPICT4ALL-FI-G1-A-forward-translation-audit-20260908.zip.members.sha256\n?? deliverables/audit/SPICT4ALL-FI-G1-A-forward-translation-audit-20260908.zip.sha256\n?? deliverables/audit/SPICT4ALL-FI-G1-A-forward-translation-audit-20260908.zip.verification.json\n?? scripts/create_g1_a_audit.py\n?? scripts/verify_g1_a_audit.py\n?? work/agent-a/REPORT.md\n?? work/agent-a/artifact_manifest.json\n?? work/agent-a/build_evidence.py\n?? work/agent-a/candidates.jsonl\n?? work/agent-a/checks/20260908T104119369506Z/agent_a_tests.txt\n?? work/agent-a/checks/20260908T104119369506Z/candidate_schema_and_coverage.txt\n?? work/agent-a/checks/20260908T104119369506Z/commands.json\n?? work/agent-a/checks/20260908T104119369506Z/coverage.txt\n?? work/agent-a/checks/20260908T104119369506Z/evidence_validation.json\n?? work/agent-a/checks/20260908T104119369506Z/repository_lint.txt\n?? work/agent-a/checks/20260908T104119369506Z/repository_tests_in_pre_g1_fixture.txt\n?? work/agent-a/checks/20260908T104119369506Z/repository_types.txt\n?? work/agent-a/checks/20260908T104119369506Z/t1_closure_in_pre_g1_fixture.txt\n?? work/agent-a/checks/20260908T104119369506Z/validate-canonical.txt\n?? work/agent-a/checks/20260908T104119369506Z/validate-governance.txt\n?? work/agent-a/checks/20260908T104119369506Z/validate-requirements.txt\n?? work/agent-a/checks/20260908T104119369506Z/validate-terminology.txt\n?? work/agent-a/checks/20260908T104119369506Z/verify-sources.txt\n?? work/agent-a/git_status.txt\n?? work/agent-a/run_checks.py\n?? work/agent-a/run_metadata.json\n?? work/agent-a/self_edit_log.json\n?? work/agent-a/test_evidence.py\n?? work/agent-a/translation_input.json\n?? work/agent-a/validate_evidence.py\n\ngit diff --stat\n\ngit diff --cached --stat\n"
+}
