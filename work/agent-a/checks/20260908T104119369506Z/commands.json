@@ -1,0 +1,146 @@
+{
+  "fixture_scope": "Authorized source/governance/tooling only. Empty historical work placeholders reconstructed from T1 integrity ledger; no existing work directory copied or traversed.",
+  "results": [
+    {
+      "args": [
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "cwd": "F:\\-DEV-\\120.SPICT-G1-A\\work\\agent-a\\tmp\\20260908T104119369506Z",
+      "exit_code": 0,
+      "label": "repository_tests_in_pre_g1_fixture",
+      "log": "work\\agent-a\\checks\\20260908T104119369506Z\\repository_tests_in_pre_g1_fixture.txt"
+    },
+    {
+      "args": [
+        "scripts/validate_t1_3_closure.py"
+      ],
+      "cwd": "F:\\-DEV-\\120.SPICT-G1-A\\work\\agent-a\\tmp\\20260908T104119369506Z",
+      "exit_code": 0,
+      "label": "t1_closure_in_pre_g1_fixture",
+      "log": "work\\agent-a\\checks\\20260908T104119369506Z\\t1_closure_in_pre_g1_fixture.txt"
+    },
+    {
+      "args": [
+        "-m",
+        "pytest",
+        "work/agent-a/test_evidence.py",
+        "-q"
+      ],
+      "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+      "exit_code": 0,
+      "label": "agent_a_tests",
+      "log": "work\\agent-a\\checks\\20260908T104119369506Z\\agent_a_tests.txt"
+    },
+    {
+      "args": [
+        "-m",
+        "spict4all.cli",
+        "verify-sources"
+      ],
+      "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+      "exit_code": 0,
+      "label": "verify-sources",
+      "log": "work\\agent-a\\checks\\20260908T104119369506Z\\verify-sources.txt"
+    },
+    {
+      "args": [
+        "-m",
+        "spict4all.cli",
+        "validate-terminology"
+      ],
+      "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+      "exit_code": 0,
+      "label": "validate-terminology",
+      "log": "work\\agent-a\\checks\\20260908T104119369506Z\\validate-terminology.txt"
+    },
+    {
+      "args": [
+        "-m",
+        "spict4all.cli",
+        "validate-canonical"
+      ],
+      "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+      "exit_code": 0,
+      "label": "validate-canonical",
+      "log": "work\\agent-a\\checks\\20260908T104119369506Z\\validate-canonical.txt"
+    },
+    {
+      "args": [
+        "-m",
+        "spict4all.cli",
+        "validate-requirements"
+      ],
+      "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+      "exit_code": 0,
+      "label": "validate-requirements",
+      "log": "work\\agent-a\\checks\\20260908T104119369506Z\\validate-requirements.txt"
+    },
+    {
+      "args": [
+        "-m",
+        "spict4all.cli",
+        "validate-governance"
+      ],
+      "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+      "exit_code": 0,
+      "label": "validate-governance",
+      "log": "work\\agent-a\\checks\\20260908T104119369506Z\\validate-governance.txt"
+    },
+    {
+      "args": [
+        "-m",
+        "spict4all.cli",
+        "validate-artifact",
+        "work/agent-a/candidates.jsonl",
+        "--schema",
+        "schemas/translation_candidate.schema.json",
+        "--require-coverage"
+      ],
+      "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+      "exit_code": 0,
+      "label": "candidate_schema_and_coverage",
+      "log": "work\\agent-a\\checks\\20260908T104119369506Z\\candidate_schema_and_coverage.txt"
+    },
+    {
+      "args": [
+        "-m",
+        "spict4all.cli",
+        "check-coverage",
+        "work/agent-a/candidates.jsonl"
+      ],
+      "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+      "exit_code": 0,
+      "label": "coverage",
+      "log": "work\\agent-a\\checks\\20260908T104119369506Z\\coverage.txt"
+    },
+    {
+      "args": [
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+      "exit_code": 0,
+      "label": "repository_lint",
+      "log": "work\\agent-a\\checks\\20260908T104119369506Z\\repository_lint.txt"
+    },
+    {
+      "args": [
+        "-m",
+        "mypy",
+        "--strict",
+        "src/spict4all"
+      ],
+      "cwd": "F:\\-DEV-\\120.SPICT-G1-A",
+      "exit_code": 0,
+      "label": "repository_types",
+      "log": "work\\agent-a\\checks\\20260908T104119369506Z\\repository_types.txt"
+    }
+  ],
+  "started_at_utc": "20260908T104119369506Z"
+}
