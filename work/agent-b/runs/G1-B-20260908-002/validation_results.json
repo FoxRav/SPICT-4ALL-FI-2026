@@ -1,0 +1,33 @@
+{
+  "artifact": "work/agent-b/runs/G1-B-20260908-002/candidates.jsonl",
+  "translator_role": "forward_translation_B",
+  "schema_valid": true,
+  "coverage_complete": true,
+  "expected_source_count": 54,
+  "candidate_count": 54,
+  "canonical_count": 53,
+  "source_requirement_count": 1,
+  "unresolved_authority_count": 2,
+  "document_insertable_count": 52,
+  "untranslated_verbatim_count": 1,
+  "issue_counts_by_severity": {
+    "BLOCKER": 2,
+    "MAJOR": 4,
+    "MINOR": 5,
+    "NOTE": 2
+  },
+  "human_terminology_decisions_applied": {
+    "S4A-2026-001": [
+      "T-002"
+    ],
+    "S4A-2026-035": [
+      "T-013"
+    ],
+    "S4A-2026-042": [
+      "T-002"
+    ],
+    "S4A-2026-049": [
+      "T-016"
+    ]
+  }
+}
