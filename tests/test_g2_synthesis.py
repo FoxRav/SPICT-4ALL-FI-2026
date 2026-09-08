@@ -91,10 +91,8 @@ def test_agent_evidence_and_official_sources_untouched() -> None:
     assert len(units) == 53
     assert (ROOT / "work/backtranslation").exists()
     later = []
-    for prefix in ("work/final", "work/human-review"):
-        directory = ROOT / prefix
-        if not directory.is_dir():
-            continue
+    directory = ROOT / "work/final"
+    if directory.is_dir():
         later.extend(
             path.relative_to(ROOT).as_posix()
             for path in directory.rglob("*")

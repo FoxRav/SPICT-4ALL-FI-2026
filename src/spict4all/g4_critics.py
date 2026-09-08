@@ -174,7 +174,7 @@ HUMAN_DECISION_CONFLICTS: dict[str, tuple[str, str]] = {
     ),
 }
 SOURCE_AUTHORITY_BLOCKERS = frozenset({TITLE_ID, REQUIREMENT_ID})
-G5_ONLY_PREFIXES = ("work/final/", "work/human-review/")
+DOCUMENT_GENERATION_PREFIXES = ("work/final/",)
 MEDIUM_PLUS = frozenset({"MEDIUM", "HIGH", "BLOCKER"})
 
 
@@ -575,7 +575,7 @@ def g4_run_failures(root: Path) -> list[str]:
         failures.append("combined_findings.jsonl is not the deterministic consolidation")
     if ids_of(written) != ids_of(review):
         failures.append("combined_findings unit_id order differs from review_input")
-    failures.extend(later_gate_failures(root, G5_ONLY_PREFIXES))
+    failures.extend(later_gate_failures(root, DOCUMENT_GENERATION_PREFIXES))
     metadata = json.loads((run_dir / "run_metadata.json").read_text(encoding="utf-8"))
     if not isinstance(metadata, dict):
         return ["run_metadata.json is not an object"]

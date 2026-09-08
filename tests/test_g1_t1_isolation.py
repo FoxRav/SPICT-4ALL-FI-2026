@@ -13,13 +13,14 @@ def test_hide_g1_files_leaves_placeholder_and_restores(tmp_path: Path) -> None:
         Path("work") / "synthesis" / "G2-20260908-001" / "candidates.jsonl": "s\n",
         Path("work") / "backtranslation" / "G3-20260908-001" / "back_translation.jsonl": "t\n",
         Path("work") / "critics" / "G4-20260908-001" / "critic-a.jsonl": "c\n",
+        Path("work") / "human-review" / "G5-20260908-001" / "human_dispositions.tsv": "d\n",
     }
     gitkeeps: list[Path] = []
     for relative, text in contents.items():
         path = tmp_path / relative
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
-    for agent in ("agent-a", "agent-b", "synthesis", "backtranslation", "critics"):
+    for agent in ("agent-a", "agent-b", "synthesis", "backtranslation", "critics", "human-review"):
         gitkeep = tmp_path / "work" / agent / ".gitkeep"
         gitkeep.write_bytes(b"")
         gitkeeps.append(gitkeep)
@@ -40,6 +41,9 @@ def test_hide_g1_files_leaves_placeholder_and_restores(tmp_path: Path) -> None:
         assert (
             aside / "work" / "critics" / "G4-20260908-001" / "critic-a.jsonl"
         ).read_text(encoding="utf-8") == "c\n"
+        assert (
+            aside / "work" / "human-review" / "G5-20260908-001" / "human_dispositions.tsv"
+        ).read_text(encoding="utf-8") == "d\n"
     for relative, text in contents.items():
         assert (tmp_path / relative).read_text(encoding="utf-8") == text
     for gitkeep in gitkeeps:

@@ -146,16 +146,14 @@ def test_g4_metadata_when_present() -> None:
     assert "G4 PASS" not in readme
 
 
-def test_no_g5_and_frozen_wording_untouched() -> None:
+def test_frozen_wording_and_no_document_generation() -> None:
     assert sha256_file(ROOT / G2_CANDIDATES_RELATIVE) == EXPECTED_HASHES[G2_CANDIDATES_RELATIVE]
     assert sha256_file(ROOT / G3_BACK_RELATIVE) == EXPECTED_HASHES[G3_BACK_RELATIVE]
     assert sha256_file(ROOT / CRITIC_A_RELATIVE) == EXPECTED_HASHES[CRITIC_A_RELATIVE]
     assert sha256_file(ROOT / CRITIC_B_RELATIVE) == EXPECTED_HASHES[CRITIC_B_RELATIVE]
     later = []
-    for prefix in ("work/final", "work/human-review"):
-        directory = ROOT / prefix
-        if not directory.is_dir():
-            continue
+    directory = ROOT / "work/final"
+    if directory.is_dir():
         later.extend(
             path.relative_to(ROOT).as_posix()
             for path in directory.rglob("*")

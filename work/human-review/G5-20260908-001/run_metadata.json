@@ -1,0 +1,62 @@
+{
+  "actual_model": "Cursor Grok 4.6",
+  "clinical_validation_claimed": false,
+  "created_at_utc": "2026-09-08T14:52:39.489692Z",
+  "finnish_revised": false,
+  "g2_changed": false,
+  "g3_changed": false,
+  "g4_changed": false,
+  "g5_audit_zip_created": false,
+  "g5_gate_passed": false,
+  "g5_status": "PREPARATION_COMPLETE_AWAITING_HUMAN_DISPOSITION",
+  "g6_started": false,
+  "human_adjudication_performed": false,
+  "inputs": [
+    {
+      "bytes": 10983,
+      "path": "F:\\-DEV-\\120.SPICT-G5\\terminology\\adjudication\\T1_2_HUMAN_REVIEW_REDUCTION_REPORT.md",
+      "sha256": "2b9e11301a5c88add69dd58bee501af0b40cccdc0812753d712f8de18d43543e"
+    },
+    {
+      "bytes": 1231,
+      "path": "F:\\-DEV-\\120.SPICT-G5\\terminology\\adjudication\\human_terminology_decisions.tsv",
+      "sha256": "d390a5b2a13a786bc246867c4c0c7fe7d1966e68e01c06a3a7d3bdc5487e9a25"
+    },
+    {
+      "bytes": 7659,
+      "path": "F:\\-DEV-\\120.SPICT-G5\\work\\backtranslation\\G3-20260908-001\\back_translation.jsonl",
+      "sha256": "e674a7f0a69ed05c554eaade38e4dbd8025c1f34df0499a8fc4cc9a15c99f00f"
+    },
+    {
+      "bytes": 70891,
+      "path": "F:\\-DEV-\\120.SPICT-G5\\work\\critics\\G4-20260908-001\\combined_findings.jsonl",
+      "sha256": "29d8ec2a0f8588de7a331088be0181eb169c84337e390d273957f2b86e1e5f19"
+    },
+    {
+      "bytes": 33689,
+      "path": "F:\\-DEV-\\120.SPICT-G5\\work\\critics\\G4-20260908-001\\critic-a.jsonl",
+      "sha256": "e527f6b999d3e06aeaa883de26264a9b29dc3e394c2f9f8d5437797dbba72daf"
+    },
+    {
+      "bytes": 45523,
+      "path": "F:\\-DEV-\\120.SPICT-G5\\work\\critics\\G4-20260908-001\\critic-b.jsonl",
+      "sha256": "ba0bb2822a4cb711d51388e025deb73ea25980f22a435e81e7bc9864d1ace52e"
+    },
+    {
+      "bytes": 27845,
+      "path": "F:\\-DEV-\\120.SPICT-G5\\work\\critics\\G4-20260908-001\\review_input.jsonl",
+      "sha256": "5a07c32c9680032eaa69f268b8160c3460f1b2ebdf7c9a6b547688b81d4f526f"
+    },
+    {
+      "bytes": 79131,
+      "path": "F:\\-DEV-\\120.SPICT-G5\\work\\synthesis\\G2-20260908-001\\candidates.jsonl",
+      "sha256": "76462191d3ad2a83c878982a1460443f322437e547b747f6267f4a29d887c619"
+    }
+  ],
+  "role": "G5 human-review preparation (not the human adjudicator) (actual model: Cursor Grok 4.6)",
+  "run_id": "G5-20260908-001",
+  "source_authority_resolved": false,
+  "status": "DRAFT",
+  "tool_version": "0.1.0",
+  "work_package": "WP-G5-HUMAN-REVIEW-PREPARATION-001"
+}

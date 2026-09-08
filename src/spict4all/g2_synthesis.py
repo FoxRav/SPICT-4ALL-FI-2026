@@ -358,7 +358,6 @@ def g2_run_failures(root: Path) -> list[str]:
         failures.append("live G1 gate ZIP hash changed")
     later_gate_prefixes = (
         "work/final/",
-        "work/human-review/",
     )
     for prefix in later_gate_prefixes:
         directory = root / prefix
@@ -367,7 +366,7 @@ def g2_run_failures(root: Path) -> list[str]:
         for path in directory.rglob("*"):
             if path.is_file() and path.name != ".gitkeep":
                 failures.append(
-                    f"G5/later-gate file present: {path.relative_to(root).as_posix()}"
+                    f"document-generation file present: {path.relative_to(root).as_posix()}"
                 )
     other_g2 = [
         path

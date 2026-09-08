@@ -246,7 +246,6 @@ def g3_run_failures(root: Path) -> list[str]:
         failures.append("validation_results claims G4 started")
     later = (
         "work/final/",
-        "work/human-review/",
     )
     for prefix in later:
         directory = root / prefix
@@ -255,6 +254,6 @@ def g3_run_failures(root: Path) -> list[str]:
         for path in directory.rglob("*"):
             if path.is_file() and path.name != ".gitkeep":
                 failures.append(
-                    f"G5/later-gate file present: {path.relative_to(root).as_posix()}"
+                    f"document-generation file present: {path.relative_to(root).as_posix()}"
                 )
     return failures

@@ -27,10 +27,10 @@ def isolate_g1_work_from_t1_inventory(
 ) -> Iterator[None]:
     """Keep historical T1 inventory exact without weakening T1 validators.
 
-    G1 Agent A/B, G2 synthesis, G3 back-translation and G4 critic work files
-    stay on disk for later-stage tests. T1 tests that scan `work/` see only the
-    T1 placeholder lock, via an isolated hide/restore fixture. Scratch copies of
-    `work/` inherit that pre-G1 view.
+    G1 Agent A/B, G2 synthesis, G3 back-translation, G4 critic and G5
+    human-review preparation files stay on disk for later-stage tests. T1 tests
+    that scan `work/` see only the T1 placeholder lock, via an isolated
+    hide/restore fixture. Scratch copies of `work/` inherit that pre-G1 view.
     """
 
     if Path(request.path).name not in T1_WORK_INVENTORY_FILES:
