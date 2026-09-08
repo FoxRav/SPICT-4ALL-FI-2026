@@ -64,10 +64,16 @@ def validate(root: Path = ROOT) -> None:
     for action, pin in pins.items():
         assert f"uses: actions/{action}@{pin}" in workflow
     assert len(re.findall(r"uses:", workflow)) == len(pins)
-    for name in ("README.md", "PUBLICATION_STATUS.md"):
-        doc = (root / "review-portal" / name).read_text(encoding="utf-8")
-        assert "DEFAULT_BRANCH_WORKFLOW_BOOTSTRAP_REQUIRED" in doc
-        assert "default branch main" in doc
+    publication_status = (root / "review-portal/PUBLICATION_STATUS.md").read_text(encoding="utf-8")
+    readme = (root / "review-portal/README.md").read_text(encoding="utf-8")
+    assert "DEFAULT_BRANCH_WORKFLOW_BOOTSTRAP_COMPLETED" in publication_status
+    assert "GitHub Pages frontend: DEPLOYED." in publication_status
+    assert "Production E2E: PASS (synthetic Issue #3; never import as human adjudication)." in publication_status
+    assert "DEFAULT_BRANCH_WORKFLOW_BOOTSTRAP_REQUIRED" not in publication_status
+    assert "The Pages workflow is bootstrapped on main" in readme
+    assert "https://foxrav.github.io/SPICT-4ALL-FI-2026/review/sami/" in readme
+    assert "Production E2E passed using synthetic Issue #3." in readme
+    assert "DEFAULT_BRANCH_WORKFLOW_BOOTSTRAP_REQUIRED" not in readme
     assert 'minlength="24" maxlength="256"' in html
     assert '<textarea maxlength="2000">' in html
     assert '<textarea maxlength="1200">' in html

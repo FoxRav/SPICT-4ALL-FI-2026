@@ -50,8 +50,8 @@ def test_portal_rejects_changed_data(tmp_path: Path, mutation: str) -> None:
 
 
 @pytest.mark.parametrize("target,old,new", [
-    ("review-portal/README.md", "DEFAULT_BRANCH_WORKFLOW_BOOTSTRAP_REQUIRED", "omitted"),
-    ("review-portal/PUBLICATION_STATUS.md", "DEFAULT_BRANCH_WORKFLOW_BOOTSTRAP_REQUIRED", "omitted"),
+    ("review-portal/README.md", "https://foxrav.github.io/SPICT-4ALL-FI-2026/review/sami/", "https://example.invalid/"),
+    ("review-portal/PUBLICATION_STATUS.md", "DEFAULT_BRANCH_WORKFLOW_BOOTSTRAP_COMPLETED", "omitted"),
     (".github/workflows/pages-review.yml", "11bd71901bbe5b1630ceea73d27597364c9af683", "v4"),
     ("review-portal/worker/wrangler.toml", 'GITHUB_EVIDENCE_REPOSITORY = "FoxRav/SPICT-4ALL-FI-2026-review-evidence"', 'GITHUB_EVIDENCE_REPOSITORY = "public/repo"'),
     ("review-portal/worker/wrangler.toml", 'GITHUB_EVIDENCE_REPOSITORY = "FoxRav/SPICT-4ALL-FI-2026-review-evidence"', 'GITHUB_EVIDENCE_REPOSITORY = ""'),
