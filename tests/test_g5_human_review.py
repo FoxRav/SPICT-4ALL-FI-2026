@@ -15,8 +15,17 @@ from spict4all.g4_critics import (
     REQUIREMENT_ID,
     TITLE_ID,
 )
+from spict4all.g5_human_dispositions import (
+    BATCH_BY_ID,
+    BATCH_IDS,
+    COMPLETED_DISPOSITIONS,
+    HUMAN_TSV_FIELDS,
+    PARTIAL_STATUS,
+    REMAINING_DISPOSITIONS,
+    SAMI_REVIEW_IDS,
+    SUPERSEDED_AT_G5,
+)
 from spict4all.g5_human_review import (
-    BLANK_HUMAN_FIELDS,
     CHECKED_BOX,
     DISPOSITION_OPTIONS,
     DOMAIN_EXPERT_REASONS,
@@ -72,9 +81,26 @@ def test_g5_run_when_present() -> None:
     assert [row["unit_id"] for row in rows] == [
         unit.unit_id for unit in load_packet_units(ROOT)
     ]
+    populated = [
+        row["unit_id"]
+        for row in rows
+        if any(row.get(field, "") for field in HUMAN_TSV_FIELDS)
+    ]
+    assert tuple(populated) == BATCH_IDS
+    blank = 0
     for row in rows:
-        for field in BLANK_HUMAN_FIELDS:
-            assert row[field] == ""
+        decision = BATCH_BY_ID.get(row["unit_id"])
+        if decision is None:
+            for field in HUMAN_TSV_FIELDS:
+                assert row[field] == ""
+            blank += 1
+            continue
+        assert row["human_disposition"] == decision["human_disposition"]
+        assert row["final_finnish"] == decision["final_finnish"]
+        assert row["reviewer"] == "Project Owner"
+        assert row["reviewer_role"] == "Project Owner / human adjudicator"
+        assert row["decision_date"] == "2026-09-08"
+    assert blank == REMAINING_DISPOSITIONS
     packet = (RUN_DIR / "G5_HUMAN_REVIEW_PACKET.md").read_text(encoding="utf-8")
     assert CHECKED_BOX.search(packet) is None
     for option in DISPOSITION_OPTIONS:
@@ -84,7 +110,10 @@ def test_g5_run_when_present() -> None:
     assert summary["total_units"] == EXPECTED_COUNT
     assert summary["tier_1_count"] == len(EXPECTED_TIER_1)
     assert summary["tier_2_count"] == len(EXPECTED_TIER_2)
-    assert summary["human_adjudication_performed"] is False
+    assert summary["status"] == PARTIAL_STATUS
+    assert summary["completed_human_dispositions"] == COMPLETED_DISPOSITIONS
+    assert summary["remaining_human_dispositions"] == REMAINING_DISPOSITIONS
+    assert summary["human_adjudication_complete"] is False
     assert summary["g5_gate_passed"] is False
     assert summary["g6_started"] is False
     assert summary["source_authority_resolved"] is False
@@ -179,3 +208,40 @@ def test_critic_outputs_untouched_paths() -> None:
     assert (ROOT / CRITIC_B_RELATIVE).is_file()
     assert sha256_file(ROOT / CRITIC_A_RELATIVE) == EXPECTED_HASHES[CRITIC_A_RELATIVE]
     assert sha256_file(ROOT / CRITIC_B_RELATIVE) == EXPECTED_HASHES[CRITIC_B_RELATIVE]
+
+
+def test_recorded_batch_events_and_sami_packet() -> None:
+    events = load_jsonl(RUN_DIR / "human_decision_events.jsonl")
+    assert len(events) == COMPLETED_DISPOSITIONS
+    assert [row["unit_id"] for row in events] == list(BATCH_IDS)
+    for event in events:
+        decision = BATCH_BY_ID[str(event["unit_id"])]
+        assert event["final_finnish"] == decision["final_finnish"]
+        assert event["human_disposition"] == decision["human_disposition"]
+        assert event["reviewer"] == "Project Owner"
+        assert event["decision_source"] == (
+            "explicit Project Owner decision in ChatGPT project session"
+        )
+        assert event["source_authority_resolved"] is False
+    superseded = {
+        row["unit_id"]
+        for row in events
+        if row["prior_human_decision_status"] == SUPERSEDED_AT_G5
+    }
+    assert superseded == {"S4A-2026-001", "S4A-2026-042"}
+    rows = {row["unit_id"]: row for row in load_dispositions(RUN_DIR / "human_dispositions.tsv")}
+    g2 = {
+        row["unit_id"]: row["candidate_fi"]
+        for row in load_jsonl(ROOT / G2_CANDIDATES_RELATIVE)
+    }
+    assert rows["S4A-2026-008"]["final_finnish"] == g2["S4A-2026-008"]
+    sami = (RUN_DIR / "G5_SAMI_DOMAIN_REVIEW.md").read_text(encoding="utf-8")
+    assert CHECKED_BOX.search(sami) is None
+    for unit_id in SAMI_REVIEW_IDS:
+        assert f"## {unit_id}" in sami
+    assert "being referred for domain-expert reconsideration" in sami
+    assert "No final human frailty wording exists" in sami
+    assert "Critic A HIGH, Critic B HIGH" in sami
+    assert "Critic A BLOCKER, Critic B HIGH" in sami
+    assert "did NOT decide how 'spiritual' should be translated" in sami
+    assert "No critic wording is recommended as authoritative." in sami

@@ -1,6 +1,7 @@
 {
   "actual_model": "Cursor Grok 4.6",
   "clinical_validation_claimed": false,
+  "completed_human_dispositions": 5,
   "created_at_utc": "2026-09-08T14:52:39.489692Z",
   "document_generation_started": false,
   "domain_expert_review_recommended_ids": [
@@ -23,7 +24,9 @@
   "g5_audit_zip_created": false,
   "g5_gate_passed": false,
   "g6_started": false,
+  "human_adjudication_complete": false,
   "human_adjudication_performed": false,
+  "human_decision_authority": "Project Owner explicit disposition. AI output is not human approval.",
   "human_disposition_prepopulated": false,
   "input_hashes": {
     "data/source_requirements.jsonl": "7893316538c8866c2b8d8f7fbce0940b282d445436003575758409ac72b8a023",
@@ -37,6 +40,13 @@
     "work/critics/G4-20260908-001/review_input.jsonl": "5a07c32c9680032eaa69f268b8160c3460f1b2ebdf7c9a6b547688b81d4f526f",
     "work/synthesis/G2-20260908-001/candidates.jsonl": "76462191d3ad2a83c878982a1460443f322437e547b747f6267f4a29d887c619"
   },
+  "populated_human_disposition_ids": [
+    "S4A-2026-001",
+    "S4A-2026-008",
+    "S4A-2026-009",
+    "S4A-2026-036",
+    "S4A-2026-042"
+  ],
   "preparation_provenance": {
     "model": "Cursor Grok 4.6",
     "role": "G5 human-review preparation (not the human adjudicator)",
@@ -44,6 +54,7 @@
     "work_package": "WP-G5-HUMAN-REVIEW-PREPARATION-001"
   },
   "readme_not_modified_by_this_package": true,
+  "remaining_human_dispositions": 49,
   "role": "G5 human-review preparation (not the human adjudicator)",
   "run_id": "G5-20260908-001",
   "source_authority_blocker_ids": [
@@ -51,7 +62,7 @@
     "S4A-REQ-2026-001"
   ],
   "source_authority_resolved": false,
-  "status": "PREPARATION_COMPLETE_AWAITING_HUMAN_DISPOSITION",
+  "status": "PARTIAL_HUMAN_ADJUDICATION_5_OF_54",
   "tier_1_count": 11,
   "tier_1_ids": [
     "S4A-2026-001",
@@ -116,5 +127,6 @@
     "S4A-REQ-2026-001"
   ],
   "total_units": 54,
-  "work_package": "WP-G5-HUMAN-REVIEW-PREPARATION-001"
+  "work_package": "WP-G5-HUMAN-REVIEW-PREPARATION-001",
+  "work_package_disposition_batch": "WP-G5-HUMAN-DISPOSITION-BATCH-001"
 }

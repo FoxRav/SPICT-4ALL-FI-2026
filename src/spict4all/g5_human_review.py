@@ -27,6 +27,23 @@ from .g4_critics import (
     SOURCE_AUTHORITY_BLOCKERS,
     TITLE_ID,
 )
+from .g5_human_dispositions import (
+    BATCH_BY_ID,
+    BATCH_IDS,
+    COMPLETED_DISPOSITIONS,
+    DISPOSITION_BATCH_ID,
+    DOMAIN_EXPERT_OPTIONS,
+    FROZEN_TSV_FIELDS,
+    HUMAN_TSV_FIELDS,
+    PARTIAL_STATUS,
+    REMAINING_DISPOSITIONS,
+    SAMI_REVIEW_IDS,
+    SUPERSEDED_AT_G5,
+    dispositions_with_batch,
+    encode_decision_events,
+    encode_dispositions_tsv,
+    overlay_summary,
+)
 from .hashing import sha256_file
 from .jsonl import load_jsonl
 from .runs import build_run_metadata
@@ -79,6 +96,16 @@ REQUIRED_OUTPUTS = (
     "G5_PRIORITY_REVIEW.md",
     "G5_CLEAN_UNITS.md",
     "G5_REVIEW_SUMMARY.json",
+)
+LIVE_OUTPUTS = REQUIRED_OUTPUTS + (
+    "human_decision_events.jsonl",
+    "G5_SAMI_DOMAIN_REVIEW.md",
+    "run_metadata.json",
+)
+PREPARATION_LOCKED_OUTPUTS = (
+    "G5_HUMAN_REVIEW_PACKET.md",
+    "G5_PRIORITY_REVIEW.md",
+    "G5_CLEAN_UNITS.md",
 )
 FORBIDDEN_CLAIM_PHRASES = (
     "G5 PASS",
@@ -836,13 +863,204 @@ def artifact_claim_failures(texts: dict[str, str]) -> list[str]:
     return failures
 
 
+def domain_expert_decision_block() -> str:
+    options = "\n".join(f"[ ] {option}" for option in DOMAIN_EXPERT_OPTIONS)
+    return f"""DOMAIN EXPERT DECISION (Sami / independent healthcare review)
+
+{options}
+
+Recommended final Finnish:
+Reviewer:
+Reviewer role / expertise:
+Rationale:
+Decision date:
+"""
+
+
+def sami_escalation_note(unit: PacketUnit) -> str:
+    if unit.unit_id == "S4A-2026-017":
+        return (
+            "The prior Project Owner wording exists "
+            "(not well enough for cancer treatment -> ei ole riittävän "
+            "hyväkuntoinen syöpähoitoon) but is being referred for domain-expert "
+            "reconsideration. This packet does not decide it."
+        )
+    if unit.unit_id == "S4A-2026-021":
+        return (
+            "No final human frailty wording exists. Frailty/hauraus was discussed "
+            "before G1 without a recorded final term. This packet does not invent one."
+        )
+    if unit.unit_id == "S4A-2026-025":
+        return (
+            "Both independent critics identified a high-priority referent/terminology "
+            "problem in the literal Finnish rendering of 'when the chest is at its "
+            "best' (Critic A HIGH, Critic B HIGH)."
+        )
+    if unit.unit_id == "S4A-2026-045":
+        return (
+            "Both independent critics identified a high-priority referent/terminology "
+            "problem in the literal Finnish rendering of 'chest infections' "
+            "(Critic A BLOCKER, Critic B HIGH)."
+        )
+    if unit.unit_id == "S4A-2026-049":
+        return (
+            "Sami's earlier decision concerned only holistic care -> "
+            "kokonaisvaltainen hoito and did NOT decide how 'spiritual' should be "
+            "translated."
+        )
+    if unit.unit_id == "S4A-2026-026":
+        return unit.domain_expert_reason
+    return unit.domain_expert_reason
+
+
+def sami_review_markdown(units: list[PacketUnit]) -> str:
+    selected = [unit for unit in units if unit.unit_id in SAMI_REVIEW_IDS]
+    if [unit.unit_id for unit in selected] != list(SAMI_REVIEW_IDS):
+        raise ArtifactValidationError("Sami review units are not the required six IDs")
+    blocks: list[str] = []
+    for unit in selected:
+        alternatives: list[str] = []
+        if unit.critic_a_proposed_fi:
+            alternatives.append("Critic A proposed Finnish (not authoritative):")
+            alternatives.append(fence(unit.critic_a_proposed_fi))
+        if unit.critic_b_proposed_fi:
+            alternatives.append("Critic B proposed Finnish (not authoritative):")
+            alternatives.append(fence(unit.critic_b_proposed_fi))
+        if not alternatives:
+            alternatives.append("No alternative Finnish wording was proposed.")
+        existing = unit.existing_human_decision or "None recorded."
+        blocks.append(
+            "\n".join(
+                [
+                    f"## {unit.unit_id}",
+                    "",
+                    f"**Why escalated:** {sami_escalation_note(unit)}",
+                    "",
+                    "**Exact English source**",
+                    fence(unit.source_text_en),
+                    "",
+                    "**Current Finnish candidate**",
+                    fence(unit.current_candidate_fi),
+                    "",
+                    critic_lines(
+                        "Critic A",
+                        unit.critic_a_verdict,
+                        unit.critic_a_severity,
+                        unit.critic_a_categories,
+                        unit.critic_a_rationale,
+                        "",
+                    ),
+                    "",
+                    critic_lines(
+                        "Critic B",
+                        unit.critic_b_verdict,
+                        unit.critic_b_severity,
+                        unit.critic_b_categories,
+                        unit.critic_b_rationale,
+                        "",
+                    ),
+                    "",
+                    "**Critic-proposed alternatives**",
+                    "\n".join(alternatives),
+                    "",
+                    f"**Previous human decision:** {existing}",
+                    "",
+                    "No critic wording is recommended as authoritative.",
+                    "",
+                    domain_expert_decision_block(),
+                ]
+            )
+        )
+    body = "\n".join(blocks)
+    ids = ", ".join(f"`{unit_id}`" for unit_id in SAMI_REVIEW_IDS)
+    return f"""# SPICT-4ALL FI — G5 Sami domain-expert review
+
+Work package: **{DISPOSITION_BATCH_ID}**
+Run: **{G5_RUN_ID}**
+Reviewer requested: **Sami (independent healthcare / domain review)**
+Units: **{len(SAMI_REVIEW_IDS)}**
+
+This packet is for independent domain-expert review. It is not human
+adjudication by the recording model, not clinical validation, and not a G5
+gate pass. No option is pre-checked. No critic wording is authoritative.
+
+Source-authority questions are a separate track and must not be resolved here.
+
+Units in canonical order: {ids}
+
+{body}
+"""
+
+
+def live_dispositions_tsv(units: list[PacketUnit]) -> str:
+    blank_rows = list(
+        csv.DictReader(io.StringIO(dispositions_tsv(units)), delimiter="\t")
+    )
+    return encode_dispositions_tsv(dispositions_with_batch(blank_rows), TSV_COLUMNS)
+
+
+def live_summary_text(
+    units: list[PacketUnit],
+    root: Path,
+    created_at_utc: str,
+) -> str:
+    return encode_json(overlay_summary(summary_payload(units, root, created_at_utc)))
+
+
+def batch_disposition_failures(
+    rows: list[dict[str, str]],
+    blank_rows: list[dict[str, str]],
+) -> list[str]:
+    failures: list[str] = []
+    populated = [
+        row["unit_id"] for row in rows if any(row.get(field, "") for field in HUMAN_TSV_FIELDS)
+    ]
+    if tuple(populated) != BATCH_IDS:
+        failures.append(f"populated disposition IDs are {populated}")
+    if len(rows) != EXPECTED_COUNT or len(blank_rows) != EXPECTED_COUNT:
+        failures.append("disposition row count is not 54")
+        return failures
+    for live, blank in zip(rows, blank_rows, strict=True):
+        unit_id = live["unit_id"]
+        for field in FROZEN_TSV_FIELDS:
+            if live.get(field, "") != blank.get(field, ""):
+                failures.append(f"{unit_id}: frozen field {field} changed")
+        decision = BATCH_BY_ID.get(unit_id)
+        if decision is None:
+            for field in HUMAN_TSV_FIELDS:
+                if live.get(field, "") != "":
+                    failures.append(f"{unit_id}: {field} is populated")
+            continue
+        if live["human_disposition"] != decision["human_disposition"]:
+            failures.append(f"{unit_id}: disposition mismatch")
+        if live["final_finnish"] != decision["final_finnish"]:
+            failures.append(f"{unit_id}: final Finnish mismatch")
+        if live["reviewer"] != decision["reviewer"]:
+            failures.append(f"{unit_id}: reviewer mismatch")
+        if live["reviewer_role"] != decision["reviewer_role"]:
+            failures.append(f"{unit_id}: reviewer role mismatch")
+        if live["decision_rationale"] != decision["decision_rationale"]:
+            failures.append(f"{unit_id}: rationale mismatch")
+        if live["decision_date"] != decision["decision_date"]:
+            failures.append(f"{unit_id}: decision date mismatch")
+        if (
+            decision["human_disposition"] == "ACCEPT_CURRENT"
+            and live["final_finnish"] != live["current_candidate_fi"]
+        ):
+            failures.append(f"{unit_id}: ACCEPT_CURRENT final Finnish is not current G2")
+    blank_human = EXPECTED_COUNT - len(BATCH_IDS)
+    if blank_human != REMAINING_DISPOSITIONS:
+        failures.append("remaining disposition count mismatch")
+    return failures
+
+
 def g5_run_failures(root: Path) -> list[str]:
     failures: list[str] = []
     for relative, expected in {**EXPECTED_HASHES, COMBINED_RELATIVE: COMBINED_SHA256}.items():
         if sha256_file(root / relative) != expected:
             failures.append(f"frozen input hash mismatch: {relative}")
     run_dir = root / G5_RUN_DIR
-    for name in REQUIRED_OUTPUTS:
+    for name in LIVE_OUTPUTS:
         if not (run_dir / name).is_file():
             failures.append(f"missing G5 output: {name}")
             return failures
@@ -861,12 +1079,8 @@ def g5_run_failures(root: Path) -> list[str]:
     if tuple(tier_ids(units, "TIER_2")) != EXPECTED_TIER_2:
         failures.append(f"Tier 2 IDs are {tier_ids(units, 'TIER_2')}")
     sources = source_index(root)
-    g2_map = {
-        str(row["unit_id"]): str(row["candidate_fi"]) for row in g2
-    }
-    back_map = {
-        str(row["unit_id"]): str(row["back_translation_en"]) for row in back
-    }
+    g2_map = {str(row["unit_id"]): str(row["candidate_fi"]) for row in g2}
+    back_map = {str(row["unit_id"]): str(row["back_translation_en"]) for row in back}
     for unit in units:
         source = sources.get(unit.unit_id)
         if source is None:
@@ -900,36 +1114,81 @@ def g5_run_failures(root: Path) -> list[str]:
         return failures
     if [row["unit_id"] for row in rows] != ids:
         failures.append("human_dispositions.tsv order is not canonical")
-    if len(rows) != EXPECTED_COUNT:
-        failures.append(f"human_dispositions.tsv has {len(rows)} data rows")
-    for row in rows:
-        for field in BLANK_HUMAN_FIELDS:
-            if row.get(field, "") != "":
-                failures.append(f"{row['unit_id']}: {field} is pre-populated")
+    blank_rows = list(
+        csv.DictReader(io.StringIO(dispositions_tsv(units)), delimiter="\t")
+    )
+    failures.extend(batch_disposition_failures(rows, blank_rows))
+    expected_tsv = live_dispositions_tsv(units)
+    if (run_dir / "human_dispositions.tsv").read_text(encoding="utf-8") != expected_tsv:
+        failures.append("human_dispositions.tsv is not the recorded batch overlay")
+    expected_events = encode_decision_events(G5_RUN_ID)
+    if (run_dir / "human_decision_events.jsonl").read_text(encoding="utf-8") != expected_events:
+        failures.append("human_decision_events.jsonl is not the recorded five events")
+    events = load_jsonl(run_dir / "human_decision_events.jsonl")
+    if len(events) != COMPLETED_DISPOSITIONS:
+        failures.append(f"decision events count is {len(events)}")
+    if [str(row["unit_id"]) for row in events] != list(BATCH_IDS):
+        failures.append("decision event IDs are not the recorded batch")
+    for event in events:
+        if event.get("source_authority_resolved") is not False:
+            failures.append(f"{event.get('unit_id')}: event resolves source authority")
+        if event.get("run_id") != G5_RUN_ID:
+            failures.append(f"{event.get('unit_id')}: event run_id mismatch")
+        if event.get("unit_id") in {"S4A-2026-001", "S4A-2026-042"}:
+            if event.get("prior_human_decision_status") != SUPERSEDED_AT_G5:
+                failures.append(
+                    f"{event.get('unit_id')}: prior decision was not recorded as superseded"
+                )
     created_at = json.loads(
         (run_dir / "G5_REVIEW_SUMMARY.json").read_text(encoding="utf-8")
     )["created_at_utc"]
     expected_texts = render_required_artifacts(units, root, str(created_at))
-    for name, expected in expected_texts.items():
+    for name in PREPARATION_LOCKED_OUTPUTS:
         actual = (run_dir / name).read_text(encoding="utf-8")
-        if actual != expected:
-            failures.append(f"{name} is not the deterministic G5 preparation output")
-    failures.extend(artifact_claim_failures(expected_texts))
+        if actual != expected_texts[name]:
+            failures.append(f"{name} is not the frozen G5 preparation output")
+    if (run_dir / "G5_REVIEW_SUMMARY.json").read_text(encoding="utf-8") != live_summary_text(
+        units, root, str(created_at)
+    ):
+        failures.append("G5_REVIEW_SUMMARY.json is not the partial-adjudication overlay")
+    expected_sami = sami_review_markdown(units)
+    if (run_dir / "G5_SAMI_DOMAIN_REVIEW.md").read_text(encoding="utf-8") != expected_sami:
+        failures.append("G5_SAMI_DOMAIN_REVIEW.md is not the deterministic Sami packet")
+    failures.extend(artifact_claim_failures({**expected_texts, "sami": expected_sami}))
+    if CHECKED_BOX.search(expected_sami):
+        failures.append("Sami packet pre-checks a domain-expert option")
     for path in document_generation_files(root):
         failures.append(f"document-generation file present: {path}")
     for path in g5_audit_zip_files(root):
         failures.append(f"G5/G6 audit artifact present: {path}")
     summary = json.loads((run_dir / "G5_REVIEW_SUMMARY.json").read_text(encoding="utf-8"))
-    if summary.get("human_adjudication_performed") is not False:
-        failures.append("summary claims human adjudication")
+    if summary.get("status") != PARTIAL_STATUS:
+        failures.append("summary status is not partial human adjudication")
+    if summary.get("completed_human_dispositions") != COMPLETED_DISPOSITIONS:
+        failures.append("summary completed_human_dispositions mismatch")
+    if summary.get("remaining_human_dispositions") != REMAINING_DISPOSITIONS:
+        failures.append("summary remaining_human_dispositions mismatch")
     if summary.get("g5_gate_passed") is not False:
         failures.append("summary claims G5 gate passed")
+    if summary.get("human_adjudication_complete") is not False:
+        failures.append("summary claims complete human adjudication")
     if summary.get("g6_started") is not False:
         failures.append("summary claims G6 started")
     if summary.get("source_authority_resolved") is not False:
         failures.append("summary claims source authority resolved")
     if summary.get("clinical_validation_claimed") is not False:
         failures.append("summary claims clinical validation")
+    metadata = json.loads((run_dir / "run_metadata.json").read_text(encoding="utf-8"))
+    if metadata.get("g5_status") != PARTIAL_STATUS:
+        failures.append("run metadata g5_status is not partial")
+    if metadata.get("g5_gate_passed") is not False:
+        failures.append("run metadata claims G5 gate passed")
+    if metadata.get("g2_changed") is not False:
+        failures.append("run metadata claims G2 changed")
+    if metadata.get("g3_changed") is not False:
+        failures.append("run metadata claims G3 changed")
+    if metadata.get("g4_changed") is not False:
+        failures.append("run metadata claims G4 changed")
     readme = (root / "README.md").read_text(encoding="utf-8")
     if "| **G5** | Human adjudication and final source reconciliation | **IN PROGRESS** |" not in readme:
         failures.append("README G5 status is not IN PROGRESS")
@@ -938,3 +1197,4 @@ def g5_run_failures(root: Path) -> list[str]:
     if "| **G6** | Target-user testing and external review | **PASS** |" in readme:
         failures.append("README claims G6 PASS")
     return failures
+

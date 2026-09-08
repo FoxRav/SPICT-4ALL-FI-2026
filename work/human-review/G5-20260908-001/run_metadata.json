@@ -1,6 +1,7 @@
 {
   "actual_model": "Cursor Grok 4.6",
   "clinical_validation_claimed": false,
+  "completed_human_dispositions": 5,
   "created_at_utc": "2026-09-08T14:52:39.489692Z",
   "finnish_revised": false,
   "g2_changed": false,
@@ -8,8 +9,9 @@
   "g4_changed": false,
   "g5_audit_zip_created": false,
   "g5_gate_passed": false,
-  "g5_status": "PREPARATION_COMPLETE_AWAITING_HUMAN_DISPOSITION",
+  "g5_status": "PARTIAL_HUMAN_ADJUDICATION_5_OF_54",
   "g6_started": false,
+  "human_adjudication_complete": false,
   "human_adjudication_performed": false,
   "inputs": [
     {
@@ -53,10 +55,19 @@
       "sha256": "76462191d3ad2a83c878982a1460443f322437e547b747f6267f4a29d887c619"
     }
   ],
+  "populated_human_disposition_ids": [
+    "S4A-2026-001",
+    "S4A-2026-008",
+    "S4A-2026-009",
+    "S4A-2026-036",
+    "S4A-2026-042"
+  ],
+  "remaining_human_dispositions": 49,
   "role": "G5 human-review preparation (not the human adjudicator) (actual model: Cursor Grok 4.6)",
   "run_id": "G5-20260908-001",
   "source_authority_resolved": false,
   "status": "DRAFT",
   "tool_version": "0.1.0",
-  "work_package": "WP-G5-HUMAN-REVIEW-PREPARATION-001"
+  "work_package": "WP-G5-HUMAN-REVIEW-PREPARATION-001",
+  "work_package_disposition_batch": "WP-G5-HUMAN-DISPOSITION-BATCH-001"
 }
