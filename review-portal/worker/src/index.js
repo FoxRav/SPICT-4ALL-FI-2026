@@ -2,6 +2,21 @@ import { config } from './review-config.generated.js';
 
 const ENUMS = ['ACCEPT_CURRENT', 'ACCEPT_WITH_EDIT', 'NEEDS_FURTHER_CLINICAL_OR_TERMINOLOGY_REVIEW'];
 const MAX_BYTES = 65536;
+function logUpstreamFailure(stage, error, status) {
+  // Runtime exception text can contain response excerpts, credentials or user data.
+  // Only known, context-free names/messages may pass through; never log the Error object.
+  const names = ['Error', 'TypeError', 'SyntaxError', 'TimeoutError', 'AbortError'];
+  const messages = ['privacy', 'upstream', 'response', 'fetch failed', 'Failed to fetch',
+    'The operation was aborted due to timeout', 'The operation was aborted.',
+    'Unexpected end of JSON input'];
+  const diagnostic = {
+    stage,
+    name: names.includes(error?.name) ? error.name : 'Error',
+    message: messages.includes(error?.message) ? error.message : '[redacted unsafe exception message]',
+  };
+  if (status !== undefined) diagnostic.status = status;
+  console.error(diagnostic);
+}
 const isObject = x => x !== null && typeof x === 'object' && !Array.isArray(x);
 function fail(message) { throw new Error(message); }
 function string(value, max, required = true) {
@@ -101,30 +116,41 @@ export default {
     evidence.submission_id = await digest(canonical(evidence));
     const body = issueBody(evidence);
     if (new TextEncoder().encode(body).byteLength > 60000) return response(413, { error: 'Arvio on liian suuri tallennettavaksi. Lyhennä tekstejä ja yritä uudelleen.' });
+    let stage = 'GITHUB_REPOSITORY_METADATA_FETCH';
+    let upstreamStatus;
     try {
       const repository = await fetch(`https://api.github.com/repos/${env.GITHUB_EVIDENCE_REPOSITORY}`, {
         headers: { Authorization: `Bearer ${env.GITHUB_TOKEN}`, Accept: 'application/vnd.github+json',
           'User-Agent': 'SPICT-G5-review', 'X-GitHub-Api-Version': '2022-11-28' },
-        redirect: 'error', signal: AbortSignal.timeout(15000),
+        redirect: 'manual', signal: AbortSignal.timeout(15000),
       });
+      upstreamStatus = repository.status;
+      // Manual mode never follows Location; all redirects fail this exact status check.
       if (repository.status !== 200) throw new Error('privacy');
+      stage = 'GITHUB_REPOSITORY_METADATA_PARSE_VALIDATE';
       const metadata = await repository.json();
       if (metadata.private !== true || typeof metadata.full_name !== 'string' || metadata.full_name.toLowerCase() !== env.GITHUB_EVIDENCE_REPOSITORY.toLowerCase()) {
         return response(503, { error: 'Arvion yksityistä tallennuspaikkaa ei voitu vahvistaa.' });
       }
+      stage = 'GITHUB_ISSUE_POST_FETCH';
+      upstreamStatus = undefined;
       const upstream = await fetch(`https://api.github.com/repos/${env.GITHUB_EVIDENCE_REPOSITORY}/issues`, {
         method: 'POST', headers: { 'Authorization': `Bearer ${env.GITHUB_TOKEN}`, 'Accept': 'application/vnd.github+json',
           'Content-Type': 'application/json', 'User-Agent': 'SPICT-G5-review', 'X-GitHub-Api-Version': '2022-11-28' },
         body: JSON.stringify({ title: `[G5 DOMAIN REVIEW] ${evidence.reviewer.name.replace(/[\r\n]/g, ' ')} — ${config.review_run_id} — ${evidence.submission_id}`, body }),
-        redirect: 'error', signal: AbortSignal.timeout(15000),
+        redirect: 'manual', signal: AbortSignal.timeout(15000),
       });
+      upstreamStatus = upstream.status;
+      // Reject redirects before reading the response or making another request.
       if (upstream.status !== 201) throw new Error('upstream');
+      stage = 'GITHUB_ISSUE_RESPONSE_PARSE_VALIDATE';
       const issue = await upstream.json();
       if (!Number.isInteger(issue.number) || issue.number < 1) throw new Error('response');
       return response(200, { ok: true, submission_id: evidence.submission_id, issue_number: issue.number,
         submitted_at_utc: evidence.submitted_at_utc });
-    } catch {
-      return response(502, { error: 'Tallennusta ei voitu vahvistaa. Älä lähetä uudelleen ennen kuin ylläpitäjä on tarkistanut, syntyikö arvio.' });
+    } catch (error) {
+      logUpstreamFailure(stage, error, upstreamStatus);
+      return response(502, { error: 'Arvion tallennusta ei voitu vahvistaa. Älä lähetä uudelleen ennen kuin ylläpitäjä on tarkistanut, syntyikö arvio.' });
     }
   },
 };

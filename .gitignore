@@ -12,6 +12,8 @@ htmlcov/
 .env.*
 .dev.vars
 .dev.vars.*
+review-portal/worker/.wrangler/
+.wrangler/
 !.env.example
 .DS_Store
 Thumbs.db

@@ -166,3 +166,87 @@ test('Issue API failure after successful privacy check is safe and not retried',
   assert.equal(result.status, 502); assert.equal(posts, 1);
   assert.ok(!(await result.text()).includes(env.GITHUB_TOKEN));
 });
+
+const diagnosticCases = [
+  ['repository network', 'GITHUB_REPOSITORY_METADATA_FETCH', undefined, 'network'],
+  ['repository HTTP', 'GITHUB_REPOSITORY_METADATA_FETCH', 403, 'http'],
+  ['repository JSON', 'GITHUB_REPOSITORY_METADATA_PARSE_VALIDATE', 200, 'json'],
+  ['repository validation exception', 'GITHUB_REPOSITORY_METADATA_PARSE_VALIDATE', 200, 'null'],
+  ['issue network', 'GITHUB_ISSUE_POST_FETCH', undefined, 'network'],
+  ['issue HTTP', 'GITHUB_ISSUE_POST_FETCH', 422, 'http'],
+  ['issue JSON', 'GITHUB_ISSUE_RESPONSE_PARSE_VALIDATE', 201, 'json'],
+  ['issue validation', 'GITHUB_ISSUE_RESPONSE_PARSE_VALIDATE', 201, 'invalid'],
+];
+for (const [label, stage, status, mode] of diagnosticCases) test(`safe diagnostic: ${label}`, async t => {
+  const logs = [];
+  t.mock.method(console, 'error', (...args) => logs.push(args));
+  const p = payload();
+  const sensitive = [env.GITHUB_TOKEN, env.REVIEW_ACCESS_CODE, p.reviewer.name, p.reviewer.role,
+    p.decisions[0].recommended_finnish, JSON.stringify(p), 'Authorization: Bearer'];
+  const hostileError = new Error(sensitive.join(' '));
+  hostileError.name = sensitive.join(' ');
+  t.mock.method(globalThis, 'fetch', async (url, options) => {
+    assert.equal(options.redirect, 'manual'); assert.ok(options.signal instanceof AbortSignal);
+    const issue = options.method === 'POST';
+    if (!issue && label.startsWith('issue')) return Response.json({ private: true, full_name: env.GITHUB_EVIDENCE_REPOSITORY });
+    if (mode === 'network') throw hostileError;
+    if (mode === 'http') return new Response(sensitive.join(' '), { status });
+    if (mode === 'json') return new Response(sensitive.join(' '), { status });
+    if (mode === 'null') return Response.json(null);
+    return Response.json({ number: 'not-an-integer' }, { status });
+  });
+  const result = await worker.fetch(request(p), env);
+  assert.equal(result.status, 502);
+  const client = await result.text();
+  assert.match(client, /Arvion tallennusta ei voitu vahvistaa/);
+  assert.ok(!client.includes(stage));
+  assert.equal(logs.length, 1); assert.equal(logs[0].length, 1);
+  const diagnostic = logs[0][0];
+  assert.equal(diagnostic.stage, stage); assert.equal(diagnostic.status, status);
+  assert.deepEqual(Object.keys(diagnostic).sort(), status === undefined ? ['message', 'name', 'stage'] : ['message', 'name', 'stage', 'status']);
+  for (const value of sensitive) { assert.ok(!JSON.stringify(logs).includes(value)); assert.ok(!client.includes(value)); }
+});
+
+test('successful submission emits no diagnostics', async t => {
+  t.mock.method(console, 'error', () => assert.fail('success must not log'));
+  let posts = 0;
+  t.mock.method(globalThis, 'fetch', async (url, options) => {
+    if (options.method !== 'POST') return Response.json({ private: true, full_name: env.GITHUB_EVIDENCE_REPOSITORY });
+    posts++; return Response.json({ number: 123 }, { status: 201 });
+  });
+  const result = await worker.fetch(request(payload()), env);
+  assert.equal(result.status, 200); assert.equal(posts, 1);
+  assert.deepEqual(Object.keys(await result.json()).sort(), ['issue_number', 'ok', 'submission_id', 'submitted_at_utc']);
+});
+
+for (const phase of ['repository', 'issue']) {
+  for (const status of [301, 302, 307, 308]) test(`${phase} redirect ${status} rejected without following Location`, async t => {
+    const logs = [];
+    t.mock.method(console, 'error', (...args) => logs.push(args));
+    const calls = [];
+    const target = 'https://redirect-target.invalid/do-not-fetch';
+    t.mock.method(globalThis, 'fetch', async (url, options) => {
+      calls.push(url);
+      assert.notEqual(url, target);
+      assert.equal(options.redirect, 'manual');
+      assert.ok(options.signal instanceof AbortSignal);
+      const base = `https://api.github.com/repos/${env.GITHUB_EVIDENCE_REPOSITORY}`;
+      if (phase === 'issue' && url === base) return Response.json({ private: true, full_name: env.GITHUB_EVIDENCE_REPOSITORY });
+      assert.equal(url, phase === 'repository' ? base : `${base}/issues`);
+      const response = new Response('not JSON', { status, headers: { Location: target } });
+      response.json = () => assert.fail('redirect body must not be parsed');
+      return response;
+    });
+    const result = await worker.fetch(request(payload()), env);
+    assert.equal(result.status, 502);
+    assert.equal(calls.length, phase === 'repository' ? 1 : 2);
+    assert.equal(logs.length, 1);
+    assert.equal(logs[0][0].stage, phase === 'repository' ? 'GITHUB_REPOSITORY_METADATA_FETCH' : 'GITHUB_ISSUE_POST_FETCH');
+    assert.equal(logs[0][0].status, status);
+    const client = await result.text();
+    for (const secret of [env.GITHUB_TOKEN, env.REVIEW_ACCESS_CODE]) {
+      assert.ok(!JSON.stringify(logs).includes(secret)); assert.ok(!client.includes(secret));
+    }
+    assert.ok(!JSON.stringify(logs).includes(target));
+  });
+}

@@ -11,7 +11,8 @@ from build_sami_review_portal import ROOT, artifacts
 
 def validate_local_secrets(root: Path) -> None:
     probes = [".dev.vars", ".dev.vars.local", "review-portal/worker/.dev.vars",
-              "review-portal/worker/.dev.vars.preview"]
+              "review-portal/worker/.dev.vars.preview", ".wrangler/cache.bin",
+              "review-portal/worker/.wrangler/cache.bin"]
     ignored = subprocess.run(
         ["git", "check-ignore", "--no-index", "--stdin"], cwd=root,
         input=("\n".join(probes) + "\n").encode(), capture_output=True, check=False,
@@ -68,8 +69,15 @@ def validate(root: Path = ROOT) -> None:
         "ALLOWED_ORIGIN": "https://foxrav.github.io",
     }
     assert 'GITHUB_REPOSITORY' not in wrangler
+    worker = (root / "review-portal/worker/src/index.js").read_text(encoding="utf-8")
+    assert worker.count("redirect: 'manual'") == 2
+    assert "redirect: 'error'" not in worker and "redirect: 'follow'" not in worker
+    assert "repository.status !== 200" in worker and "upstream.status !== 201" in worker
+    assert worker.count("AbortSignal.timeout(15000)") == 2
     validate_local_secrets(root)
     for path in (root / "review-portal").rglob("*"):
+        if ".wrangler" in path.relative_to(root / "review-portal").parts:
+            continue  # Local Wrangler runtime cache is not source or review evidence.
         if not path.is_file() or path.name == ".dev.vars" or path.name.startswith(".dev.vars."):
             continue
         text = path.read_text(encoding="utf-8")
