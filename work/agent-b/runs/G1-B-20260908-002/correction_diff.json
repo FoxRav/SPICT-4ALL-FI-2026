@@ -1,0 +1,52 @@
+{
+  "base_run_id": "G1-B-20260908-001",
+  "corrected_run_id": "G1-B-20260908-002",
+  "work_package": "WP-G1-B-CORRECTION-R2-001",
+  "agent_a_inspected": false,
+  "synthesis_performed": false,
+  "g2_performed": false,
+  "human_approval_created": false,
+  "changed_fields": [
+    "candidate_fi"
+  ],
+  "changed_unit_ids": [
+    "S4A-2026-001",
+    "S4A-2026-004",
+    "S4A-2026-014",
+    "S4A-2026-017",
+    "S4A-2026-042"
+  ],
+  "unchanged_candidate_fi_count": 49,
+  "changes": [
+    {
+      "unit_id": "S4A-2026-001",
+      "field": "candidate_fi",
+      "before": "SPICT auttaa meitä etsimään ihmisiä, joilla on elinikää lyhentäviä terveydentiloja ja jotka voivat huonommin. Nämä ihmiset tarvitsevat nyt enemmän apua ja hoitoa sekä suunnitelman tulevaa hoitoa varten.",
+      "after": "SPICT auttaa meitä etsimään ihmisiä, joilla on elinikää lyhentäviä terveydentiloja ja joiden terveydentila on heikentynyt. Nämä ihmiset tarvitsevat nyt enemmän apua ja hoitoa sekä suunnitelman tulevaa hoitoa varten."
+    },
+    {
+      "unit_id": "S4A-2026-004",
+      "field": "candidate_fi",
+      "before": "Selviytyy tavanomaisista toimistaan aiempaa huonommin; ei ole yhtä hyvässä kunnossa kuin ennen.\n(Henkilö on usein vuoteessa tai tuolissa yli puolet päivästä.)",
+      "after": "Toimintakyky on heikentynyt tavanomaisissa toimissa; ei ole yhtä hyvässä kunnossa kuin ennen.\n(Henkilö on usein vuoteessa tai tuolissa yli puolet päivästä.)"
+    },
+    {
+      "unit_id": "S4A-2026-014",
+      "field": "candidate_fi",
+      "before": "Selviytyy tavanomaisista toimistaan aiempaa huonommin, ja terveys heikkenee.",
+      "after": "Toimintakyky on heikentynyt tavanomaisissa toimissa, ja terveys heikkenee."
+    },
+    {
+      "unit_id": "S4A-2026-017",
+      "field": "candidate_fi",
+      "before": "Ei ole tarpeeksi hyvässä kunnossa syöpähoitoon, tai hoito on oireiden helpottamiseksi.",
+      "after": "Ei ole riittävän hyväkuntoinen syöpähoitoon, tai hoito on oireiden helpottamiseksi."
+    },
+    {
+      "unit_id": "S4A-2026-042",
+      "field": "candidate_fi",
+      "before": "Ihmiset, jotka voivat huonommin ja joilla on muita elinikää lyhentäviä ruumiillisia tai henkisiä sairauksia tai terveydentiloja. Hoitoa ei ole saatavilla, tai se ei tehoa hyvin.",
+      "after": "Ihmiset, joiden terveydentila on heikentynyt ja joilla on muita elinikää lyhentäviä ruumiillisia tai henkisiä sairauksia tai terveydentiloja. Hoitoa ei ole saatavilla, tai se ei tehoa hyvin."
+    }
+  ]
+}

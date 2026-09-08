@@ -1,0 +1,39 @@
+{
+  "created_at_utc": "2026-09-08T11:31:05.040612Z",
+  "inputs": [
+    {
+      "bytes": 893,
+      "path": "F:\\-DEV-\\120.SPICT-G1-B\\data\\source_requirements.jsonl",
+      "sha256": "7893316538c8866c2b8d8f7fbce0940b282d445436003575758409ac72b8a023"
+    },
+    {
+      "bytes": 22694,
+      "path": "F:\\-DEV-\\120.SPICT-G1-B\\data\\source_units.jsonl",
+      "sha256": "f4751a7e67ff42338fc5c23a842cc7af07c03f2c6a394dea1819f26546c127a5"
+    },
+    {
+      "bytes": 10983,
+      "path": "F:\\-DEV-\\120.SPICT-G1-B\\terminology\\adjudication\\T1_2_HUMAN_REVIEW_REDUCTION_REPORT.md",
+      "sha256": "2b9e11301a5c88add69dd58bee501af0b40cccdc0812753d712f8de18d43543e"
+    },
+    {
+      "bytes": 1231,
+      "path": "F:\\-DEV-\\120.SPICT-G1-B\\terminology\\adjudication\\human_terminology_decisions.tsv",
+      "sha256": "d390a5b2a13a786bc246867c4c0c7fe7d1966e68e01c06a3a7d3bdc5487e9a25"
+    },
+    {
+      "bytes": 27281,
+      "path": "F:\\-DEV-\\120.SPICT-G1-B\\work\\agent-b\\agent_b_translations.json",
+      "sha256": "1d10eb85a0fbad412148e90c2f890a05c473bcf4165b1b3bca99dfbd185a775e"
+    },
+    {
+      "bytes": 80567,
+      "path": "F:\\-DEV-\\120.SPICT-G1-B\\work\\agent-b\\candidates.jsonl",
+      "sha256": "0bb36348713bf951fb5166c4ebed53d66afc6f3436c5790d790d0a53fe23f640"
+    }
+  ],
+  "role": "forward_translation_B",
+  "run_id": "G1-B-20260908-002",
+  "status": "DRAFT",
+  "tool_version": "0.1.0"
+}
