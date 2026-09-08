@@ -10,6 +10,8 @@ htmlcov/
 *.pyc
 .env
 .env.*
+.dev.vars
+.dev.vars.*
 !.env.example
 .DS_Store
 Thumbs.db

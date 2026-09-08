@@ -46,6 +46,24 @@ field whitelist and excludes critic alternatives.
 
 ## Configuration and future activation (do not execute while blocked)
 
+### Local development secret handling
+
+Local development secrets go in `review-portal/worker/.dev.vars`.
+Names only (the ellipses below are placeholders, not values):
+
+```dotenv
+GITHUB_TOKEN="..."
+REVIEW_ACCESS_CODE="..."
+```
+
+`.dev.vars` is local only: never commit it or any `.dev.vars.*` variant.
+Never paste a PAT into source files. Local `wrangler dev` may load this file;
+this does not deploy the Worker. No local secrets file is supplied by this project.
+The `[secrets] required` declaration lists only the two required secret names.
+Publication remains blocked with `PUBLICATION_AUTHORIZED = "false"`.
+Validation checks ignore behavior and rejects tracked local secret files without
+reading their contents; ignored local secret values are excluded from file scans.
+
 Required Worker secrets: `GITHUB_TOKEN`, `REVIEW_ACCESS_CODE`. Set them with
 `npx wrangler secret put GITHUB_TOKEN` and `npx wrangler secret put REVIEW_ACCESS_CODE`
 from review-portal/worker, entering values interactively. Never put secrets in

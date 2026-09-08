@@ -2,10 +2,24 @@
 from __future__ import annotations
 
 import re
+import subprocess
 import tomllib
 from pathlib import Path
 
 from build_sami_review_portal import ROOT, artifacts
+
+
+def validate_local_secrets(root: Path) -> None:
+    probes = [".dev.vars", ".dev.vars.local", "review-portal/worker/.dev.vars",
+              "review-portal/worker/.dev.vars.preview"]
+    ignored = subprocess.run(
+        ["git", "check-ignore", "--no-index", "--stdin"], cwd=root,
+        input=("\n".join(probes) + "\n").encode(), capture_output=True, check=False,
+    )
+    assert set(ignored.stdout.decode().splitlines()) == set(probes), "Local secret files must be gitignored"
+    tracked = subprocess.check_output(["git", "ls-files", "-z"], cwd=root).decode().split("\0")
+    assert not any(Path(name).name == ".dev.vars" or Path(name).name.startswith(".dev.vars.")
+                   for name in tracked), "Local secret file is tracked; contents not read"
 
 
 def validate(root: Path = ROOT) -> None:
@@ -45,15 +59,18 @@ def validate(root: Path = ROOT) -> None:
     assert 'edit.maxLength = 2000' in js and 'rationale.maxLength = 1200' in js
     assert "issue-link" not in html and "result.issue_url" not in js
     wrangler = (root / "review-portal/worker/wrangler.toml").read_text()
-    worker_vars = tomllib.loads(wrangler)["vars"]
+    worker_config = tomllib.loads(wrangler)
+    assert worker_config["secrets"] == {"required": ["GITHUB_TOKEN", "REVIEW_ACCESS_CODE"]}
+    worker_vars = worker_config["vars"]
     assert worker_vars == {
         "GITHUB_EVIDENCE_REPOSITORY": "FoxRav/SPICT-4ALL-FI-2026-review-evidence",
         "PUBLICATION_AUTHORIZED": "false",
         "ALLOWED_ORIGIN": "https://foxrav.github.io",
     }
     assert 'GITHUB_REPOSITORY' not in wrangler
+    validate_local_secrets(root)
     for path in (root / "review-portal").rglob("*"):
-        if not path.is_file():
+        if not path.is_file() or path.name == ".dev.vars" or path.name.startswith(".dev.vars."):
             continue
         text = path.read_text(encoding="utf-8")
         assert not re.search(r"(?:github_pat_|gh[pousr]_)[A-Za-z0-9_]{20,}", text), path

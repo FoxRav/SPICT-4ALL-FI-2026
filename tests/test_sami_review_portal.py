@@ -3,6 +3,7 @@ from __future__ import annotations
 import importlib.util
 import json
 import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -57,11 +58,27 @@ def test_portal_rejects_changed_data(tmp_path: Path, mutation: str) -> None:
     ("review-portal/worker/wrangler.toml", 'PUBLICATION_AUTHORIZED = "false"', 'PUBLICATION_AUTHORIZED = "true"'),
     ("review-portal/worker/wrangler.toml", 'ALLOWED_ORIGIN = "https://foxrav.github.io"', 'ALLOWED_ORIGIN = "*"'),
     ("review-portal/site/review/sami/index.html", 'minlength="24"', 'minlength="1"'),
+    ("review-portal/worker/wrangler.toml", '["GITHUB_TOKEN", "REVIEW_ACCESS_CODE"]', '["GITHUB_TOKEN"]'),
+    ("review-portal/worker/wrangler.toml", '["GITHUB_TOKEN", "REVIEW_ACCESS_CODE"]', '["GITHUB_TOKEN", "REVIEW_ACCESS_CODE", "EXTRA"]'),
+    (".gitignore", '.dev.vars\n', ''),
+    (".gitignore", '.dev.vars.*', ''),
 ])
 def test_activation_safety_regressions(tmp_path: Path, target: str, old: str, new: str) -> None:
-    shutil.copytree(ROOT / "review-portal", tmp_path / "review-portal")
+    shutil.copytree(ROOT / "review-portal", tmp_path / "review-portal", ignore=shutil.ignore_patterns(".dev.vars", ".dev.vars.*"))
     shutil.copytree(ROOT / ".github", tmp_path / ".github")
+    shutil.copy(ROOT / ".gitignore", tmp_path / ".gitignore")
+    subprocess.run(["git", "init", "-q", str(tmp_path)], check=True)
     path = tmp_path / target
     path.write_text(path.read_text(encoding="utf-8").replace(old, new), encoding="utf-8")
     with pytest.raises(AssertionError):
         MODULE.validate(tmp_path)
+
+
+def test_force_tracked_local_secret_file_rejected_without_reading(tmp_path: Path) -> None:
+    subprocess.run(["git", "init", "-q", str(tmp_path)], check=True)
+    shutil.copy(ROOT / ".gitignore", tmp_path / ".gitignore")
+    (tmp_path / ".dev.vars").write_text("# Empty test fixture; no secret values\n")
+    MODULE.validate_local_secrets(tmp_path)
+    subprocess.run(["git", "add", "-f", ".dev.vars"], cwd=tmp_path, check=True)
+    with pytest.raises(AssertionError, match="tracked"):
+        MODULE.validate_local_secrets(tmp_path)
