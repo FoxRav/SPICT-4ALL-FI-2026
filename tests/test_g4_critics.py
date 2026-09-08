@@ -140,7 +140,9 @@ def test_g4_metadata_when_present() -> None:
     )
     assert [row["unit_id"] for row in combined] == [row["unit_id"] for row in expected]
     readme = README.read_text(encoding="utf-8")
-    assert "G4 independent review is in progress" in readme
+    assert "| **G4** | Independent critics and adversarial review | **PASS** |" in readme
+    assert "| **G5** | Human adjudication and final source reconciliation | **IN PROGRESS** |" in readme
+    assert "G5 human adjudication is in progress" in readme
     assert "G4 PASS" not in readme
 
 
